@@ -61,6 +61,56 @@ namespace ControlDeTiempos.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 2015
+        ///2016
+        ///2017
+        ///2018
+        ///2018
+        ///2019
+        ///2020
+        ///2021.
+        /// </summary>
+        internal static string año {
+            get {
+                return ResourceManager.GetString("año", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1. Planeacion Estrategica
+        ///2. EFECTIVO E INVERSIONES TEMPORALES
+        ///3. INMUEBLES, MAQUINARIA Y EQUIPO
+        ///4. INVENTARIOS
+        ///5. Planeación de Auditoría Detallada
+        ///6. Determinacion de la Materialidad
+        ///7. Análisis de Variaciones en estados financieros 
+        ///8. INVERSIONES TEMPORALES
+        ///9. Revision de cifras dictaminadas
+        ///10. CUENTAS POR COBRAR 
+        ///10. VENTAS
+        ///11. OTROS ACTIVOS
+        ///12. CUENTAS POR PAGAR- PROVEEDORES
+        ///12. CUENTAS POR PAGAR- DOCUMENTOS
+        ///12. CUENTAS POR PAGAR- ANTICIPOS DE CLIENTES
+        ///13. CIAS. AFILIADAS Y RELACIONADA [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string area {
+            get {
+                return ResourceManager.GetString("area", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon bloquear {
+            get {
+                object obj = ResourceManager.GetObject("bloquear", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap buscar {
@@ -81,12 +131,44 @@ namespace ControlDeTiempos.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auditoría 
+        ///Contabilidad
+        ///Administración.
+        /// </summary>
+        internal static string concepto {
+            get {
+                return ResourceManager.GetString("concepto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap diseño_interior_del_sitio_vacío {
             get {
                 object obj = ResourceManager.GetObject("diseño_interior_del_sitio_vacío", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ALIANZAS AFECTUOSAS, S.A de C.V
+        ///ADMINISTRADORA DE OBRAS Y CONCESIONES, S.A de C.V
+        ///ASCENCIO SOULES Y CIA, S.C
+        ///CONSTRUCTORA MAKRO, S.A de C.V
+        ///CORPORATIVO INTEGRAL DE VIVIENDA, S.A. de C.V.
+        ///DISTRIBUIDORA PIPILA, S. de R.L. de C.V.
+        ///HOGAR PARA NINIOS NECESITADOS CRISTO POR SU MUNDO, A.C.
+        ///MADERAS Y MATERIALES, JR, S.A. de C.V.
+        ///MAGNAMAQ, S.A. de C.V.
+        ///OPERADORA FARMACEUTICA DE BAJA CALIFORNIA, S. de R.L. de C.V.
+        ///PIEDRAS HEADWATERS, S. de R.L
+        ///TRITUASFALTOS, S.A. de C.V.
+        ///Otros- no auditoria.
+        /// </summary>
+        internal static string empresa {
+            get {
+                return ResourceManager.GetString("empresa", resourceCulture);
             }
         }
         
@@ -117,6 +199,16 @@ namespace ControlDeTiempos.Properties {
             get {
                 object obj = ResourceManager.GetObject("lupa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon usuario {
+            get {
+                object obj = ResourceManager.GetObject("usuario", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

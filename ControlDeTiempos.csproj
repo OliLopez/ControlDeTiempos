@@ -116,5 +116,23 @@
   <ItemGroup>
     <None Include="Resources\buscar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empresa.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bloquear.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\año.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\area.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\concepto.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

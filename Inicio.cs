@@ -17,13 +17,14 @@ namespace ControlDeTiempos
         {
             InitializeComponent();
         }
-        //Diseño, para mover la ventana
+        //Inicio de codigo para diseño
+        //para mover la ventana
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        
+
         private void txtNombreUsuario_Click(object sender, EventArgs e)
         {
             txtNombreUsuario.Clear();
@@ -59,5 +60,55 @@ namespace ControlDeTiempos
             pictureBox2.BackColor = Color.White;
         }
         //Fin de codigo para diseño
+
+        //Validaciones de campos
+        int validacionInicio()
+        {
+            if (!(txtNombreUsuario.Text.All(Char.IsLetter)) || (txtNombreUsuario.Text == ""))
+            {
+                return 1;
+            }
+            else
+            {
+                if (txtContraseña.Text == "" || txtContraseña.Text == "Contraseña")
+                {
+                    return 2;
+                }
+                else
+                {
+                    //no hay ningun error
+                    return 0;
+                }
+
+            }
+        }
+
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            switch(validacionInicio())
+            {
+                case 0:
+                    {
+                        //no hay ningun error
+                        errorProviderUsername.SetError(panel1, "");
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show("validaciones basicas completas ","Datos correctos", buttons);
+                        break;
+                    }
+
+                case 1:
+                    {
+                        errorProviderUsername.SetError(panel1, "Nombre de usuario invalido, ingresar solo letras ");
+                        break;
+                    }
+
+                case 2:
+                    {
+                        errorProviderUsername.SetError(panel1, "debe introducir una contraseña");
+                        break;
+                    }
+            }
+        }
+        //Fin Validaciones de campos
     }
 }
