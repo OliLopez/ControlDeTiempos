@@ -45,7 +45,6 @@
             this.comboConcepto = new System.Windows.Forms.ComboBox();
             this.comboAño = new System.Windows.Forms.ComboBox();
             this.comboEmpresa = new System.Windows.Forms.ComboBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.txtBienvenido = new System.Windows.Forms.Label();
             this.errorProviderUsuario = new System.Windows.Forms.ErrorProvider(this.components);
             this.picError = new System.Windows.Forms.PictureBox();
@@ -57,7 +56,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackColor = System.Drawing.Color.SlateGray;
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -72,19 +71,18 @@
             this.panel1.Controls.Add(this.comboConcepto);
             this.panel1.Controls.Add(this.comboAño);
             this.panel1.Controls.Add(this.comboEmpresa);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel1.Location = new System.Drawing.Point(12, 35);
+            this.panel1.Location = new System.Drawing.Point(9, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(728, 224);
+            this.panel1.Size = new System.Drawing.Size(664, 287);
             this.panel1.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.DarkGray;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(424, 84);
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1, 104);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 20);
             this.label5.TabIndex = 13;
@@ -93,20 +91,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.DarkGray;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(352, 84);
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1, 173);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 20);
+            this.label4.Size = new System.Drawing.Size(35, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "HRS";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.DarkGray;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(84, 92);
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 20);
             this.label3.TabIndex = 11;
@@ -115,22 +113,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.DarkGray;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 88);
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Ejercicio";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.DarkGray;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(352, 19);
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(2, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 20);
+            this.label1.Size = new System.Drawing.Size(63, 20);
             this.label1.TabIndex = 9;
             this.label1.Text = "Empresa";
             // 
@@ -138,11 +136,12 @@
             // 
             this.textHRS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
             this.textHRS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorProviderUsuario.SetIconAlignment(this.textHRS, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
-            this.textHRS.Location = new System.Drawing.Point(356, 111);
+            this.textHRS.ForeColor = System.Drawing.SystemColors.Control;
+            this.textHRS.Location = new System.Drawing.Point(297, 163);
             this.textHRS.Name = "textHRS";
             this.textHRS.Size = new System.Drawing.Size(66, 26);
             this.textHRS.TabIndex = 8;
+            this.textHRS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textHRS.Click += new System.EventHandler(this.textHRS_Click);
             // 
             // dateTimePicker1
@@ -150,7 +149,7 @@
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.DarkGray;
             this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(21, 35);
+            this.dateTimePicker1.Location = new System.Drawing.Point(1, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(279, 26);
             this.dateTimePicker1.TabIndex = 7;
@@ -158,8 +157,9 @@
             // picBoxNotaConcepto
             // 
             this.picBoxNotaConcepto.BackColor = System.Drawing.Color.DodgerBlue;
+            this.picBoxNotaConcepto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picBoxNotaConcepto.Image = global::ControlDeTiempos.Properties.Resources.lupa;
-            this.picBoxNotaConcepto.Location = new System.Drawing.Point(297, 116);
+            this.picBoxNotaConcepto.Location = new System.Drawing.Point(369, 137);
             this.picBoxNotaConcepto.Name = "picBoxNotaConcepto";
             this.picBoxNotaConcepto.Size = new System.Drawing.Size(42, 21);
             this.picBoxNotaConcepto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -174,12 +174,14 @@
             this.btnVerHr.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVerHr.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerHr.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnVerHr.Location = new System.Drawing.Point(428, 167);
+            this.btnVerHr.Location = new System.Drawing.Point(271, 232);
             this.btnVerHr.Name = "btnVerHr";
             this.btnVerHr.Size = new System.Drawing.Size(92, 54);
             this.btnVerHr.TabIndex = 5;
             this.btnVerHr.Text = "Visualizar horas";
             this.btnVerHr.UseVisualStyleBackColor = false;
+            this.btnVerHr.MouseLeave += new System.EventHandler(this.btnVerHr_MouseLeave);
+            this.btnVerHr.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnVerHr_MouseMove);
             // 
             // btnCapurarHr
             // 
@@ -187,22 +189,26 @@
             this.btnCapurarHr.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCapurarHr.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapurarHr.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCapurarHr.Location = new System.Drawing.Point(253, 167);
+            this.btnCapurarHr.Location = new System.Drawing.Point(107, 232);
             this.btnCapurarHr.Name = "btnCapurarHr";
             this.btnCapurarHr.Size = new System.Drawing.Size(86, 54);
             this.btnCapurarHr.TabIndex = 4;
             this.btnCapurarHr.Text = "Capturar hora";
             this.btnCapurarHr.UseVisualStyleBackColor = false;
             this.btnCapurarHr.Click += new System.EventHandler(this.btnCapurarHr_Click);
+            this.btnCapurarHr.MouseLeave += new System.EventHandler(this.btnCapurarHr_MouseLeave);
+            this.btnCapurarHr.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCapurarHr_MouseMove);
             // 
             // comboArea
             // 
             this.comboArea.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboArea.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.comboArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboArea.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboArea.ForeColor = System.Drawing.SystemColors.Control;
             this.comboArea.FormattingEnabled = true;
-            this.comboArea.Location = new System.Drawing.Point(428, 115);
+            this.comboArea.Location = new System.Drawing.Point(72, 106);
             this.comboArea.Name = "comboArea";
             this.comboArea.Size = new System.Drawing.Size(291, 22);
             this.comboArea.TabIndex = 3;
@@ -213,9 +219,11 @@
             this.comboConcepto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboConcepto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboConcepto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.comboConcepto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboConcepto.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboConcepto.ForeColor = System.Drawing.SystemColors.Window;
             this.comboConcepto.FormattingEnabled = true;
-            this.comboConcepto.Location = new System.Drawing.Point(84, 115);
+            this.comboConcepto.Location = new System.Drawing.Point(156, 135);
             this.comboConcepto.Name = "comboConcepto";
             this.comboConcepto.Size = new System.Drawing.Size(207, 22);
             this.comboConcepto.TabIndex = 2;
@@ -226,11 +234,13 @@
             this.comboAño.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboAño.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboAño.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.comboAño.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboAño.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboAño.ForeColor = System.Drawing.SystemColors.Window;
             this.comboAño.FormattingEnabled = true;
-            this.comboAño.Location = new System.Drawing.Point(0, 111);
+            this.comboAño.Location = new System.Drawing.Point(297, 67);
             this.comboAño.Name = "comboAño";
-            this.comboAño.Size = new System.Drawing.Size(78, 26);
+            this.comboAño.Size = new System.Drawing.Size(66, 26);
             this.comboAño.TabIndex = 1;
             this.comboAño.SelectedIndexChanged += new System.EventHandler(this.comboAño_SelectedIndexChanged);
             // 
@@ -239,28 +249,21 @@
             this.comboEmpresa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboEmpresa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.comboEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboEmpresa.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboEmpresa.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.comboEmpresa.FormattingEnabled = true;
-            this.comboEmpresa.Location = new System.Drawing.Point(356, 42);
+            this.comboEmpresa.Location = new System.Drawing.Point(71, 39);
             this.comboEmpresa.Name = "comboEmpresa";
-            this.comboEmpresa.Size = new System.Drawing.Size(306, 22);
+            this.comboEmpresa.Size = new System.Drawing.Size(292, 22);
             this.comboEmpresa.TabIndex = 0;
             this.comboEmpresa.SelectedIndexChanged += new System.EventHandler(this.comboEmpresa_SelectedIndexChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Gray;
-            this.panel2.Location = new System.Drawing.Point(3, 23);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(315, 50);
-            this.panel2.TabIndex = 14;
             // 
             // txtBienvenido
             // 
             this.txtBienvenido.AutoSize = true;
             this.txtBienvenido.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBienvenido.Location = new System.Drawing.Point(10, 12);
+            this.txtBienvenido.Location = new System.Drawing.Point(10, 7);
             this.txtBienvenido.Name = "txtBienvenido";
             this.txtBienvenido.Size = new System.Drawing.Size(87, 20);
             this.txtBienvenido.TabIndex = 1;
@@ -274,9 +277,9 @@
             // 
             this.picError.BackColor = System.Drawing.Color.DarkRed;
             this.picError.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picError.Location = new System.Drawing.Point(737, 162);
+            this.picError.Location = new System.Drawing.Point(677, 220);
             this.picError.Name = "picError";
-            this.picError.Size = new System.Drawing.Size(21, 72);
+            this.picError.Size = new System.Drawing.Size(10, 32);
             this.picError.TabIndex = 15;
             this.picError.TabStop = false;
             this.picError.Visible = false;
@@ -288,14 +291,14 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BackgroundImage = global::ControlDeTiempos.Properties.Resources.diseño_interior_del_sitio_vacío;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(768, 292);
+            this.ClientSize = new System.Drawing.Size(695, 337);
             this.Controls.Add(this.picError);
             this.Controls.Add(this.txtBienvenido);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Usuario";
-            this.Opacity = 0.9D;
+            this.Opacity = 0.99D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.Usuario_Load);
@@ -327,7 +330,6 @@
         private System.Windows.Forms.ComboBox comboAño;
         private System.Windows.Forms.ComboBox comboEmpresa;
         private System.Windows.Forms.Label txtBienvenido;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ErrorProvider errorProviderUsuario;
         private System.Windows.Forms.PictureBox picError;
     }

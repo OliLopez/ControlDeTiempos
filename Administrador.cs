@@ -71,7 +71,7 @@ namespace ControlDeTiempos
                 comboEmpleado.Items.Add(array_empleado[i]);
             }
         }
-        //Inicio Diseño boton
+        //Inicio Diseño 
         private void btnReporte_MouseMove(object sender, MouseEventArgs e)
         {
             btnReporte.BackColor = Color.Goldenrod;
@@ -83,6 +83,58 @@ namespace ControlDeTiempos
             btnReporte.BackColor = Color.DodgerBlue;
             btnReporte.ForeColor = Color.White;
         }
-        //Fin Diseño boton
+
+        private void comboAdminEmpresa_MouseMove(object sender, MouseEventArgs e)
+        {
+            labelEmpresa.BackColor = Color.Goldenrod;
+            labelaño.BackColor = Color.White;
+            labelempleado.BackColor = Color.White;
+            labelarea.BackColor = Color.White;
+        }
+
+        private void comboAdminEmpresa_MouseLeave(object sender, EventArgs e)
+        {
+            labelEmpresa.BackColor = Color.White;
+        }
+
+        private void comboAdminAño_MouseLeave(object sender, EventArgs e)
+        {
+            labelaño.BackColor = Color.White;
+        }
+
+        private void comboAdminAño_MouseMove(object sender, MouseEventArgs e)
+        {
+            labelaño.BackColor = Color.Goldenrod;
+            labelEmpresa.BackColor = Color.White;
+            labelempleado.BackColor = Color.White;
+            labelarea.BackColor = Color.White;
+        }
+
+        private void comboEmpleado_MouseLeave(object sender, EventArgs e)
+        {
+            labelempleado.BackColor = Color.White;
+        }
+
+        private void comboEmpleado_MouseMove(object sender, MouseEventArgs e)
+        {
+            labelempleado.BackColor = Color.Goldenrod;
+            labelEmpresa.BackColor = Color.White;
+            labelaño.BackColor = Color.White;
+            labelarea.BackColor = Color.White;
+        }
+
+        private void comboAdminArea_MouseLeave(object sender, EventArgs e)
+        {
+            labelarea.BackColor = Color.White;
+        }
+
+        private void comboAdminArea_MouseMove(object sender, MouseEventArgs e)
+        {
+            labelarea.BackColor = Color.Goldenrod;
+            labelEmpresa.BackColor = Color.White;
+            labelaño.BackColor = Color.White;
+            labelempleado.BackColor = Color.White;
+        }
+        //Fin Diseño
     }
 }

@@ -98,13 +98,13 @@ namespace ControlDeTiempos
 
                 case 1:
                     {
-                        errorProviderUsername.SetError(panel1, "Nombre de usuario invalido, ingresar solo letras ");
+                        errorProviderUsername.SetError(panel1, "Nombre de usuario invalido");
                         break;
                     }
 
                 case 2:
                     {
-                        errorProviderUsername.SetError(panel1, "debe introducir una contraseña");
+                        errorProviderUsername.SetError(panel1, "Debe introducir una contraseña");
                         break;
                     }
             }

@@ -102,6 +102,7 @@ namespace ControlDeTiempos
         private void textHRS_Click(object sender, EventArgs e)
         {
             textHRS.BackColor = Color.White;
+            textHRS.ForeColor = Color.Black;
         }
 
         private void picBoxNotaConcepto_MouseMove(object sender, MouseEventArgs e)
@@ -113,10 +114,27 @@ namespace ControlDeTiempos
         {
             picBoxNotaConcepto.BackColor = Color.DodgerBlue;
         }
+        private void btnCapurarHr_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnCapurarHr.BackColor = Color.Goldenrod;
+        }
+        private void btnCapurarHr_MouseLeave(object sender, EventArgs e)
+        {
+            btnCapurarHr.BackColor = Color.DodgerBlue;
+        }
+        private void btnVerHr_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnVerHr.BackColor = Color.Goldenrod;
+        }
+        private void btnVerHr_MouseLeave(object sender, EventArgs e)
+        {
+            btnVerHr.BackColor = Color.DodgerBlue;
+        }
+
         //Validaciones de campos
         int validacionUsuario()
         {
-            if ((comboEmpresa.SelectedIndex <= -1) || (comboAño.SelectedIndex <= -1) || (comboConcepto.SelectedIndex <= -1) || (comboArea.SelectedIndex <= -1))
+            if ((comboEmpresa.SelectedIndex <= -1) || (comboAño.SelectedIndex <= -1) || (comboConcepto.SelectedIndex <= -1))
             {
                 return 1;
             }
@@ -127,6 +145,12 @@ namespace ControlDeTiempos
                 {
                     return 2;
                 }
+
+                else 
+                    if (comboArea.Text=="")
+                        {
+                         return 3;
+                        }
                 else
                 {
                     return 0;
@@ -157,6 +181,14 @@ namespace ControlDeTiempos
                 case 2:
                     {
                         errorProviderUsuario.SetError(textHRS, "Ingresar horas numericas o decimales FORMATO 0.0");
+                        textHRS.Focus();
+                        break;
+                    }
+                case 3:
+                    {
+                        comboArea.Text = "Auditoria";
+                        comboArea.BackColor = Color.White;
+                        comboArea.ForeColor = Color.Black;
                         break;
                     }
             }
