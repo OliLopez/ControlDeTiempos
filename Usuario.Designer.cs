@@ -56,7 +56,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SlateGray;
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -134,9 +134,9 @@
             // 
             // textHRS
             // 
-            this.textHRS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.textHRS.BackColor = System.Drawing.Color.Gray;
             this.textHRS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHRS.ForeColor = System.Drawing.SystemColors.Control;
+            this.textHRS.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textHRS.Location = new System.Drawing.Point(297, 163);
             this.textHRS.Name = "textHRS";
             this.textHRS.Size = new System.Drawing.Size(66, 26);
@@ -203,10 +203,10 @@
             // 
             this.comboArea.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboArea.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.comboArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboArea.BackColor = System.Drawing.Color.Gray;
+            this.comboArea.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboArea.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboArea.ForeColor = System.Drawing.SystemColors.Control;
+            this.comboArea.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.comboArea.FormattingEnabled = true;
             this.comboArea.Location = new System.Drawing.Point(72, 106);
             this.comboArea.Name = "comboArea";
@@ -218,10 +218,10 @@
             // 
             this.comboConcepto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboConcepto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboConcepto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.comboConcepto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboConcepto.BackColor = System.Drawing.Color.Gray;
+            this.comboConcepto.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboConcepto.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboConcepto.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboConcepto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.comboConcepto.FormattingEnabled = true;
             this.comboConcepto.Location = new System.Drawing.Point(156, 135);
             this.comboConcepto.Name = "comboConcepto";
@@ -233,10 +233,10 @@
             // 
             this.comboAño.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboAño.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboAño.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.comboAño.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboAño.BackColor = System.Drawing.Color.Gray;
+            this.comboAño.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboAño.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboAño.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboAño.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.comboAño.FormattingEnabled = true;
             this.comboAño.Location = new System.Drawing.Point(297, 67);
             this.comboAño.Name = "comboAño";
@@ -248,10 +248,10 @@
             // 
             this.comboEmpresa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboEmpresa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.comboEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboEmpresa.BackColor = System.Drawing.Color.Gray;
+            this.comboEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboEmpresa.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboEmpresa.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.comboEmpresa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.comboEmpresa.FormattingEnabled = true;
             this.comboEmpresa.Location = new System.Drawing.Point(71, 39);
             this.comboEmpresa.Name = "comboEmpresa";
@@ -289,7 +289,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.BackgroundImage = global::ControlDeTiempos.Properties.Resources.diseño_interior_del_sitio_vacío;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(695, 337);
             this.Controls.Add(this.picError);
@@ -301,6 +300,7 @@
             this.Opacity = 0.99D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuario";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Usuario_FormClosed);
             this.Load += new System.EventHandler(this.Usuario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

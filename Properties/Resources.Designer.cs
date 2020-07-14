@@ -131,23 +131,13 @@ namespace ControlDeTiempos.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auditoría 
-        ///Contabilidad
-        ///Administración.
+        ///   Looks up a localized string similar to AUDITORIA
+        ///CONTABILIDAD
+        ///ADMINISTRACION.
         /// </summary>
         internal static string concepto {
             get {
                 return ResourceManager.GetString("concepto", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap diseño_interior_del_sitio_vacío {
-            get {
-                object obj = ResourceManager.GetObject("diseño_interior_del_sitio_vacío", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

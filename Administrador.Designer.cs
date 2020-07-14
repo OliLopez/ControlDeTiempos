@@ -46,8 +46,8 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.labelarea);
             this.panel1.Controls.Add(this.labelempleado);
             this.panel1.Controls.Add(this.labelaño);
@@ -57,7 +57,7 @@
             this.panel1.Controls.Add(this.labelEmpresa);
             this.panel1.Controls.Add(this.comboEmpleado);
             this.panel1.Controls.Add(this.comboAdminEmpresa);
-            this.panel1.Location = new System.Drawing.Point(10, 9);
+            this.panel1.Location = new System.Drawing.Point(3, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(409, 268);
             this.panel1.TabIndex = 1;
@@ -164,6 +164,7 @@
             // 
             this.comboAdminEmpresa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboAdminEmpresa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboAdminEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboAdminEmpresa.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboAdminEmpresa.FormattingEnabled = true;
             this.comboAdminEmpresa.Location = new System.Drawing.Point(93, 4);
@@ -177,9 +178,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.pictureBox1.Image = global::ControlDeTiempos.Properties.Resources.buscar;
-            this.pictureBox1.Location = new System.Drawing.Point(425, 72);
+            this.pictureBox1.Location = new System.Drawing.Point(-10, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(99, 101);
+            this.pictureBox1.Size = new System.Drawing.Size(79, 53);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -188,8 +189,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.ClientSize = new System.Drawing.Size(526, 294);
+            this.BackColor = System.Drawing.Color.Gray;
+            this.ClientSize = new System.Drawing.Size(415, 327);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -198,6 +199,7 @@
             this.Name = "Administrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrador";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Administrador_FormClosed);
             this.Load += new System.EventHandler(this.Administrador_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
