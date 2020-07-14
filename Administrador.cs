@@ -135,5 +135,10 @@ namespace ControlDeTiempos
             labelempleado.BackColor = Color.White;
         }
         //Fin Diseño
+        //CERRAR APLICACION
+        private void Administrador_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

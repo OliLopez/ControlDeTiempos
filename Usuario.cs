@@ -74,6 +74,7 @@ namespace ControlDeTiempos
                 comboConcepto.Items.Add(array_concepto[i]);
             }
         }
+        //DISEÑO
         //Eventos click para el diseño de los combos
         private void comboEmpresa_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -130,7 +131,7 @@ namespace ControlDeTiempos
         {
             btnVerHr.BackColor = Color.DodgerBlue;
         }
-
+        //FIN DISEÑO
         //Validaciones de campos
         int validacionUsuario()
         {
@@ -194,5 +195,11 @@ namespace ControlDeTiempos
             }
         }
         //Fin Validaciones de campos
+        //CERRAR APLICACION
+        private void Usuario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }

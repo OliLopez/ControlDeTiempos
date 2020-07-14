@@ -32,7 +32,8 @@ namespace ControlDeTiempos
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows.Count == 1)
-                {   this.Hide();
+                {
+                    this.Hide();
                     if(dt.Rows[0][1].ToString()=="Admin")
                     {
                         new Administrador().Show();
