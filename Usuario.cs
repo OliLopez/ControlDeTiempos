@@ -17,10 +17,10 @@ namespace ControlDeTiempos
         string[] array_año;
         string[] array_area;
         string[] array_concepto;
-        public Usuario()
+        public Usuario(string nombre)
         {
             InitializeComponent();
-
+            lbBienvenido.Text = "Bienvenido, "+nombre;
             //el archivo txt se pasa a string
             string slistado_empresas = Properties.Resources.empresa.ToString();
             string slistado_año = Properties.Resources.año.ToString();
