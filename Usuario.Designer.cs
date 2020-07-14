@@ -45,7 +45,7 @@
             this.comboConcepto = new System.Windows.Forms.ComboBox();
             this.comboAño = new System.Windows.Forms.ComboBox();
             this.comboEmpresa = new System.Windows.Forms.ComboBox();
-            this.txtBienvenido = new System.Windows.Forms.Label();
+            this.lbBienvenido = new System.Windows.Forms.Label();
             this.errorProviderUsuario = new System.Windows.Forms.ErrorProvider(this.components);
             this.picError = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -259,15 +259,15 @@
             this.comboEmpresa.TabIndex = 0;
             this.comboEmpresa.SelectedIndexChanged += new System.EventHandler(this.comboEmpresa_SelectedIndexChanged);
             // 
-            // txtBienvenido
+            // lbBienvenido
             // 
-            this.txtBienvenido.AutoSize = true;
-            this.txtBienvenido.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBienvenido.Location = new System.Drawing.Point(10, 7);
-            this.txtBienvenido.Name = "txtBienvenido";
-            this.txtBienvenido.Size = new System.Drawing.Size(87, 20);
-            this.txtBienvenido.TabIndex = 1;
-            this.txtBienvenido.Text = "Bienvenido, ";
+            this.lbBienvenido.AutoSize = true;
+            this.lbBienvenido.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBienvenido.Location = new System.Drawing.Point(10, 7);
+            this.lbBienvenido.Name = "lbBienvenido";
+            this.lbBienvenido.Size = new System.Drawing.Size(87, 20);
+            this.lbBienvenido.TabIndex = 1;
+            this.lbBienvenido.Text = "Bienvenido, ";
             // 
             // errorProviderUsuario
             // 
@@ -293,7 +293,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(695, 337);
             this.Controls.Add(this.picError);
-            this.Controls.Add(this.txtBienvenido);
+            this.Controls.Add(this.lbBienvenido);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -329,7 +329,7 @@
         private System.Windows.Forms.ComboBox comboConcepto;
         private System.Windows.Forms.ComboBox comboAño;
         private System.Windows.Forms.ComboBox comboEmpresa;
-        private System.Windows.Forms.Label txtBienvenido;
+        private System.Windows.Forms.Label lbBienvenido;
         private System.Windows.Forms.ErrorProvider errorProviderUsuario;
         private System.Windows.Forms.PictureBox picError;
     }

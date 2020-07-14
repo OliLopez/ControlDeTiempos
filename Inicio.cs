@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-
+using System.Data.SqlClient;
 namespace ControlDeTiempos
 {
     public partial class Inicio : Form
@@ -17,6 +17,47 @@ namespace ControlDeTiempos
         {
             InitializeComponent();
         }
+        //Inicio de codigo para loguear usuario
+        SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-RH8U25N\\SQLEXPRESS;Initial Catalog=ControlTiempos;Integrated Security=True");
+ 
+        public void logear(string usuario, string contrasena)
+        {
+            try
+            {
+                conexion.Open();
+                SqlCommand cmd = new SqlCommand("SELECT Nombre, Tipo_usuario FROM Usuarios1 WHERE Usuario= @usuario AND contra = @pas", conexion);
+                cmd.Parameters.AddWithValue("usuario", usuario);
+                cmd.Parameters.AddWithValue("pas", contrasena);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows.Count == 1)
+                {   this.Hide();
+                    if(dt.Rows[0][1].ToString()=="Admin")
+                    {
+                        new Administrador().Show();
+                    }
+                    else if(dt.Rows[0][1].ToString() == "Usuario")
+                    {
+                        new Usuario(dt.Rows[0][0].ToString()).Show();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o Contraseña Incorrecta");
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        //Fin de codigo para loguear usuarios
+
         //Inicio de codigo para diseño
         //para mover la ventana
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -91,8 +132,7 @@ namespace ControlDeTiempos
                     {
                         //no hay ningun error
                         errorProviderUsername.SetError(panel1, "");
-                        MessageBoxButtons buttons = MessageBoxButtons.OK;
-                        MessageBox.Show("validaciones basicas completas ","Datos correctos", buttons);
+                        logear(this.txtNombreUsuario.Text, this.txtContraseña.Text);
                         break;
                     }
 

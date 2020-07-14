@@ -19,7 +19,6 @@ namespace ControlDeTiempos
         public Administrador()
         {
             InitializeComponent();
-
             //el archivo txt se pasa a string
             string slistado_empresasAdmin = Properties.Resources.empresa.ToString();
             string slistado_añoAdmin = Properties.Resources.año.ToString();
