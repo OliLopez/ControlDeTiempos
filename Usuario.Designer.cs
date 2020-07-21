@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuario));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,7 +44,6 @@
             this.textHRS = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.picBoxNotaConcepto = new System.Windows.Forms.PictureBox();
-            this.btnVerHr = new System.Windows.Forms.Button();
             this.btnCapurarHr = new System.Windows.Forms.Button();
             this.comboArea = new System.Windows.Forms.ComboBox();
             this.comboConcepto = new System.Windows.Forms.ComboBox();
@@ -49,6 +53,7 @@
             this.errorProviderUsuario = new System.Windows.Forms.ErrorProvider(this.components);
             this.picError = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxNotaConcepto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picError)).BeginInit();
@@ -57,6 +62,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -65,17 +71,69 @@
             this.panel1.Controls.Add(this.textHRS);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.picBoxNotaConcepto);
-            this.panel1.Controls.Add(this.btnVerHr);
             this.panel1.Controls.Add(this.btnCapurarHr);
             this.panel1.Controls.Add(this.comboArea);
             this.panel1.Controls.Add(this.comboConcepto);
             this.panel1.Controls.Add(this.comboAño);
             this.panel1.Controls.Add(this.comboEmpresa);
             this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel1.Location = new System.Drawing.Point(9, 34);
+            this.panel1.Location = new System.Drawing.Point(7, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(664, 287);
+            this.panel1.Size = new System.Drawing.Size(560, 280);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(420, 1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(138, 274);
+            this.panel2.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(49, 218);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 24);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "0.0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(45, 85);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 24);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "0.0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(33, 176);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 18);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Suma total";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(29, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 18);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Total del día";
             // 
             // label5
             // 
@@ -134,7 +192,7 @@
             // 
             // textHRS
             // 
-            this.textHRS.BackColor = System.Drawing.Color.Gray;
+            this.textHRS.BackColor = System.Drawing.Color.DarkGray;
             this.textHRS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textHRS.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textHRS.Location = new System.Drawing.Point(297, 163);
@@ -165,31 +223,18 @@
             this.picBoxNotaConcepto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBoxNotaConcepto.TabIndex = 6;
             this.picBoxNotaConcepto.TabStop = false;
+            this.picBoxNotaConcepto.Click += new System.EventHandler(this.picBoxNotaConcepto_Click);
             this.picBoxNotaConcepto.MouseLeave += new System.EventHandler(this.picBoxNotaConcepto_MouseLeave);
             this.picBoxNotaConcepto.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picBoxNotaConcepto_MouseMove);
-            // 
-            // btnVerHr
-            // 
-            this.btnVerHr.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnVerHr.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVerHr.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerHr.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnVerHr.Location = new System.Drawing.Point(271, 232);
-            this.btnVerHr.Name = "btnVerHr";
-            this.btnVerHr.Size = new System.Drawing.Size(92, 54);
-            this.btnVerHr.TabIndex = 5;
-            this.btnVerHr.Text = "Visualizar horas";
-            this.btnVerHr.UseVisualStyleBackColor = false;
-            this.btnVerHr.MouseLeave += new System.EventHandler(this.btnVerHr_MouseLeave);
-            this.btnVerHr.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnVerHr_MouseMove);
             // 
             // btnCapurarHr
             // 
             this.btnCapurarHr.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnCapurarHr.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCapurarHr.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapurarHr.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCapurarHr.Location = new System.Drawing.Point(107, 232);
+            this.btnCapurarHr.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCapurarHr.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapurarHr.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCapurarHr.Location = new System.Drawing.Point(170, 221);
             this.btnCapurarHr.Name = "btnCapurarHr";
             this.btnCapurarHr.Size = new System.Drawing.Size(86, 54);
             this.btnCapurarHr.TabIndex = 4;
@@ -203,7 +248,7 @@
             // 
             this.comboArea.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboArea.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboArea.BackColor = System.Drawing.Color.Gray;
+            this.comboArea.BackColor = System.Drawing.Color.DarkGray;
             this.comboArea.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboArea.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboArea.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -218,7 +263,7 @@
             // 
             this.comboConcepto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboConcepto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboConcepto.BackColor = System.Drawing.Color.Gray;
+            this.comboConcepto.BackColor = System.Drawing.Color.DarkGray;
             this.comboConcepto.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboConcepto.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboConcepto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -233,7 +278,7 @@
             // 
             this.comboAño.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboAño.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboAño.BackColor = System.Drawing.Color.Gray;
+            this.comboAño.BackColor = System.Drawing.Color.DarkGray;
             this.comboAño.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboAño.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboAño.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -248,7 +293,7 @@
             // 
             this.comboEmpresa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboEmpresa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboEmpresa.BackColor = System.Drawing.Color.Gray;
+            this.comboEmpresa.BackColor = System.Drawing.Color.DarkGray;
             this.comboEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboEmpresa.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboEmpresa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -277,7 +322,7 @@
             // 
             this.picError.BackColor = System.Drawing.Color.DarkRed;
             this.picError.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picError.Location = new System.Drawing.Point(677, 220);
+            this.picError.Location = new System.Drawing.Point(569, 190);
             this.picError.Name = "picError";
             this.picError.Size = new System.Drawing.Size(10, 32);
             this.picError.TabIndex = 15;
@@ -288,9 +333,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(695, 337);
+            this.ClientSize = new System.Drawing.Size(583, 321);
             this.Controls.Add(this.picError);
             this.Controls.Add(this.lbBienvenido);
             this.Controls.Add(this.panel1);
@@ -304,6 +349,8 @@
             this.Load += new System.EventHandler(this.Usuario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxNotaConcepto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picError)).EndInit();
@@ -323,7 +370,6 @@
         private System.Windows.Forms.TextBox textHRS;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.PictureBox picBoxNotaConcepto;
-        private System.Windows.Forms.Button btnVerHr;
         private System.Windows.Forms.Button btnCapurarHr;
         private System.Windows.Forms.ComboBox comboArea;
         private System.Windows.Forms.ComboBox comboConcepto;
@@ -332,5 +378,10 @@
         private System.Windows.Forms.Label lbBienvenido;
         private System.Windows.Forms.ErrorProvider errorProviderUsuario;
         private System.Windows.Forms.PictureBox picError;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }

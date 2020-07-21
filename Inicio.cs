@@ -124,7 +124,7 @@ namespace ControlDeTiempos
 
             }
         }
-
+        //Desarrollo del boton iniciar sesion
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
             switch(validacionInicio())
@@ -150,6 +150,7 @@ namespace ControlDeTiempos
                     }
             }
         }
+        //Desarrollo del boton iniciar sesion
         //Fin Validaciones de campos
     }
 }

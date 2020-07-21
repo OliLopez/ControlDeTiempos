@@ -118,20 +118,15 @@ namespace ControlDeTiempos
         private void btnCapurarHr_MouseMove(object sender, MouseEventArgs e)
         {
             btnCapurarHr.BackColor = Color.Goldenrod;
+            btnCapurarHr.ForeColor = Color.Black;
         }
         private void btnCapurarHr_MouseLeave(object sender, EventArgs e)
         {
             btnCapurarHr.BackColor = Color.DodgerBlue;
-        }
-        private void btnVerHr_MouseMove(object sender, MouseEventArgs e)
-        {
-            btnVerHr.BackColor = Color.Goldenrod;
-        }
-        private void btnVerHr_MouseLeave(object sender, EventArgs e)
-        {
-            btnVerHr.BackColor = Color.DodgerBlue;
+            btnCapurarHr.ForeColor = Color.White;
         }
         //FIN DISEÑO
+
         //Validaciones de campos
         int validacionUsuario()
         {
@@ -158,7 +153,7 @@ namespace ControlDeTiempos
                 }
             }
         }
-
+        //DESARROLLO DE BOTONES
         private void btnCapurarHr_Click(object sender, EventArgs e)
         {
             switch (validacionUsuario())
@@ -194,12 +189,19 @@ namespace ControlDeTiempos
                     }
             }
         }
+
+        private void picBoxNotaConcepto_Click(object sender, EventArgs e)
+        {
+            using (NotaConcepto ventanaConcepto = new NotaConcepto())
+                ventanaConcepto.ShowDialog();
+        }
+        //FIN DE DESARROLLO DE BOTONES
         //Fin Validaciones de campos
+
         //CERRAR APLICACION
         private void Usuario_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
     }
 }

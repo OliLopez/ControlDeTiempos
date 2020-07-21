@@ -52,6 +52,18 @@
     <Compile Include="Administrador.Designer.cs">
       <DependentUpon>Administrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotaConcepto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotaConcepto.Designer.cs">
+      <DependentUpon>NotaConcepto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteAdmin.Designer.cs">
+      <DependentUpon>ReporteAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +84,9 @@
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NotaConcepto.resx">
+      <DependentUpon>NotaConcepto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -82,6 +97,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReporteAdmin.resx">
+      <DependentUpon>ReporteAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>
     </EmbeddedResource>

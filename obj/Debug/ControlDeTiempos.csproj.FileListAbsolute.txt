@@ -10,3 +10,5 @@ C:\Users\Olivia\source\repos\ControlDeTiempos\ControlDeTiempos\obj\Debug\Control
 C:\Users\Olivia\source\repos\ControlDeTiempos\ControlDeTiempos\obj\Debug\ControlDeTiempos.pdb
 C:\Users\Olivia\source\repos\ControlDeTiempos\ControlDeTiempos\obj\Debug\ControlDeTiempos.Administrador.resources
 C:\Users\Olivia\source\repos\ControlDeTiempos\ControlDeTiempos\obj\Debug\ControlDeTiempos.Usuario.resources
+C:\Users\Olivia\source\repos\ControlDeTiempos\ControlDeTiempos\obj\Debug\ControlDeTiempos.NotaConcepto.resources
+C:\Users\Olivia\source\repos\ControlDeTiempos\ControlDeTiempos\obj\Debug\ControlDeTiempos.ReporteAdmin.resources
