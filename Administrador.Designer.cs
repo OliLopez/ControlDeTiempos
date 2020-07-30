@@ -55,7 +55,7 @@
             this.panel1.Controls.Add(this.labelEmpresa);
             this.panel1.Controls.Add(this.comboEmpleado);
             this.panel1.Controls.Add(this.comboAdminEmpresa);
-            this.panel1.Location = new System.Drawing.Point(3, 50);
+            this.panel1.Location = new System.Drawing.Point(3, 10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(422, 137);
             this.panel1.TabIndex = 1;
@@ -143,7 +143,7 @@
             this.btnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReporte.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporte.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnReporte.Location = new System.Drawing.Point(166, 197);
+            this.btnReporte.Location = new System.Drawing.Point(170, 154);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(93, 48);
             this.btnReporte.TabIndex = 4;
@@ -157,9 +157,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.pictureBox1.Image = global::ControlDeTiempos.Properties.Resources.buscar;
-            this.pictureBox1.Location = new System.Drawing.Point(352, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(270, 155);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 48);
+            this.pictureBox1.Size = new System.Drawing.Size(55, 43);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -172,8 +172,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(429, 249);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(429, 209);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnReporte);

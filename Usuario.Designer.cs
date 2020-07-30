@@ -31,11 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuario));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtOtrasAreas = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,12 +45,17 @@
             this.comboConcepto = new System.Windows.Forms.ComboBox();
             this.comboAño = new System.Windows.Forms.ComboBox();
             this.comboEmpresa = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.lbBienvenido = new System.Windows.Forms.Label();
             this.errorProviderUsuario = new System.Windows.Forms.ErrorProvider(this.components);
             this.picError = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxNotaConcepto)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picError)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +63,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.txtOtrasAreas);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -79,61 +80,19 @@
             this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panel1.Location = new System.Drawing.Point(7, 34);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(560, 280);
+            this.panel1.Size = new System.Drawing.Size(418, 280);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // txtOtrasAreas
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(420, 1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(138, 274);
-            this.panel2.TabIndex = 18;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(49, 218);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 24);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "0.0";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(45, 85);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 24);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "0.0";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(33, 176);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 18);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Suma total";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(29, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 18);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Total del día";
+            this.txtOtrasAreas.BackColor = System.Drawing.Color.Silver;
+            this.txtOtrasAreas.Font = new System.Drawing.Font("Arial Narrow", 11F);
+            this.txtOtrasAreas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtOtrasAreas.Location = new System.Drawing.Point(156, 134);
+            this.txtOtrasAreas.Name = "txtOtrasAreas";
+            this.txtOtrasAreas.Size = new System.Drawing.Size(207, 24);
+            this.txtOtrasAreas.TabIndex = 20;
+            this.txtOtrasAreas.TextChanged += new System.EventHandler(this.txtOtrasAreas_TextChanged);
             // 
             // label5
             // 
@@ -192,7 +151,7 @@
             // 
             // textHRS
             // 
-            this.textHRS.BackColor = System.Drawing.Color.DarkGray;
+            this.textHRS.BackColor = System.Drawing.Color.Silver;
             this.textHRS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textHRS.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textHRS.Location = new System.Drawing.Point(297, 163);
@@ -201,6 +160,7 @@
             this.textHRS.TabIndex = 8;
             this.textHRS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textHRS.Click += new System.EventHandler(this.textHRS_Click);
+            this.textHRS.TextChanged += new System.EventHandler(this.textHRS_TextChanged);
             // 
             // dateTimePicker1
             // 
@@ -217,7 +177,7 @@
             this.picBoxNotaConcepto.BackColor = System.Drawing.Color.DodgerBlue;
             this.picBoxNotaConcepto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picBoxNotaConcepto.Image = global::ControlDeTiempos.Properties.Resources.lupa;
-            this.picBoxNotaConcepto.Location = new System.Drawing.Point(369, 137);
+            this.picBoxNotaConcepto.Location = new System.Drawing.Point(371, 137);
             this.picBoxNotaConcepto.Name = "picBoxNotaConcepto";
             this.picBoxNotaConcepto.Size = new System.Drawing.Size(42, 21);
             this.picBoxNotaConcepto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -248,7 +208,7 @@
             // 
             this.comboArea.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboArea.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboArea.BackColor = System.Drawing.Color.DarkGray;
+            this.comboArea.BackColor = System.Drawing.Color.Silver;
             this.comboArea.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboArea.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboArea.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -263,7 +223,7 @@
             // 
             this.comboConcepto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboConcepto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboConcepto.BackColor = System.Drawing.Color.DarkGray;
+            this.comboConcepto.BackColor = System.Drawing.Color.Silver;
             this.comboConcepto.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboConcepto.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboConcepto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -278,7 +238,7 @@
             // 
             this.comboAño.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboAño.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboAño.BackColor = System.Drawing.Color.DarkGray;
+            this.comboAño.BackColor = System.Drawing.Color.Silver;
             this.comboAño.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboAño.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboAño.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -293,7 +253,7 @@
             // 
             this.comboEmpresa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboEmpresa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboEmpresa.BackColor = System.Drawing.Color.DarkGray;
+            this.comboEmpresa.BackColor = System.Drawing.Color.Silver;
             this.comboEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboEmpresa.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboEmpresa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -303,6 +263,59 @@
             this.comboEmpresa.Size = new System.Drawing.Size(292, 22);
             this.comboEmpresa.TabIndex = 0;
             this.comboEmpresa.SelectedIndexChanged += new System.EventHandler(this.comboEmpresa_SelectedIndexChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(442, 38);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(138, 274);
+            this.panel2.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(49, 218);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 24);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "0.0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(45, 85);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 24);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "0.0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(33, 176);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 18);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Suma total";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(29, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 18);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Total del día";
             // 
             // lbBienvenido
             // 
@@ -322,7 +335,7 @@
             // 
             this.picError.BackColor = System.Drawing.Color.DarkRed;
             this.picError.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picError.Location = new System.Drawing.Point(569, 190);
+            this.picError.Location = new System.Drawing.Point(428, 171);
             this.picError.Name = "picError";
             this.picError.Size = new System.Drawing.Size(10, 32);
             this.picError.TabIndex = 15;
@@ -333,11 +346,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SeaShell;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(583, 321);
+            this.ClientSize = new System.Drawing.Size(588, 321);
             this.Controls.Add(this.picError);
             this.Controls.Add(this.lbBienvenido);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -349,9 +363,9 @@
             this.Load += new System.EventHandler(this.Usuario_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxNotaConcepto)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxNotaConcepto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picError)).EndInit();
             this.ResumeLayout(false);
@@ -383,5 +397,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtOtrasAreas;
     }
 }

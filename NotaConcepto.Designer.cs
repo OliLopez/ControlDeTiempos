@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtConcepto = new System.Windows.Forms.TextBox();
+            this.txtComentario = new System.Windows.Forms.TextBox();
             this.lbactividad = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtConcepto
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(79, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 22);
-            this.textBox1.TabIndex = 0;
+            this.txtConcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConcepto.Location = new System.Drawing.Point(79, 13);
+            this.txtConcepto.Name = "txtConcepto";
+            this.txtConcepto.Size = new System.Drawing.Size(224, 22);
+            this.txtConcepto.TabIndex = 0;
             // 
-            // textBox2
+            // txtComentario
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(11, 44);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(292, 60);
-            this.textBox2.TabIndex = 1;
+            this.txtComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComentario.Location = new System.Drawing.Point(11, 44);
+            this.txtComentario.Multiline = true;
+            this.txtComentario.Name = "txtComentario";
+            this.txtComentario.Size = new System.Drawing.Size(292, 60);
+            this.txtComentario.TabIndex = 1;
             // 
             // lbactividad
             // 
@@ -62,29 +62,31 @@
             this.lbactividad.TabIndex = 2;
             this.lbactividad.Text = "Actividad";
             // 
-            // button1
+            // btnAceptar
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Location = new System.Drawing.Point(11, 118);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 35);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAceptar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAceptar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAceptar.Location = new System.Drawing.Point(11, 118);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(83, 35);
+            this.btnAceptar.TabIndex = 3;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(220, 118);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 33);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCancelar.BackColor = System.Drawing.Color.Red;
+            this.btnCancelar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCancelar.Location = new System.Drawing.Point(220, 118);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(83, 33);
+            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // NotaConcepto
             // 
@@ -92,11 +94,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(312, 162);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lbactividad);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtComentario);
+            this.Controls.Add(this.txtConcepto);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NotaConcepto";
@@ -110,10 +112,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtConcepto;
+        private System.Windows.Forms.TextBox txtComentario;
         private System.Windows.Forms.Label lbactividad;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

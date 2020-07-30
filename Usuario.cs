@@ -12,14 +12,19 @@ namespace ControlDeTiempos
 {
     public partial class Usuario : Form
     {
-
+        InsertarBD formulario = new InsertarBD();
         string[] array_empresa;
         string[] array_año;
         string[] array_area;
         string[] array_concepto;
+        string comentario;
+        string mensaje;
+        string valorConcepto = "";
+
         public Usuario(string nombre)
         {
             InitializeComponent();
+            txtOtrasAreas.Visible = false;
             lbBienvenido.Text = "Bienvenido, "+nombre;
             //el archivo txt se pasa a string
             string slistado_empresas = Properties.Resources.empresa.ToString();
@@ -78,34 +83,47 @@ namespace ControlDeTiempos
         //Eventos click para el diseño de los combos
         private void comboEmpresa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboEmpresa.BackColor = Color.White;
-            comboEmpresa.ForeColor = Color.Black;
+                comboEmpresa.BackColor = Color.White;
         }
 
         private void comboAño_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboAño.BackColor = Color.White;
-            comboAño.ForeColor = Color.Black;
         }
-
         private void comboArea_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboArea.BackColor = Color.White;
-            comboArea.ForeColor = Color.Black;
+            if((comboArea.Text == "") || (comboArea.Text == "Auditoria")||(comboArea.SelectedIndex <= -1))
+            {
+                txtOtrasAreas.Visible = false;
+                comboConcepto.Visible = true;
+                txtOtrasAreas.Text = "";
+            }
+            else
+            {
+                txtOtrasAreas.Visible = true;
+                comboConcepto.Visible = false;
+                comboConcepto.Text = "";
+            }
         }
 
         private void comboConcepto_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboConcepto.BackColor = Color.White;
-            comboConcepto.ForeColor = Color.Black;
+        }
+        private void txtOtrasAreas_TextChanged(object sender, EventArgs e)
+        {
+            txtOtrasAreas.BackColor = Color.White;
         }
 
         private void textHRS_Click(object sender, EventArgs e)
         {
             textHRS.BackColor = Color.White;
-            textHRS.ForeColor = Color.Black;
         }
-
+        private void textHRS_TextChanged(object sender, EventArgs e)
+        {
+            textHRS.BackColor = Color.White;
+        }
         private void picBoxNotaConcepto_MouseMove(object sender, MouseEventArgs e)
         {
             picBoxNotaConcepto.BackColor = Color.Goldenrod;
@@ -126,27 +144,20 @@ namespace ControlDeTiempos
             btnCapurarHr.ForeColor = Color.White;
         }
         //FIN DISEÑO
-
         //Validaciones de campos
         int validacionUsuario()
         {
-            if ((comboEmpresa.SelectedIndex <= -1) || (comboAño.SelectedIndex <= -1) || (comboConcepto.SelectedIndex <= -1))
+            if ((comboEmpresa.SelectedIndex <= -1)||(comboAño.SelectedIndex <= -1)||(comboConcepto.Visible == true && comboConcepto.SelectedIndex <= -1)||(txtOtrasAreas.Visible == true && txtOtrasAreas.Text==""))
             {
                 return 1;
             }
 
             else
             {
-                if((textHRS.Text.All(Char.IsLetter)) || (textHRS.Text.Contains(",")) || (textHRS.Text.Any(Char.IsLetter)) || (textHRS.Text == ""))
+                if ((textHRS.Text.All(Char.IsLetter)) || (textHRS.Text.Contains(",")) || (textHRS.Text.Any(Char.IsLetter)) || (textHRS.Text == ""))
                 {
                     return 2;
                 }
-
-                else 
-                    if (comboArea.Text=="")
-                        {
-                         return 3;
-                        }
                 else
                 {
                     return 0;
@@ -161,11 +172,40 @@ namespace ControlDeTiempos
                 case 0:
                     {
                         //no hay ningun error
+                        if(comboArea.Text=="")
+                        {
+                            comboArea.Text= "Auditoria";
+                        }
                         picError.Visible = false;
                         errorProviderUsuario.SetError(panel1, "");
                         errorProviderUsuario.SetError(textHRS, "");
-                        MessageBoxButtons buttons = MessageBoxButtons.OK;
-                        MessageBox.Show("validaciones basicas completas ", "Datos correctos", buttons);
+                        //comboEmpresa,comboAño,comboArea, comboConcepto, textHRS
+                        //formulario.insertar(Convert.ToInt32(), );
+                        if(comentario==null)
+                        {
+                            mensaje = "Fecha: " + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "\nEmpresa: " + comboEmpresa.Text + "\nEjercicio: " + comboAño.Text + "\nArea: " + comboArea.Text + "\nConcepto: " + comboConcepto.Text + txtOtrasAreas.Text +"\nHoras: " + textHRS.Text +
+                            "\n¿está seguro de registrar estos datos?";
+                        }
+                        else
+                        {
+                            mensaje = "Fecha: " + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "\nEmpresa: " + comboEmpresa.Text + "\nEjercicio: " + comboAño.Text + "\nArea: " + comboArea.Text + "\nConcepto: " + comboConcepto.Text + txtOtrasAreas.Text + ", " + comentario + "\nHoras: " + textHRS.Text +
+                            "\n¿está seguro de registrar estos datos?";
+                        }
+                        //retroalimentacion
+                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                        DialogResult dialogResult = MessageBox.Show(mensaje, "Confirmacion", buttons);
+                        if(dialogResult==DialogResult.Yes)
+                        {
+                            Limpiar limpiar = new Limpiar();
+                            limpiar.BorrarCampos(panel1);
+                            comentario = "";
+                            comboEmpresa.BackColor = Color.Silver;
+                            comboAño.BackColor = Color.Silver;
+                            comboArea.BackColor = Color.Silver;
+                            comboConcepto.BackColor = Color.Silver;
+                            txtOtrasAreas.BackColor = Color.Silver;
+                            textHRS.BackColor = Color.Silver;
+                        }
                         break;
                     }
                 case 1:
@@ -180,24 +220,40 @@ namespace ControlDeTiempos
                         textHRS.Focus();
                         break;
                     }
-                case 3:
-                    {
-                        comboArea.Text = "Auditoria";
-                        comboArea.BackColor = Color.White;
-                        comboArea.ForeColor = Color.Black;
-                        break;
-                    }
             }
-        }
-
-        private void picBoxNotaConcepto_Click(object sender, EventArgs e)
-        {
-            using (NotaConcepto ventanaConcepto = new NotaConcepto())
-                ventanaConcepto.ShowDialog();
         }
         //FIN DE DESARROLLO DE BOTONES
         //Fin Validaciones de campos
 
+        //OBTENER VALORES DEL FORM NOTACONCEPTO:
+        public Usuario(string concepto, string comentario)
+        {
+            InitializeComponent();
+        }
+        
+        private void picBoxNotaConcepto_Click(object sender, EventArgs e)
+        {
+            if (comboConcepto.Visible == true)
+            {
+                valorConcepto = comboConcepto.Text;
+            }
+            else if(txtOtrasAreas.Visible==true)
+            {
+                valorConcepto = txtOtrasAreas.Text;
+            }
+            //paso datos usuario al form nota concepto
+            NotaConcepto notaConcepto = new NotaConcepto(valorConcepto,comentario);
+            notaConcepto.pasado += new NotaConcepto.pasar(ejecutar);
+            notaConcepto.ShowDialog();
+        }
+
+        public void ejecutar(string dato, string dato2)
+        {
+            //aqui obtengo todos los datos del form NotaConcepto
+            valorConcepto = dato;
+            comentario= dato2;
+        }
+        //FINOBTENER VALORES DEL FORM NOTACONCEPTO
         //CERRAR APLICACION
         private void Usuario_FormClosed(object sender, FormClosedEventArgs e)
         {

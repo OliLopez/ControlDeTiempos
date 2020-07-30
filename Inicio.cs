@@ -25,7 +25,7 @@ namespace ControlDeTiempos
             try
             {
                 conexion.Open();
-                SqlCommand cmd = new SqlCommand("SELECT Nombre, Tipo_usuario FROM Usuarios1 WHERE Usuario= @usuario AND contra = @pas", conexion);
+                SqlCommand cmd = new SqlCommand("SELECT Nombre, Tipo_usuario FROM LogIn WHERE Usuario= @usuario AND Contra = @pas", conexion);
                 cmd.Parameters.AddWithValue("usuario", usuario);
                 cmd.Parameters.AddWithValue("pas", contrasena);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
