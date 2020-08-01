@@ -25,7 +25,7 @@ namespace ControlDeTiempos
             try
             {
                 conexion.Open();
-                SqlCommand cmd = new SqlCommand("SELECT Nombre, Tipo_usuario FROM LogIn WHERE Usuario= @usuario AND Contra = @pas", conexion);
+                SqlCommand cmd = new SqlCommand("SELECT Nombre, Tipo_usuario, Id_usuario FROM LogIn WHERE Usuario= @usuario AND Contra = @pas", conexion);
                 cmd.Parameters.AddWithValue("usuario", usuario);
                 cmd.Parameters.AddWithValue("pas", contrasena);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -40,7 +40,7 @@ namespace ControlDeTiempos
                     }
                     else if(dt.Rows[0][1].ToString() == "Usuario")
                     {
-                        new Usuario(dt.Rows[0][0].ToString()).Show();
+                        new Usuario(dt.Rows[0][0].ToString(), Convert.ToInt32(dt.Rows[0][2])).Show();
                     }
                 }
                 else
@@ -57,6 +57,7 @@ namespace ControlDeTiempos
                 conexion.Close();
             }
         }
+         
         //Fin de codigo para loguear usuarios
 
         //Inicio de codigo para diseño

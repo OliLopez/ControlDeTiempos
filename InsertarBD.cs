@@ -13,8 +13,7 @@ namespace ControlDeTiempos
     {
         SqlConnection sqlConexion;
         SqlCommand sqlComando;
-        SqlDataAdapter sqlAdapter;
-
+    
         public InsertarBD()
         {
             try
@@ -30,12 +29,13 @@ namespace ControlDeTiempos
             }
         }
 
-        public string insertar(int c1, string c2, string c3)
+        public string insertar(int id, string fecha, string empresa, int ejercicio, string area, string concepto, string comentario, float horas)
         {
-            string salida = "Se insertaron los datos";
+            string salida = "DATOS REGISTRADOS";
+            
             try
             {
-                sqlComando = new SqlCommand("Insert into tabla(Campo1, Campo2, Campo3) values("+c1+", '"+c2+"', '"+c3+"')", sqlConexion);
+                sqlComando = new SqlCommand("Insert into Registro(Id_Empleado, Fecha, Empresa, Ejercicio, Area, Concepto, Comentario, Horas) values(" +id+", '"+fecha+"', '"+empresa+"', "+ejercicio+", '"+area+"', '"+concepto+"','"+comentario+"',"+horas+")", sqlConexion);
                 sqlComando.ExecuteNonQuery();
             }
             catch(Exception ex)
@@ -43,8 +43,8 @@ namespace ControlDeTiempos
                 //en caso de que un dato este mal escrito o no coincida en la tabla:
                 salida = "Error en la inserccion de datos: " + ex.ToString();
             }
+            MessageBoxTemporal.Show(salida, " ", 3, true);
             return salida;
         }
-        //ver si se usara en realidad metodo para evitar datos repetitivos... min 13:34
     }
 }

@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="InsertarBD.cs" />
     <Compile Include="Limpiar.cs" />
+    <Compile Include="MessageBoxTemporal.cs" />
     <Compile Include="NotaConcepto.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -20,11 +20,13 @@ namespace ControlDeTiempos
         string comentario;
         string mensaje;
         string valorConcepto = "";
+        int idFormInicio;
 
-        public Usuario(string nombre)
+        public Usuario(string nombre, int id)
         {
             InitializeComponent();
             txtOtrasAreas.Visible = false;
+            idFormInicio = id;
             lbBienvenido.Text = "Bienvenido, "+nombre;
             //el archivo txt se pasa a string
             string slistado_empresas = Properties.Resources.empresa.ToString();
@@ -172,16 +174,16 @@ namespace ControlDeTiempos
                 case 0:
                     {
                         //no hay ningun error
-                        if(comboArea.Text=="")
-                        {
-                            comboArea.Text= "Auditoria";
-                        }
                         picError.Visible = false;
                         errorProviderUsuario.SetError(panel1, "");
                         errorProviderUsuario.SetError(textHRS, "");
-                        //comboEmpresa,comboAño,comboArea, comboConcepto, textHRS
-                        //formulario.insertar(Convert.ToInt32(), );
-                        if(comentario==null)
+
+                        if (comboArea.Text=="")
+                        {
+                            comboArea.Text= "Auditoria";
+                        }
+                        //NOTIFICACIONES
+                        if (comentario==null)
                         {
                             mensaje = "Fecha: " + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "\nEmpresa: " + comboEmpresa.Text + "\nEjercicio: " + comboAño.Text + "\nArea: " + comboArea.Text + "\nConcepto: " + comboConcepto.Text + txtOtrasAreas.Text +"\nHoras: " + textHRS.Text +
                             "\n¿está seguro de registrar estos datos?";
@@ -191,20 +193,22 @@ namespace ControlDeTiempos
                             mensaje = "Fecha: " + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "\nEmpresa: " + comboEmpresa.Text + "\nEjercicio: " + comboAño.Text + "\nArea: " + comboArea.Text + "\nConcepto: " + comboConcepto.Text + txtOtrasAreas.Text + ", " + comentario + "\nHoras: " + textHRS.Text +
                             "\n¿está seguro de registrar estos datos?";
                         }
-                        //retroalimentacion
+
                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                         DialogResult dialogResult = MessageBox.Show(mensaje, "Confirmacion", buttons);
                         if(dialogResult==DialogResult.Yes)
-                        {
-                            Limpiar limpiar = new Limpiar();
-                            limpiar.BorrarCampos(panel1);
-                            comentario = "";
+                        { //Insertar datos desde c# a sql:
+                            formulario.insertar(idFormInicio, dateTimePicker1.Value.ToString("yyyy/MM/dd"), comboEmpresa.Text, Convert.ToInt32(comboAño.Text), comboArea.Text, comboConcepto.Text, comentario, float.Parse(textHRS.Text));
+                            //Limpiar formulario
                             comboEmpresa.BackColor = Color.Silver;
                             comboAño.BackColor = Color.Silver;
                             comboArea.BackColor = Color.Silver;
                             comboConcepto.BackColor = Color.Silver;
                             txtOtrasAreas.BackColor = Color.Silver;
                             textHRS.BackColor = Color.Silver;
+                            Limpiar limpiar = new Limpiar();
+                            limpiar.BorrarCampos(panel1);
+                            comentario = "";
                         }
                         break;
                     }
