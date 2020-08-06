@@ -40,6 +40,12 @@ namespace ControlDeTiempos
             array_año = slistado_año.Split(new[] {"\r\n" }, StringSplitOptions.RemoveEmptyEntries);
             array_area = slistado_area.Split(new[] {"\r\n" }, StringSplitOptions.RemoveEmptyEntries);
             array_concepto = slistado_concepto.Split(new[] {"\r\n"}, StringSplitOptions.RemoveEmptyEntries);
+            //Desplegar las horas total que lleva del el usuario por dia
+            float dia = formulario.diaTotal(idFormInicio, dateTimePicker1.Value.ToString("dd"));
+            lbHoraDia.Text = dia.ToString();
+            //Desplegar las horas total que lleva del el usuario al mes
+            float mes = formulario.MesTotal(idFormInicio, dateTimePicker1.Value.ToString("MM"));
+            lbTotal.Text = mes.ToString();
         }
 
         private void Usuario_Load(object sender, EventArgs e)
@@ -166,6 +172,7 @@ namespace ControlDeTiempos
                 }
             }
         }
+
         //DESARROLLO DE BOTONES
         private void btnCapurarHr_Click(object sender, EventArgs e)
         {
@@ -174,6 +181,7 @@ namespace ControlDeTiempos
                 case 0:
                     {
                         //no hay ningun error
+                        
                         picError.Visible = false;
                         errorProviderUsuario.SetError(panel1, "");
                         errorProviderUsuario.SetError(textHRS, "");
@@ -197,18 +205,25 @@ namespace ControlDeTiempos
                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                         DialogResult dialogResult = MessageBox.Show(mensaje, "Confirmacion", buttons);
                         if(dialogResult==DialogResult.Yes)
-                        { //Insertar datos desde c# a sql:
+                        {
+                            //Insertar datos desde c# a sql:
                             formulario.insertar(idFormInicio, dateTimePicker1.Value.ToString("yyyy/MM/dd"), comboEmpresa.Text, Convert.ToInt32(comboAño.Text), comboArea.Text, comboConcepto.Text, comentario, float.Parse(textHRS.Text));
                             //Limpiar formulario
+                            Limpiar limpiar = new Limpiar();
+                            limpiar.BorrarCampos(panel1);
+                            comentario = "";
                             comboEmpresa.BackColor = Color.Silver;
                             comboAño.BackColor = Color.Silver;
                             comboArea.BackColor = Color.Silver;
                             comboConcepto.BackColor = Color.Silver;
                             txtOtrasAreas.BackColor = Color.Silver;
                             textHRS.BackColor = Color.Silver;
-                            Limpiar limpiar = new Limpiar();
-                            limpiar.BorrarCampos(panel1);
-                            comentario = "";
+                            //Actualizar dia
+                            float diact = formulario.diaTotal(idFormInicio, dateTimePicker1.Value.ToString("dd"));
+                            lbHoraDia.Text = diact.ToString();
+                            //Actualizar mes
+                            float mesact = formulario.MesTotal(idFormInicio, dateTimePicker1.Value.ToString("MM"));
+                            lbTotal.Text = mesact.ToString();
                         }
                         break;
                     }

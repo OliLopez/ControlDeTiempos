@@ -68,7 +68,8 @@ namespace ControlDeTiempos.Properties {
         ///2018
         ///2019
         ///2020
-        ///2021.
+        ///2021
+        ///2022.
         /// </summary>
         internal static string año {
             get {
@@ -77,22 +78,13 @@ namespace ControlDeTiempos.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1. Planeacion Estrategica
-        ///2. EFECTIVO E INVERSIONES TEMPORALES
-        ///3. INMUEBLES, MAQUINARIA Y EQUIPO
-        ///4. INVENTARIOS
-        ///5. Planeación de Auditoría Detallada
-        ///6. Determinacion de la Materialidad
-        ///7. Análisis de Variaciones en estados financieros 
-        ///8. INVERSIONES TEMPORALES
-        ///9. Revision de cifras dictaminadas
-        ///10. CUENTAS POR COBRAR 
-        ///10. VENTAS
-        ///11. OTROS ACTIVOS
-        ///12. CUENTAS POR PAGAR- PROVEEDORES
-        ///12. CUENTAS POR PAGAR- DOCUMENTOS
-        ///12. CUENTAS POR PAGAR- ANTICIPOS DE CLIENTES
-        ///13. CIAS. AFILIADAS Y RELACIONADA [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to Auditoria
+        ///Contabilidad
+        ///Administracion
+        ///TrabajoEspecial
+        ///Otros
+        ///
+        ///.
         /// </summary>
         internal static string area {
             get {
@@ -131,9 +123,22 @@ namespace ControlDeTiempos.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AUDITORIA
-        ///CONTABILIDAD
-        ///ADMINISTRACION.
+        ///   Looks up a localized string similar to 1. Planeacion Estrategica
+        ///2. EFECTIVO E INVERSIONES TEMPORALES
+        ///3. INMUEBLES, MAQUINARIA Y EQUIPO
+        ///4. INVENTARIOS
+        ///5. Planeación de Auditoría Detallada
+        ///6. Determinacion de la Materialidad
+        ///7. Análisis de Variaciones en estados financieros 
+        ///8. INVERSIONES TEMPORALES
+        ///9. Revision de cifras dictaminadas
+        ///10. CUENTAS POR COBRAR 
+        ///10. VENTAS
+        ///11. OTROS ACTIVOS
+        ///12. CUENTAS POR PAGAR- PROVEEDORES
+        ///12. CUENTAS POR PAGAR- DOCUMENTOS
+        ///12. CUENTAS POR PAGAR- ANTICIPOS DE CLIENTES
+        ///13. CIAS. AFILIADAS Y RELACIONADA [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string concepto {
             get {
@@ -185,9 +190,9 @@ namespace ControlDeTiempos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap lupa {
+        internal static System.Drawing.Bitmap mas {
             get {
-                object obj = ResourceManager.GetObject("lupa", resourceCulture);
+                object obj = ResourceManager.GetObject("mas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

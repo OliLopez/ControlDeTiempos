@@ -14,7 +14,7 @@ namespace ControlDeTiempos
     {
         string[] array_empresaAdmin;
         string[] array_añoAdmin;
-        string[] array_areaAdmin;
+        //string[] array_areaAdmin;
         string[] array_empleado = {"Julio","Socorro"};
         public Administrador()
         {

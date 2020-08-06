@@ -46,8 +46,8 @@
             this.comboAño = new System.Windows.Forms.ComboBox();
             this.comboEmpresa = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbTotal = new System.Windows.Forms.Label();
+            this.lbHoraDia = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbBienvenido = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.txtOtrasAreas);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -176,10 +176,10 @@
             // 
             this.picBoxNotaConcepto.BackColor = System.Drawing.Color.DodgerBlue;
             this.picBoxNotaConcepto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picBoxNotaConcepto.Image = global::ControlDeTiempos.Properties.Resources.lupa;
-            this.picBoxNotaConcepto.Location = new System.Drawing.Point(371, 137);
+            this.picBoxNotaConcepto.Image = global::ControlDeTiempos.Properties.Resources.mas;
+            this.picBoxNotaConcepto.Location = new System.Drawing.Point(367, 135);
             this.picBoxNotaConcepto.Name = "picBoxNotaConcepto";
-            this.picBoxNotaConcepto.Size = new System.Drawing.Size(42, 21);
+            this.picBoxNotaConcepto.Size = new System.Drawing.Size(34, 27);
             this.picBoxNotaConcepto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBoxNotaConcepto.TabIndex = 6;
             this.picBoxNotaConcepto.TabStop = false;
@@ -266,56 +266,56 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
+            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lbTotal);
+            this.panel2.Controls.Add(this.lbHoraDia);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(442, 38);
+            this.panel2.Location = new System.Drawing.Point(442, 34);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(138, 274);
+            this.panel2.Size = new System.Drawing.Size(109, 247);
             this.panel2.TabIndex = 18;
             // 
-            // label9
+            // lbTotal
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(49, 218);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 24);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "0.0";
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Location = new System.Drawing.Point(39, 201);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(26, 29);
+            this.lbTotal.TabIndex = 21;
+            this.lbTotal.Text = "0";
             // 
-            // label8
+            // lbHoraDia
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(45, 85);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 24);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "0.0";
+            this.lbHoraDia.AutoSize = true;
+            this.lbHoraDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHoraDia.Location = new System.Drawing.Point(39, 67);
+            this.lbHoraDia.Name = "lbHoraDia";
+            this.lbHoraDia.Size = new System.Drawing.Size(26, 29);
+            this.lbHoraDia.TabIndex = 20;
+            this.lbHoraDia.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(33, 176);
+            this.label7.Location = new System.Drawing.Point(19, 158);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 18);
+            this.label7.Size = new System.Drawing.Size(82, 18);
             this.label7.TabIndex = 19;
-            this.label7.Text = "Suma total";
+            this.label7.Text = "Horas/mes";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(29, 36);
+            this.label6.Location = new System.Drawing.Point(15, 18);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 18);
+            this.label6.Size = new System.Drawing.Size(72, 18);
             this.label6.TabIndex = 18;
-            this.label6.Text = "Total del día";
+            this.label6.Text = "Horas/día";
             // 
             // lbBienvenido
             // 
@@ -348,7 +348,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(588, 321);
+            this.ClientSize = new System.Drawing.Size(569, 321);
             this.Controls.Add(this.picError);
             this.Controls.Add(this.lbBienvenido);
             this.Controls.Add(this.panel2);
@@ -393,8 +393,8 @@
         private System.Windows.Forms.ErrorProvider errorProviderUsuario;
         private System.Windows.Forms.PictureBox picError;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbTotal;
+        private System.Windows.Forms.Label lbHoraDia;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtOtrasAreas;
