@@ -88,7 +88,7 @@
             this.txtOtrasAreas.BackColor = System.Drawing.Color.Silver;
             this.txtOtrasAreas.Font = new System.Drawing.Font("Arial Narrow", 11F);
             this.txtOtrasAreas.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtOtrasAreas.Location = new System.Drawing.Point(156, 134);
+            this.txtOtrasAreas.Location = new System.Drawing.Point(166, 134);
             this.txtOtrasAreas.Name = "txtOtrasAreas";
             this.txtOtrasAreas.Size = new System.Drawing.Size(207, 24);
             this.txtOtrasAreas.TabIndex = 20;
@@ -98,10 +98,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1, 104);
+            this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(11, 104);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 20);
+            this.label5.Size = new System.Drawing.Size(38, 17);
             this.label5.TabIndex = 13;
             this.label5.Text = "Area";
             // 
@@ -109,10 +109,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1, 173);
+            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(11, 173);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 20);
+            this.label4.Size = new System.Drawing.Size(39, 17);
             this.label4.TabIndex = 12;
             this.label4.Text = "HRS";
             // 
@@ -120,10 +120,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1, 137);
+            this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 137);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.Size = new System.Drawing.Size(71, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "Concepto";
             // 
@@ -131,10 +131,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1, 72);
+            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 72);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 20);
+            this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "Ejercicio";
             // 
@@ -142,10 +142,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 41);
+            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.Size = new System.Drawing.Size(68, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Empresa";
             // 
@@ -154,7 +154,7 @@
             this.textHRS.BackColor = System.Drawing.Color.Silver;
             this.textHRS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textHRS.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textHRS.Location = new System.Drawing.Point(297, 163);
+            this.textHRS.Location = new System.Drawing.Point(307, 163);
             this.textHRS.Name = "textHRS";
             this.textHRS.Size = new System.Drawing.Size(66, 26);
             this.textHRS.TabIndex = 8;
@@ -177,7 +177,7 @@
             this.picBoxNotaConcepto.BackColor = System.Drawing.Color.DodgerBlue;
             this.picBoxNotaConcepto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picBoxNotaConcepto.Image = global::ControlDeTiempos.Properties.Resources.mas;
-            this.picBoxNotaConcepto.Location = new System.Drawing.Point(367, 135);
+            this.picBoxNotaConcepto.Location = new System.Drawing.Point(377, 135);
             this.picBoxNotaConcepto.Name = "picBoxNotaConcepto";
             this.picBoxNotaConcepto.Size = new System.Drawing.Size(34, 27);
             this.picBoxNotaConcepto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -210,12 +210,12 @@
             this.comboArea.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboArea.BackColor = System.Drawing.Color.Silver;
             this.comboArea.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboArea.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboArea.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboArea.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.comboArea.FormattingEnabled = true;
-            this.comboArea.Location = new System.Drawing.Point(72, 106);
+            this.comboArea.Location = new System.Drawing.Point(166, 103);
             this.comboArea.Name = "comboArea";
-            this.comboArea.Size = new System.Drawing.Size(291, 22);
+            this.comboArea.Size = new System.Drawing.Size(207, 25);
             this.comboArea.TabIndex = 3;
             this.comboArea.SelectedIndexChanged += new System.EventHandler(this.comboArea_SelectedIndexChanged);
             // 
@@ -228,7 +228,7 @@
             this.comboConcepto.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboConcepto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.comboConcepto.FormattingEnabled = true;
-            this.comboConcepto.Location = new System.Drawing.Point(156, 135);
+            this.comboConcepto.Location = new System.Drawing.Point(166, 135);
             this.comboConcepto.Name = "comboConcepto";
             this.comboConcepto.Size = new System.Drawing.Size(207, 22);
             this.comboConcepto.TabIndex = 2;
@@ -243,7 +243,7 @@
             this.comboAño.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboAño.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.comboAño.FormattingEnabled = true;
-            this.comboAño.Location = new System.Drawing.Point(297, 67);
+            this.comboAño.Location = new System.Drawing.Point(307, 67);
             this.comboAño.Name = "comboAño";
             this.comboAño.Size = new System.Drawing.Size(66, 26);
             this.comboAño.TabIndex = 1;
@@ -258,7 +258,7 @@
             this.comboEmpresa.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboEmpresa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.comboEmpresa.FormattingEnabled = true;
-            this.comboEmpresa.Location = new System.Drawing.Point(71, 39);
+            this.comboEmpresa.Location = new System.Drawing.Point(81, 39);
             this.comboEmpresa.Name = "comboEmpresa";
             this.comboEmpresa.Size = new System.Drawing.Size(292, 22);
             this.comboEmpresa.TabIndex = 0;
@@ -281,7 +281,7 @@
             // 
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.Location = new System.Drawing.Point(39, 201);
+            this.lbTotal.Location = new System.Drawing.Point(39, 200);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(26, 29);
             this.lbTotal.TabIndex = 21;
@@ -301,7 +301,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(19, 158);
+            this.label7.Location = new System.Drawing.Point(19, 157);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 18);
             this.label7.TabIndex = 19;
@@ -348,13 +348,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(569, 321);
+            this.ClientSize = new System.Drawing.Size(565, 323);
             this.Controls.Add(this.picError);
             this.Controls.Add(this.lbBienvenido);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(581, 362);
+            this.MinimumSize = new System.Drawing.Size(581, 362);
             this.Name = "Usuario";
             this.Opacity = 0.99D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -31,12 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administrador));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelempleado = new System.Windows.Forms.Label();
-            this.labelaño = new System.Windows.Forms.Label();
-            this.comboAdminAño = new System.Windows.Forms.ComboBox();
-            this.labelEmpresa = new System.Windows.Forms.Label();
-            this.comboEmpleado = new System.Windows.Forms.ComboBox();
-            this.comboAdminEmpresa = new System.Windows.Forms.ComboBox();
+            this.cmbArea = new System.Windows.Forms.ComboBox();
+            this.lblArea = new System.Windows.Forms.Label();
+            this.lblempleado = new System.Windows.Forms.Label();
+            this.lblaño = new System.Windows.Forms.Label();
+            this.cmbAño = new System.Windows.Forms.ComboBox();
+            this.lblEmpresa = new System.Windows.Forms.Label();
+            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
+            this.cmbEmpresa = new System.Windows.Forms.ComboBox();
             this.btnReporte = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProviderAdmin = new System.Windows.Forms.ErrorProvider(this.components);
@@ -48,94 +50,117 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.labelempleado);
-            this.panel1.Controls.Add(this.labelaño);
-            this.panel1.Controls.Add(this.comboAdminAño);
-            this.panel1.Controls.Add(this.labelEmpresa);
-            this.panel1.Controls.Add(this.comboEmpleado);
-            this.panel1.Controls.Add(this.comboAdminEmpresa);
-            this.panel1.Location = new System.Drawing.Point(3, 10);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.cmbArea);
+            this.panel1.Controls.Add(this.lblArea);
+            this.panel1.Controls.Add(this.lblempleado);
+            this.panel1.Controls.Add(this.lblaño);
+            this.panel1.Controls.Add(this.cmbAño);
+            this.panel1.Controls.Add(this.lblEmpresa);
+            this.panel1.Controls.Add(this.cmbEmpleado);
+            this.panel1.Controls.Add(this.cmbEmpresa);
+            this.panel1.Location = new System.Drawing.Point(9, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(422, 137);
+            this.panel1.Size = new System.Drawing.Size(411, 150);
             this.panel1.TabIndex = 1;
             // 
-            // labelempleado
+            // cmbArea
             // 
-            this.labelempleado.AutoSize = true;
-            this.labelempleado.BackColor = System.Drawing.Color.White;
-            this.labelempleado.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelempleado.Location = new System.Drawing.Point(5, 93);
-            this.labelempleado.Name = "labelempleado";
-            this.labelempleado.Size = new System.Drawing.Size(80, 18);
-            this.labelempleado.TabIndex = 7;
-            this.labelempleado.Text = "Empleado";
+            this.cmbArea.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbArea.FormattingEnabled = true;
+            this.cmbArea.Location = new System.Drawing.Point(264, 12);
+            this.cmbArea.Name = "cmbArea";
+            this.cmbArea.Size = new System.Drawing.Size(121, 26);
+            this.cmbArea.TabIndex = 9;
+            this.cmbArea.MouseLeave += new System.EventHandler(this.cmbArea_MouseLeave);
+            this.cmbArea.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cmbArea_MouseMove);
             // 
-            // labelaño
+            // lblArea
             // 
-            this.labelaño.AutoSize = true;
-            this.labelaño.BackColor = System.Drawing.Color.White;
-            this.labelaño.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelaño.Location = new System.Drawing.Point(9, 49);
-            this.labelaño.Name = "labelaño";
-            this.labelaño.Size = new System.Drawing.Size(69, 18);
-            this.labelaño.TabIndex = 6;
-            this.labelaño.Text = "Ejercicio";
+            this.lblArea.AutoSize = true;
+            this.lblArea.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArea.Location = new System.Drawing.Point(7, 18);
+            this.lblArea.Name = "lblArea";
+            this.lblArea.Size = new System.Drawing.Size(38, 17);
+            this.lblArea.TabIndex = 8;
+            this.lblArea.Text = "Area";
             // 
-            // comboAdminAño
+            // lblempleado
             // 
-            this.comboAdminAño.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboAdminAño.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboAdminAño.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboAdminAño.FormattingEnabled = true;
-            this.comboAdminAño.Location = new System.Drawing.Point(333, 46);
-            this.comboAdminAño.Name = "comboAdminAño";
-            this.comboAdminAño.Size = new System.Drawing.Size(66, 26);
-            this.comboAdminAño.TabIndex = 1;
-            this.comboAdminAño.MouseLeave += new System.EventHandler(this.comboAdminAño_MouseLeave);
-            this.comboAdminAño.MouseMove += new System.Windows.Forms.MouseEventHandler(this.comboAdminAño_MouseMove);
+            this.lblempleado.AutoSize = true;
+            this.lblempleado.BackColor = System.Drawing.Color.Transparent;
+            this.lblempleado.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblempleado.Location = new System.Drawing.Point(4, 111);
+            this.lblempleado.Name = "lblempleado";
+            this.lblempleado.Size = new System.Drawing.Size(74, 17);
+            this.lblempleado.TabIndex = 7;
+            this.lblempleado.Text = "Empleado";
             // 
-            // labelEmpresa
+            // lblaño
             // 
-            this.labelEmpresa.AutoSize = true;
-            this.labelEmpresa.BackColor = System.Drawing.Color.White;
-            this.labelEmpresa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmpresa.Location = new System.Drawing.Point(10, 3);
-            this.labelEmpresa.Name = "labelEmpresa";
-            this.labelEmpresa.Size = new System.Drawing.Size(72, 18);
-            this.labelEmpresa.TabIndex = 5;
-            this.labelEmpresa.Text = "Empresa";
+            this.lblaño.AutoSize = true;
+            this.lblaño.BackColor = System.Drawing.Color.Transparent;
+            this.lblaño.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblaño.Location = new System.Drawing.Point(5, 79);
+            this.lblaño.Name = "lblaño";
+            this.lblaño.Size = new System.Drawing.Size(64, 17);
+            this.lblaño.TabIndex = 6;
+            this.lblaño.Text = "Ejercicio";
             // 
-            // comboEmpleado
+            // cmbAño
             // 
-            this.comboEmpleado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboEmpleado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboEmpleado.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboEmpleado.FormattingEnabled = true;
-            this.comboEmpleado.Items.AddRange(new object[] {
+            this.cmbAño.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbAño.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbAño.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAño.FormattingEnabled = true;
+            this.cmbAño.Location = new System.Drawing.Point(319, 74);
+            this.cmbAño.Name = "cmbAño";
+            this.cmbAño.Size = new System.Drawing.Size(66, 26);
+            this.cmbAño.TabIndex = 1;
+            this.cmbAño.MouseLeave += new System.EventHandler(this.comboAdminAño_MouseLeave);
+            this.cmbAño.MouseMove += new System.Windows.Forms.MouseEventHandler(this.comboAdminAño_MouseMove);
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.AutoSize = true;
+            this.lblEmpresa.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmpresa.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpresa.Location = new System.Drawing.Point(5, 48);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(68, 17);
+            this.lblEmpresa.TabIndex = 5;
+            this.lblEmpresa.Text = "Empresa";
+            // 
+            // cmbEmpleado
+            // 
+            this.cmbEmpleado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbEmpleado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbEmpleado.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEmpleado.FormattingEnabled = true;
+            this.cmbEmpleado.Items.AddRange(new object[] {
             "Todos"});
-            this.comboEmpleado.Location = new System.Drawing.Point(278, 93);
-            this.comboEmpleado.Name = "comboEmpleado";
-            this.comboEmpleado.Size = new System.Drawing.Size(121, 26);
-            this.comboEmpleado.TabIndex = 2;
-            this.comboEmpleado.MouseLeave += new System.EventHandler(this.comboEmpleado_MouseLeave);
-            this.comboEmpleado.MouseMove += new System.Windows.Forms.MouseEventHandler(this.comboEmpleado_MouseMove);
+            this.cmbEmpleado.Location = new System.Drawing.Point(264, 108);
+            this.cmbEmpleado.Name = "cmbEmpleado";
+            this.cmbEmpleado.Size = new System.Drawing.Size(121, 26);
+            this.cmbEmpleado.TabIndex = 2;
+            this.cmbEmpleado.MouseLeave += new System.EventHandler(this.comboEmpleado_MouseLeave);
+            this.cmbEmpleado.MouseMove += new System.Windows.Forms.MouseEventHandler(this.comboEmpleado_MouseMove);
             // 
-            // comboAdminEmpresa
+            // cmbEmpresa
             // 
-            this.comboAdminEmpresa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboAdminEmpresa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboAdminEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboAdminEmpresa.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboAdminEmpresa.FormattingEnabled = true;
-            this.comboAdminEmpresa.Items.AddRange(new object[] {
+            this.cmbEmpresa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbEmpresa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbEmpresa.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEmpresa.FormattingEnabled = true;
+            this.cmbEmpresa.Items.AddRange(new object[] {
             "Todos"});
-            this.comboAdminEmpresa.Location = new System.Drawing.Point(93, 4);
-            this.comboAdminEmpresa.Name = "comboAdminEmpresa";
-            this.comboAdminEmpresa.Size = new System.Drawing.Size(306, 22);
-            this.comboAdminEmpresa.TabIndex = 0;
-            this.comboAdminEmpresa.MouseLeave += new System.EventHandler(this.comboAdminEmpresa_MouseLeave);
-            this.comboAdminEmpresa.MouseMove += new System.Windows.Forms.MouseEventHandler(this.comboAdminEmpresa_MouseMove);
+            this.cmbEmpresa.Location = new System.Drawing.Point(79, 45);
+            this.cmbEmpresa.Name = "cmbEmpresa";
+            this.cmbEmpresa.Size = new System.Drawing.Size(306, 22);
+            this.cmbEmpresa.TabIndex = 0;
+            this.cmbEmpresa.MouseLeave += new System.EventHandler(this.comboAdminEmpresa_MouseLeave);
+            this.cmbEmpresa.MouseMove += new System.Windows.Forms.MouseEventHandler(this.comboAdminEmpresa_MouseMove);
             // 
             // btnReporte
             // 
@@ -143,9 +168,9 @@
             this.btnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReporte.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporte.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnReporte.Location = new System.Drawing.Point(170, 154);
+            this.btnReporte.Location = new System.Drawing.Point(191, 168);
             this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(93, 48);
+            this.btnReporte.Size = new System.Drawing.Size(84, 62);
             this.btnReporte.TabIndex = 4;
             this.btnReporte.Text = "Reporte";
             this.btnReporte.UseVisualStyleBackColor = false;
@@ -157,9 +182,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.pictureBox1.Image = global::ControlDeTiempos.Properties.Resources.buscar;
-            this.pictureBox1.Location = new System.Drawing.Point(270, 155);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 172);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 43);
+            this.pictureBox1.Size = new System.Drawing.Size(71, 52);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -173,13 +198,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(429, 209);
+            this.ClientSize = new System.Drawing.Size(428, 242);
+            this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnReporte);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(448, 285);
+            this.MinimumSize = new System.Drawing.Size(448, 285);
             this.Name = "Administrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrador";
@@ -196,14 +223,16 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelempleado;
-        private System.Windows.Forms.Label labelaño;
-        private System.Windows.Forms.Label labelEmpresa;
+        private System.Windows.Forms.Label lblempleado;
+        private System.Windows.Forms.Label lblaño;
+        private System.Windows.Forms.Label lblEmpresa;
         private System.Windows.Forms.Button btnReporte;
-        private System.Windows.Forms.ComboBox comboEmpleado;
-        private System.Windows.Forms.ComboBox comboAdminAño;
-        private System.Windows.Forms.ComboBox comboAdminEmpresa;
+        private System.Windows.Forms.ComboBox cmbEmpleado;
+        private System.Windows.Forms.ComboBox cmbAño;
+        private System.Windows.Forms.ComboBox cmbEmpresa;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ErrorProvider errorProviderAdmin;
+        private System.Windows.Forms.Label lblArea;
+        private System.Windows.Forms.ComboBox cmbArea;
     }
 }

@@ -14,7 +14,7 @@ namespace ControlDeTiempos
     {
         string[] array_empresaAdmin;
         string[] array_añoAdmin;
-        //string[] array_areaAdmin;
+        string[] array_areaAdmin;
         string[] array_empleado = {"Julio","Socorro"};
         public Administrador()
         {
@@ -25,25 +25,32 @@ namespace ControlDeTiempos
             string slistado_areaAdmin = Properties.Resources.area.ToString();
             //arreglo empresa se inicializa dentro de este constructor leyendo los datos del archivo txt
             //metodo Split genera un nuevo arreglo en el cual el separador sea los caracteres:"\r\n"
-            //en opciones del split, si se ve una linea vacia se elimine
             array_empresaAdmin = slistado_empresasAdmin.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
             array_añoAdmin = slistado_añoAdmin.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            //array_areaAdmin = slistado_areaAdmin.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            array_areaAdmin = slistado_areaAdmin.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
         }
 
         private void Administrador_Load(object sender, EventArgs e)
         {
             desplegarEmpresas();
             desplegarAños();
-            //desplegarAreas();
+            desplegarAreas();
             desplegarEmpleados();
         }
         //Metodos para el Llenado de los combos
+        void desplegarAreas()
+        {
+            for (int i = 0; i < array_areaAdmin.Length; i++)
+            {
+                cmbArea.Items.Add(array_areaAdmin[i]);
+
+            }
+        }
         void desplegarEmpresas()
         {
             for (int i = 0; i < array_empresaAdmin.Length; i++)
             {
-                comboAdminEmpresa.Items.Add(array_empresaAdmin[i]);
+                cmbEmpresa.Items.Add(array_empresaAdmin[i]);
 
             }
         }
@@ -51,7 +58,7 @@ namespace ControlDeTiempos
         {
             for (int i = 0; i < array_añoAdmin.Length; i++)
             {
-                comboAdminAño.Items.Add(array_añoAdmin[i]);
+                cmbAño.Items.Add(array_añoAdmin[i]);
 
             }
         }
@@ -59,7 +66,7 @@ namespace ControlDeTiempos
         {
             for (int i = 0; i < array_empleado.Length; i++)
             {
-                comboEmpleado.Items.Add(array_empleado[i]);
+                cmbEmpleado.Items.Add(array_empleado[i]);
             }
         }
         //Inicio Diseño 
@@ -77,54 +84,54 @@ namespace ControlDeTiempos
 
         private void comboAdminEmpresa_MouseMove(object sender, MouseEventArgs e)
         {
-            labelEmpresa.BackColor = Color.Goldenrod;
-            labelaño.BackColor = Color.White;
-            labelempleado.BackColor = Color.White;
+            lblEmpresa.BackColor = Color.Goldenrod;
+            lblaño.BackColor = Color.Transparent;
+            lblempleado.BackColor = Color.Transparent;
+            lblArea.BackColor = Color.Transparent;
         }
 
         private void comboAdminEmpresa_MouseLeave(object sender, EventArgs e)
         {
-            labelEmpresa.BackColor = Color.White;
+            lblEmpresa.BackColor = Color.Transparent;
         }
 
         private void comboAdminAño_MouseLeave(object sender, EventArgs e)
         {
-            labelaño.BackColor = Color.White;
+            lblaño.BackColor = Color.Transparent;
         }
 
         private void comboAdminAño_MouseMove(object sender, MouseEventArgs e)
         {
-            labelaño.BackColor = Color.Goldenrod;
-            labelEmpresa.BackColor = Color.White;
-            labelempleado.BackColor = Color.White;
-            //labelarea.BackColor = Color.White;
+            lblaño.BackColor = Color.Goldenrod;
+            lblEmpresa.BackColor = Color.Transparent;
+            lblempleado.BackColor = Color.Transparent;
+            lblArea.BackColor = Color.Transparent;
         }
 
         private void comboEmpleado_MouseLeave(object sender, EventArgs e)
         {
-            labelempleado.BackColor = Color.White;
+            lblempleado.BackColor = Color.Transparent;
         }
 
         private void comboEmpleado_MouseMove(object sender, MouseEventArgs e)
         {
-            labelempleado.BackColor = Color.Goldenrod;
-            labelEmpresa.BackColor = Color.White;
-            labelaño.BackColor = Color.White;
-            //labelarea.BackColor = Color.White;
+            lblempleado.BackColor = Color.Goldenrod;
+            lblEmpresa.BackColor = Color.Transparent;
+            lblaño.BackColor = Color.Transparent;
+            lblArea.BackColor = Color.Transparent;
+        }
+        private void cmbArea_MouseLeave(object sender, EventArgs e)
+        {
+            lblArea.BackColor = Color.Transparent;
         }
 
-        private void comboAdminArea_MouseLeave(object sender, EventArgs e)
+        private void cmbArea_MouseMove(object sender, MouseEventArgs e)
         {
-           // labelarea.BackColor = Color.White;
+            lblArea.BackColor = Color.Goldenrod;
+            lblEmpresa.BackColor = Color.Transparent;
+            lblaño.BackColor = Color.Transparent;
         }
 
-        private void comboAdminArea_MouseMove(object sender, MouseEventArgs e)
-        {
-            //labelarea.BackColor = Color.Goldenrod;
-            labelEmpresa.BackColor = Color.White;
-            labelaño.BackColor = Color.White;
-            labelempleado.BackColor = Color.White;
-        }
         //Fin Diseño
         //CERRAR APLICACION
         private void Administrador_FormClosed(object sender, FormClosedEventArgs e)
@@ -135,7 +142,7 @@ namespace ControlDeTiempos
         int validacionAdmin()
         {
             //todas las relaciones implican que se debe escoger un año en especifico
-            if (comboAdminAño.SelectedIndex<=-1)
+            if (cmbAño.SelectedIndex<=-1)
             {
                 return 1;
             }
@@ -159,15 +166,18 @@ namespace ControlDeTiempos
                         using (ReporteAdmin ventanaReporteGeneral = new ReporteAdmin())
                             ventanaReporteGeneral.ShowDialog();
                         break;
+                        //MOSTRAR EL REPORTE SOLICITADO:
+
                     }
                 case 1:
                     {
-                        errorProviderAdmin.SetError(comboAdminAño, "seleccione un año");
-                        comboAdminAño.Focus();
+                        errorProviderAdmin.SetError(cmbAño, "seleccione un año");
+                        cmbAño.Focus();
                         break;
                     }
             } 
         }
+
         //FIN DESAROLLO DE BOTONES
     }
 }

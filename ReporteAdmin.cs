@@ -12,9 +12,14 @@ namespace ControlDeTiempos
 {
     public partial class ReporteAdmin : Form
     {
+        Reporte reporte = new Reporte();
         public ReporteAdmin()
         {
             InitializeComponent();
+            reporte.cargarHoras(dgvReporte);
+            this.Size = new Size(590, 450);
+            dgvReporte.Size = new Size(500, 450);
         }
+
     }
 }

@@ -100,7 +100,9 @@
             this.Controls.Add(this.txtComentario);
             this.Controls.Add(this.txtConcepto);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(328, 201);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(328, 201);
             this.Name = "NotaConcepto";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

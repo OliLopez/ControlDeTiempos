@@ -61,6 +61,7 @@
     <Compile Include="NotaConcepto.Designer.cs">
       <DependentUpon>NotaConcepto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clase_report.cs" />
     <Compile Include="ReporteAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,13 +127,7 @@
     <None Include="Resources\cerrar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\diseño-interior-del-sitio-vacío.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\fondo-azul-oscuro.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lupa.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buscar.png" />
