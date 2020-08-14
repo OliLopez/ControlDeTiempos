@@ -62,11 +62,11 @@
       <DependentUpon>NotaConcepto.cs</DependentUpon>
     </Compile>
     <Compile Include="Clase_report.cs" />
-    <Compile Include="ReporteAdmin.cs">
+    <Compile Include="Form_ReporteAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReporteAdmin.Designer.cs">
-      <DependentUpon>ReporteAdmin.cs</DependentUpon>
+    <Compile Include="Form_ReporteAdmin.Designer.cs">
+      <DependentUpon>Form_ReporteAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs">
       <SubType>Form</SubType>
@@ -101,8 +101,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ReporteAdmin.resx">
-      <DependentUpon>ReporteAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="Form_ReporteAdmin.resx">
+      <DependentUpon>Form_ReporteAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>

@@ -12,10 +12,17 @@ namespace ControlDeTiempos
 {
     public partial class Administrador : Form
     {
+
+        int variableRelacion=0;
+        string sarea="/";
+        string sempresa="/";
+        string iEjercicio="0";
+        string sempleado = "/";
         string[] array_empresaAdmin;
         string[] array_añoAdmin;
         string[] array_areaAdmin;
-        string[] array_empleado = {"Julio","Socorro"};
+        string[] array_empleado = {"Contador Julio"," Contadora Socorro"};
+
         public Administrador()
         {
             InitializeComponent();
@@ -151,6 +158,46 @@ namespace ControlDeTiempos
                 return 0;
             }
         }
+        //metodo para identificar tipo de relacion
+        int relacion()
+        {
+            //realizar aqui La relacion super especifica: caso 7
+            
+            if (!(cmbEmpleado.SelectedIndex <= -1) && !(cmbEmpresa.SelectedIndex <= -1))
+            {
+                return 1;
+            }
+            if (!(cmbArea.SelectedIndex <= -1) && !(cmbEmpleado.SelectedIndex <= -1))
+            {
+                return 2;
+            }
+            if (!(cmbEmpresa.SelectedIndex <= -1) && !(cmbArea.SelectedIndex <= -1))
+            {
+                return 3;
+            }
+            else
+            {
+                //Relaciones generales
+                if (!(cmbArea.SelectedIndex <= -1))
+                {
+                    return 4;
+                }
+                if (!(cmbEmpresa.SelectedIndex <= -1))
+                {
+                    return 5;
+                }
+                if (!(cmbEmpleado.SelectedIndex <= -1))
+                {
+                    return 6;
+                }
+                else
+                {
+                    //EN PRUEBA
+                    //año
+                    return 0;
+                }
+            }
+        }
             //FIN VALIDACIONES
             //DESAROLLO DE BOTONES
             private void btnReporte_Click(object sender, EventArgs e)
@@ -159,25 +206,63 @@ namespace ControlDeTiempos
             {
                 case 0:
                     {
-                        //no hay ningun error
-                        errorProviderAdmin.SetError(panel1, "");
-                        MessageBoxButtons buttons = MessageBoxButtons.OK;
-                        MessageBox.Show("validaciones basicas completas ", "Datos correctos", buttons);
-                        using (ReporteAdmin ventanaReporteGeneral = new ReporteAdmin())
+                        errorProviderAdmin.SetError(cmbAño, "");
+                        //MOSTRAR EL REPORTE SOLICITADO:
+                        switch (relacion())
+                        {
+                            case 1:
+                                {
+                                    //nombre, año, empresa
+                                    variableRelacion = 1;
+                                    break;
+                                }
+                            case 2:
+                                {
+                                    variableRelacion = 2;
+                                    break;
+                                }
+                            case 3:
+                                {
+                                    variableRelacion = 3;
+                                    break;
+                                }
+                            case 4:
+                                {
+                                    variableRelacion = 4;
+                                    break;
+                                }
+                            case 5:
+                                {
+                                    variableRelacion = 5;
+                                    break;
+                                }
+                            case 6:
+                                {
+                                    variableRelacion = 6;
+                                    break;
+                                }
+                            case 0:
+                                {
+                                    variableRelacion = 0;
+                                    break;
+                                }
+                        }
+                        sarea = cmbArea.Text;
+                        sempresa = cmbEmpresa.Text;
+                        iEjercicio = cmbAño.Text;
+                        sempleado = cmbEmpleado.Text;
+                        using (Form_ReporteAdmin ventanaReporteGeneral = new Form_ReporteAdmin(variableRelacion,sarea,sempresa,iEjercicio,sempleado))
                             ventanaReporteGeneral.ShowDialog();
                         break;
-                        //MOSTRAR EL REPORTE SOLICITADO:
-
                     }
                 case 1:
                     {
-                        errorProviderAdmin.SetError(cmbAño, "seleccione un año");
+                        errorProviderAdmin.SetError(cmbAño, "Seleccione un año");
                         cmbAño.Focus();
                         break;
                     }
             } 
         }
-
         //FIN DESAROLLO DE BOTONES
     }
 }

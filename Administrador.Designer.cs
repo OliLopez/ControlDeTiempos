@@ -139,9 +139,9 @@
             this.cmbEmpleado.FormattingEnabled = true;
             this.cmbEmpleado.Items.AddRange(new object[] {
             "Todos"});
-            this.cmbEmpleado.Location = new System.Drawing.Point(264, 108);
+            this.cmbEmpleado.Location = new System.Drawing.Point(180, 108);
             this.cmbEmpleado.Name = "cmbEmpleado";
-            this.cmbEmpleado.Size = new System.Drawing.Size(121, 26);
+            this.cmbEmpleado.Size = new System.Drawing.Size(205, 26);
             this.cmbEmpleado.TabIndex = 2;
             this.cmbEmpleado.MouseLeave += new System.EventHandler(this.comboEmpleado_MouseLeave);
             this.cmbEmpleado.MouseMove += new System.Windows.Forms.MouseEventHandler(this.comboEmpleado_MouseMove);
@@ -182,9 +182,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.pictureBox1.Image = global::ControlDeTiempos.Properties.Resources.buscar;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 172);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 172);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 52);
+            this.pictureBox1.Size = new System.Drawing.Size(71, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
