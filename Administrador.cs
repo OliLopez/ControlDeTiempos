@@ -12,70 +12,18 @@ namespace ControlDeTiempos
 {
     public partial class Administrador : Form
     {
-
         int variableRelacion=0;
         string sarea="/";
         string sempresa="/";
         string iEjercicio="0";
         string sempleado = "/";
-        string[] array_empresaAdmin;
-        string[] array_añoAdmin;
-        string[] array_areaAdmin;
-        string[] array_empleado = {"Contador Julio"," Contadora Socorro"};
 
         public Administrador()
         {
             InitializeComponent();
-            //el archivo txt se pasa a string
-            string slistado_empresasAdmin = Properties.Resources.empresa.ToString();
-            string slistado_añoAdmin = Properties.Resources.año.ToString();
-            string slistado_areaAdmin = Properties.Resources.area.ToString();
-            //arreglo empresa se inicializa dentro de este constructor leyendo los datos del archivo txt
-            //metodo Split genera un nuevo arreglo en el cual el separador sea los caracteres:"\r\n"
-            array_empresaAdmin = slistado_empresasAdmin.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            array_añoAdmin = slistado_añoAdmin.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            array_areaAdmin = slistado_areaAdmin.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
         }
 
-        private void Administrador_Load(object sender, EventArgs e)
-        {
-            desplegarEmpresas();
-            desplegarAños();
-            desplegarAreas();
-            desplegarEmpleados();
-        }
         //Metodos para el Llenado de los combos
-        void desplegarAreas()
-        {
-            for (int i = 0; i < array_areaAdmin.Length; i++)
-            {
-                cmbArea.Items.Add(array_areaAdmin[i]);
-
-            }
-        }
-        void desplegarEmpresas()
-        {
-            for (int i = 0; i < array_empresaAdmin.Length; i++)
-            {
-                cmbEmpresa.Items.Add(array_empresaAdmin[i]);
-
-            }
-        }
-        void desplegarAños()
-        {
-            for (int i = 0; i < array_añoAdmin.Length; i++)
-            {
-                cmbAño.Items.Add(array_añoAdmin[i]);
-
-            }
-        }
-        void desplegarEmpleados()
-        {
-            for (int i = 0; i < array_empleado.Length; i++)
-            {
-                cmbEmpleado.Items.Add(array_empleado[i]);
-            }
-        }
         //Inicio Diseño 
         private void btnReporte_MouseMove(object sender, MouseEventArgs e)
         {
@@ -138,13 +86,8 @@ namespace ControlDeTiempos
             lblEmpresa.BackColor = Color.Transparent;
             lblaño.BackColor = Color.Transparent;
         }
-
         //Fin Diseño
-        //CERRAR APLICACION
-        private void Administrador_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
+
         //INICIO DE VALIDACIONES DE LOS CAMPOS COMBOBOX
         int validacionAdmin()
         {
@@ -158,11 +101,11 @@ namespace ControlDeTiempos
                 return 0;
             }
         }
+        //PRUEBAS
+ 
         //metodo para identificar tipo de relacion
         int relacion()
         {
-            //realizar aqui La relacion super especifica: caso 7
-            
             if (!(cmbEmpleado.SelectedIndex <= -1) && !(cmbEmpresa.SelectedIndex <= -1))
             {
                 return 1;
@@ -175,8 +118,6 @@ namespace ControlDeTiempos
             {
                 return 3;
             }
-            else
-            {
                 //Relaciones generales
                 if (!(cmbArea.SelectedIndex <= -1))
                 {
@@ -184,23 +125,43 @@ namespace ControlDeTiempos
                 }
                 if (!(cmbEmpresa.SelectedIndex <= -1))
                 {
+
                     return 5;
                 }
+
                 if (!(cmbEmpleado.SelectedIndex <= -1))
                 {
                     return 6;
                 }
-                else
-                {
-                    //EN PRUEBA
-                    //año
-                    return 0;
-                }
+
+            //POSDASTIALES
+            if (cmbEmpleado.Text=="Todos" && !(cmbArea.Text == "Todos")&& !(cmbEmpresa.Text == "Todos"))
+            {
+                return 7;
+            }
+            if(cmbArea.Text == "Todos" && !(cmbEmpresa.Text == "Todos") && !(cmbEmpleado.Text == "Todos"))
+            {
+                return 8;
+            }
+            if (cmbEmpresa.Text == "Todos" &&!(cmbArea.Text == "Todos")&& !(cmbEmpleado.Text == "Todos"))
+            {
+                return 9;
+            }
+            //Especifico
+            if (!(cmbArea.Text=="")&& !(cmbEmpresa.Text=="") && !(cmbEmpleado.Text==""))
+            {
+                return 10;
+            }
+            
+            else
+            {
+             //consulta año
+             return 0;
             }
         }
-            //FIN VALIDACIONES
-            //DESAROLLO DE BOTONES
-            private void btnReporte_Click(object sender, EventArgs e)
+        //FIN VALIDACIONES
+        //DESAROLLO DE BOTONES
+        private void btnReporte_Click(object sender, EventArgs e)
         {
             switch (validacionAdmin())
             {
@@ -241,16 +202,36 @@ namespace ControlDeTiempos
                                     variableRelacion = 6;
                                     break;
                                 }
+                            case 7:
+                                {
+                                    variableRelacion = 7;
+                                    break;
+                                }
+                            case 8:
+                                {
+                                    variableRelacion = 8;
+                                    break;
+                                }
+                            case 9:
+                                {
+                                    variableRelacion = 9;
+                                    break;
+                                }
+                            case 10:
+                                {
+                                    variableRelacion = 10;
+                                    break;
+                                }
                             case 0:
                                 {
                                     variableRelacion = 0;
                                     break;
                                 }
                         }
+                        sempleado = cmbEmpleado.Text;
                         sarea = cmbArea.Text;
                         sempresa = cmbEmpresa.Text;
                         iEjercicio = cmbAño.Text;
-                        sempleado = cmbEmpleado.Text;
                         using (Form_ReporteAdmin ventanaReporteGeneral = new Form_ReporteAdmin(variableRelacion,sarea,sempresa,iEjercicio,sempleado))
                             ventanaReporteGeneral.ShowDialog();
                         break;
@@ -264,5 +245,10 @@ namespace ControlDeTiempos
             } 
         }
         //FIN DESAROLLO DE BOTONES
+        //CERRAR APLICACION
+        private void Administrador_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

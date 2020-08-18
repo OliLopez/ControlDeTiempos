@@ -42,6 +42,7 @@
             this.btnReporte = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProviderAdmin = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAdmin)).BeginInit();
@@ -68,6 +69,13 @@
             // 
             this.cmbArea.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbArea.FormattingEnabled = true;
+            this.cmbArea.Items.AddRange(new object[] {
+            "Todos",
+            "Auditoria",
+            "Contabilidad",
+            "Administracion",
+            "Trabajo especial",
+            "Otros"});
             this.cmbArea.Location = new System.Drawing.Point(264, 12);
             this.cmbArea.Name = "cmbArea";
             this.cmbArea.Size = new System.Drawing.Size(121, 26);
@@ -113,6 +121,15 @@
             this.cmbAño.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbAño.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAño.FormattingEnabled = true;
+            this.cmbAño.Items.AddRange(new object[] {
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022"});
             this.cmbAño.Location = new System.Drawing.Point(319, 74);
             this.cmbAño.Name = "cmbAño";
             this.cmbAño.Size = new System.Drawing.Size(66, 26);
@@ -138,7 +155,9 @@
             this.cmbEmpleado.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEmpleado.FormattingEnabled = true;
             this.cmbEmpleado.Items.AddRange(new object[] {
-            "Todos"});
+            "Todos",
+            "Contador Julio",
+            "Contadora Socorro"});
             this.cmbEmpleado.Location = new System.Drawing.Point(180, 108);
             this.cmbEmpleado.Name = "cmbEmpleado";
             this.cmbEmpleado.Size = new System.Drawing.Size(205, 26);
@@ -154,7 +173,20 @@
             this.cmbEmpresa.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEmpresa.FormattingEnabled = true;
             this.cmbEmpresa.Items.AddRange(new object[] {
-            "Todos"});
+            "Todos",
+            "ALIANZAS AFECTUOSAS, S.A de C.V",
+            "ADMINISTRADORA DE OBRAS Y CONCESIONES, S.A de C.V",
+            "ASCENCIO SOULES Y CIA, S.C",
+            "CONSTRUCTORA MAKRO, S.A de C.V",
+            "CORPORATIVO INTEGRAL DE VIVIENDA, S.A. de C.V.",
+            "DISTRIBUIDORA PIPILA, S. de R.L. de C.V.",
+            "HOGAR PARA NINIOS NECESITADOS CRISTO POR SU MUNDO, A.C.",
+            "MADERAS Y MATERIALES, JR, S.A. de C.V.",
+            "MAGNAMAQ, S.A. de C.V.",
+            "OPERADORA FARMACEUTICA DE BAJA CALIFORNIA, S. de R.L. de C.V.",
+            "PIEDRAS HEADWATERS, S. de R.L",
+            "TRITUASFALTOS, S.A. de C.V.",
+            "Otros- no auditoria"});
             this.cmbEmpresa.Location = new System.Drawing.Point(79, 45);
             this.cmbEmpresa.Name = "cmbEmpresa";
             this.cmbEmpresa.Size = new System.Drawing.Size(306, 22);
@@ -193,12 +225,22 @@
             // 
             this.errorProviderAdmin.ContainerControl = this;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(87, 184);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            // 
             // Administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(428, 242);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
@@ -211,12 +253,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrador";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Administrador_FormClosed);
-            this.Load += new System.EventHandler(this.Administrador_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAdmin)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -234,5 +276,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderAdmin;
         private System.Windows.Forms.Label lblArea;
         private System.Windows.Forms.ComboBox cmbArea;
+        private System.Windows.Forms.Label label1;
     }
 }

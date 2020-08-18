@@ -28,86 +28,145 @@ namespace ControlDeTiempos
             Ra = año;
             Rempl = empl;
             desplegarReporte();
+            lblancho.Text = ResultReport.ToString();
         }
 
         public void desplegarReporte()
         {
-            if(ResultReport==1)
+            try
             {
-                reporte.empleado_empresa(dgvReporte,Rempl,Ra,Rempr);
-                this.toolTip.SetToolTip(lblNotifi, "Cuantas horas gasto un empleado en determinada empresa");
-                this.StartPosition = FormStartPosition.CenterScreen;
-                this.Size = new Size(565, 135);
+                if (ResultReport == 1)
+                {
+                    reporte.empleado_empresa(dgvReporte, Rempl, Ra, Rempr);
+                    this.toolTip.SetToolTip(btnotify, "Cuantas horas gasto un empleado en determinada empresa");
+                    this.Size = new Size(565, 160);
+                }
+                if (ResultReport == 2)
+                {
+                    reporte.empleado_area(dgvReporte, Rempl, Ra, Rarea);
+                    this.toolTip.SetToolTip(btnotify, "Cuantas horas gasto un empleado en determinada area");
+                    this.Size = new Size(390, 160);
+                }
+                if (ResultReport == 3)
+                {
+                    reporte.empresa_area(dgvReporte, Rarea, Ra, Rempr);
+                    this.toolTip.SetToolTip(btnotify, "Cuantas horas tiene una empresa en determinada area");
+                    this.Size = new Size(475, 160);
+                }
+                if (ResultReport == 4)
+                {
+                    reporte.area(dgvReporte, Rarea, Ra);
+                    this.toolTip.SetToolTip(btnotify, "Cuantas horas tiene un area en un año");
+                    this.Size = new Size(290, 160);
+                }
+                if (ResultReport == 5)
+                {
+                    reporte.empresa(dgvReporte, Rempr, Ra);
+                    this.toolTip.SetToolTip(btnotify, "Cuantas horas tiene una empresa en un año");
+                    this.Size = new Size(515, 160);
+                }
+                if (ResultReport == 6)
+                {
+                    reporte.empleado(dgvReporte, Rempl, Ra);
+                    this.toolTip.SetToolTip(btnotify, "Total horas por todos los servicios del empleado seleccionado");
+                    this.Size = new Size(730, 200);
+                }
+
+                if (ResultReport == 7)
+                {
+                    reporte.todos_empleado(dgvReporte,Ra);
+                    this.toolTip.SetToolTip(btnotify, "Total horas de todos los empleados");
+                    this.Size = new Size(370, 270);
+                    
+                }
+                if (ResultReport == 8)
+                {
+                    reporte.todos_area(dgvReporte,Ra);
+                    this.toolTip.SetToolTip(btnotify, "Total horas de todas las Areas");
+                    this.Size = new Size(370, 270);
+                   
+                }
+                if (ResultReport == 9)
+                {
+                    reporte.todos_empresa(dgvReporte,Ra);
+                    this.toolTip.SetToolTip(btnotify, "Total horas de todas las empresas");
+                    this.Size = new Size(575, 270);
+                    
+                }
+                if (ResultReport == 10)
+                {
+                    reporte.con_especifico(dgvReporte,Rempl,Rarea,Ra,Rempr);
+                    this.Size = new Size(565, 270);
+                    this.toolTip.SetToolTip(btnotify, "Total horas de un empleado en un area especifica y empresa seleccionada");
+                }
+                if (ResultReport == 0)
+                {
+                    reporte.ejercicio(dgvReporte,Ra);
+                    this.toolTip.SetToolTip(btnotify, "Total de horas del año contable seleccionado");
+                    this.Size = new Size(830, 270);
+                    
+                }
             }
-            if (ResultReport == 2)
+            catch (Exception)
             {
-                reporte.empleado_area(dgvReporte,Rempl,Ra,Rarea);
-                this.toolTip.SetToolTip(lblNotifi, "Cuantas horas gasto un empleado en determinada area");
-                this.StartPosition = FormStartPosition.CenterScreen;
-                this.Size = new Size(390, 135);
-            }
-            if (ResultReport == 3)
-            {
-                reporte.empresa_area(dgvReporte,Rarea,Ra,Rempr);
-                this.toolTip.SetToolTip(lblNotifi, "Cuantas horas tiene una empresa en determinada area");
-                this.StartPosition = FormStartPosition.CenterScreen;
-                this.Size = new Size(565, 135);
-            }
-            if (ResultReport == 4)
-            {
-                reporte.area(dgvReporte, Rarea, Ra);
-                this.toolTip.SetToolTip(lblNotifi, "Cuantas horas tiene un area en un año");
-                this.StartPosition = FormStartPosition.CenterScreen;
-                this.Size = new Size(290, 150);
-            }
-            if (ResultReport == 5)
-            {
-                reporte.empresa(dgvReporte, Rempr, Ra);
-                this.toolTip.SetToolTip(lblNotifi, "Cuantas horas tiene una empresa en un año");
-                this.StartPosition = FormStartPosition.CenterScreen;
-                this.Size = new Size(565, 135);
-            }
-            if (ResultReport == 6)
-            {
-                reporte.empleado(dgvReporte, Rempl, Ra);
-                this.toolTip.SetToolTip(lblNotifi, "Total horas por todos los servicios del empleado seleccionado");
-                this.Size = new Size(1240, 150);
+                reporte.ejercicio(dgvReporte, Ra);
+                this.toolTip.SetToolTip(btnotify, "Total de horas del año contable seleccionado");
+                this.Size = new Size(830, 270);
             }
         }
         //prueba medidas
         private void button1_Click(object sender, EventArgs e)
         {
-            //this.Size = new Size(1300, 328);
             string anchoform;
             anchoform = this.Size.ToString();
             lblancho.Text = anchoform;
         }
 
-        private void lblNotifi_Click(object sender, EventArgs e)
+        private void btnotify_Click(object sender, EventArgs e)
         {
+            if (ResultReport == 0)
+            {
+                this.toolTip.SetToolTip(btnotify, "Total de horas del año contable seleccionado");
+            }
             if (ResultReport == 1)
             {
-                this.toolTip.SetToolTip(lblNotifi, "Cuantas horas gasto un empleado en determinada empresa");
+                this.toolTip.SetToolTip(btnotify, "Cuantas horas gasto un empleado en determinada empresa");
             }
             if (ResultReport == 2)
             {
-                this.toolTip.SetToolTip(lblNotifi, "Cuantas horas gasto un empleado en determinada area");
+                this.toolTip.SetToolTip(btnotify, "Cuantas horas gasto un empleado en determinada area");
             }
             if (ResultReport == 3)
             {
-                this.toolTip.SetToolTip(lblNotifi, "Cuantas horas tiene una empresa en determinada area");
+                this.toolTip.SetToolTip(btnotify, "Cuantas horas tiene una empresa en determinada area");
             }
             if (ResultReport == 4)
             {
-                this.toolTip.SetToolTip(lblNotifi, "Cuantas horas tiene un area en un año");
+                this.toolTip.SetToolTip(btnotify, "Cuantas horas tiene un area en un año");
             }
             if (ResultReport == 5)
             {
-                this.toolTip.SetToolTip(lblNotifi, "Cuantas horas tiene una empresa en un año");
+                this.toolTip.SetToolTip(btnotify, "Cuantas horas tiene una empresa en un año");
             }
             if (ResultReport == 6)
             {
-                this.toolTip.SetToolTip(lblNotifi, "Total horas por todos los servicios del empleado seleccionado");
+                this.toolTip.SetToolTip(btnotify, "Total horas por todos los servicios del empleado seleccionado");
+            }
+            if (ResultReport == 7)
+            {
+                this.toolTip.SetToolTip(btnotify, "Total horas de todos los empleados");
+            }
+            if (ResultReport == 8)
+            {
+                this.toolTip.SetToolTip(btnotify, "Total horas de todas las Areas");
+            }
+            if (ResultReport == 9)
+            {
+                this.toolTip.SetToolTip(btnotify, "Total horas de todas las empresas");
+            }
+            if (ResultReport == 10)
+            {
+                this.toolTip.SetToolTip(btnotify, "Total horas de un empleado en un area especifica y empresa seleccionada");
             }
         }
     }
