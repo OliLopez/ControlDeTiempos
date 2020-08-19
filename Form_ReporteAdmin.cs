@@ -28,7 +28,6 @@ namespace ControlDeTiempos
             Ra = año;
             Rempl = empl;
             desplegarReporte();
-            lblancho.Text = ResultReport.ToString();
         }
 
         public void desplegarReporte()
@@ -91,9 +90,35 @@ namespace ControlDeTiempos
                     reporte.todos_empresa(dgvReporte,Ra);
                     this.toolTip.SetToolTip(btnotify, "Total horas de todas las empresas");
                     this.Size = new Size(575, 270);
-                    
                 }
+                
+                //Ultimos 4
                 if (ResultReport == 10)
+                {
+                    reporte.ejercicio(dgvReporte,Ra);
+                    this.toolTip.SetToolTip(btnotify, "Total horas de todos los empleados, de todas las areas y empresas");
+                    this.Size = new Size(830, 270);
+                }
+                if (ResultReport == 11)
+                {
+                    reporte.empleados_empresas(dgvReporte,Ra);
+                    this.toolTip.SetToolTip(btnotify, "Total horas de todos los empleados y empresas del ejercicio seleccionado");
+                    this.Size = new Size(685, 270);
+                }
+                if (ResultReport == 12)
+                {
+                    reporte.empleados_areas(dgvReporte,Ra);
+                    this.toolTip.SetToolTip(btnotify, "Total horas de todos los empleados y areas del ejercicio seleccionado");
+                    this.Size = new Size(525, 270);
+                }
+                if (ResultReport == 13)
+                {
+                    reporte.empresas_areas(dgvReporte,Ra);
+                    this.toolTip.SetToolTip(btnotify, "Total horas de todas las empresas y areas del ejercicio seleccionado");
+                    this.Size = new Size(725, 270);
+                }
+
+                if (ResultReport == 14)
                 {
                     reporte.con_especifico(dgvReporte,Rempl,Rarea,Ra,Rempr);
                     this.Size = new Size(565, 270);
@@ -113,13 +138,6 @@ namespace ControlDeTiempos
                 this.toolTip.SetToolTip(btnotify, "Total de horas del año contable seleccionado");
                 this.Size = new Size(830, 270);
             }
-        }
-        //prueba medidas
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string anchoform;
-            anchoform = this.Size.ToString();
-            lblancho.Text = anchoform;
         }
 
         private void btnotify_Click(object sender, EventArgs e)
@@ -164,7 +182,25 @@ namespace ControlDeTiempos
             {
                 this.toolTip.SetToolTip(btnotify, "Total horas de todas las empresas");
             }
+
             if (ResultReport == 10)
+            {
+                this.toolTip.SetToolTip(btnotify, "Total horas de todos los empleados, de todas las areas y empresas");
+            }
+            if (ResultReport == 11)
+            {
+                this.toolTip.SetToolTip(btnotify, "Total horas de todos los empleados y empresas del ejercicio seleccionado");
+            }
+            if (ResultReport == 12)
+            {
+                this.toolTip.SetToolTip(btnotify, "Total horas de todos los empleados y areas del ejercicio seleccionado");
+            }
+            if (ResultReport == 13)
+            {
+                this.toolTip.SetToolTip(btnotify, "Total horas de todas las empresas y areas del ejercicio seleccionado");
+            }
+
+            if (ResultReport == 14)
             {
                 this.toolTip.SetToolTip(btnotify, "Total horas de un empleado en un area especifica y empresa seleccionada");
             }

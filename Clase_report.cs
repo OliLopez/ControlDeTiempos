@@ -250,5 +250,62 @@ string consulta = "select distinct Area,substring((select ', '+convert(varchar(1
                 MessageBox.Show("No se pudo realizar la consulta: \n" + ex.ToString());
             }
         }
+        //11
+        public void empleados_empresas(DataGridView dgv, string ej)
+        {
+            try
+            {
+                string consulta = "SELECT DISTINCT Ejercicio,SUBSTRING((SELECT ', '+ li.Nombre AS [text()]FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario WHERE Ejercicio=@ej GROUP BY li.Nombre FOR XML PATH ('')), 2,1000) [Empleados],SUBSTRING((SELECT ', '+r.Empresa  AS [text()]FROM Registro r WHERE Ejercicio=@ej GROUP BY Empresa FOR XML PATH ('')), 2,1000) [Empresas],sum(Horas) as HRS from Registro where Ejercicio=@ej group by Ejercicio";
+
+                SqlCommand sqlcmd = new SqlCommand(consulta, sqlConexion);
+                sqlcmd.Parameters.AddWithValue("ej", ej);
+                da = new SqlDataAdapter(sqlcmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo realizar la consulta: \n" + ex.ToString());
+            }
+        }
+        //12
+        public void empleados_areas(DataGridView dgv, string ej)
+        {
+            try
+            {
+                string consulta = "SELECT DISTINCT Ejercicio,SUBSTRING((SELECT ', '+ li.Nombre AS [text()]FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario WHERE Ejercicio=@ej GROUP BY li.Nombre FOR XML PATH ('')), 2,1000) [Empleados],SUBSTRING((SELECT ', '+r.Area  AS [text()]FROM Registro r WHERE Ejercicio=@ej GROUP BY Area FOR XML PATH ('')), 2,1000) [Areas],sum(Horas) as HRS from Registro where Ejercicio='2020'group by Ejercicio";
+
+                SqlCommand sqlcmd = new SqlCommand(consulta, sqlConexion);
+                sqlcmd.Parameters.AddWithValue("ej", ej);
+                da = new SqlDataAdapter(sqlcmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo realizar la consulta: \n" + ex.ToString());
+            }
+        }
+        //13
+        public void empresas_areas(DataGridView dgv, string ej)
+        {
+            try
+            {
+                string consulta = "SELECT DISTINCT Ejercicio,SUBSTRING((SELECT ', '+r.Area  AS [text()]FROM Registro r WHERE Ejercicio='2020'GROUP BY Area FOR XML PATH ('')), 2,1000) [Areas],SUBSTRING((SELECT ', '+r.Empresa  AS [text()]FROM Registro r WHERE Ejercicio=@ej GROUP BY Empresa FOR XML PATH ('')), 2,1000) [Empresas],sum(Horas) as HRS from Registro where Ejercicio=@ej group by Ejercicio";
+
+                SqlCommand sqlcmd = new SqlCommand(consulta, sqlConexion);
+                sqlcmd.Parameters.AddWithValue("ej", ej);
+                da = new SqlDataAdapter(sqlcmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo realizar la consulta: \n" + ex.ToString());
+            }
+        }
     }
 }

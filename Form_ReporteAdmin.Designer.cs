@@ -33,8 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvReporte = new System.Windows.Forms.DataGridView();
-            this.lblancho = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.btnotify = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).BeginInit();
@@ -87,27 +85,6 @@
             this.dgvReporte.Size = new System.Drawing.Size(411, 232);
             this.dgvReporte.TabIndex = 0;
             // 
-            // lblancho
-            // 
-            this.lblancho.AutoSize = true;
-            this.lblancho.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblancho.Location = new System.Drawing.Point(59, 52);
-            this.lblancho.Name = "lblancho";
-            this.lblancho.Size = new System.Drawing.Size(48, 24);
-            this.lblancho.TabIndex = 1;
-            this.lblancho.Text = "size:";
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(0, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 31);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "btnR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // toolTip
             // 
             this.toolTip.AutoPopDelay = 10000;
@@ -139,23 +116,18 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(411, 232);
             this.Controls.Add(this.btnotify);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lblancho);
             this.Controls.Add(this.dgvReporte);
             this.Name = "Form_ReporteAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte";
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporte)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvReporte;
-        private System.Windows.Forms.Label lblancho;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Button btnotify;
     }

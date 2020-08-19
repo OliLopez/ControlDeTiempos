@@ -101,40 +101,10 @@ namespace ControlDeTiempos
                 return 0;
             }
         }
-        //PRUEBAS
  
         //metodo para identificar tipo de relacion
         int relacion()
         {
-            if (!(cmbEmpleado.SelectedIndex <= -1) && !(cmbEmpresa.SelectedIndex <= -1))
-            {
-                return 1;
-            }
-            if (!(cmbArea.SelectedIndex <= -1) && !(cmbEmpleado.SelectedIndex <= -1))
-            {
-                return 2;
-            }
-            if (!(cmbEmpresa.SelectedIndex <= -1) && !(cmbArea.SelectedIndex <= -1))
-            {
-                return 3;
-            }
-                //Relaciones generales
-                if (!(cmbArea.SelectedIndex <= -1))
-                {
-                    return 4;
-                }
-                if (!(cmbEmpresa.SelectedIndex <= -1))
-                {
-
-                    return 5;
-                }
-
-                if (!(cmbEmpleado.SelectedIndex <= -1))
-                {
-                    return 6;
-                }
-
-            //POSDASTIALES
             if (cmbEmpleado.Text=="Todos" && !(cmbArea.Text == "Todos")&& !(cmbEmpresa.Text == "Todos"))
             {
                 return 7;
@@ -147,16 +117,59 @@ namespace ControlDeTiempos
             {
                 return 9;
             }
-            //Especifico
-            if (!(cmbArea.Text=="")&& !(cmbEmpresa.Text=="") && !(cmbEmpleado.Text==""))
+                
+            if (cmbEmpleado.Text == "Todos" && (cmbArea.Text == "Todos") && (cmbEmpresa.Text == "Todos"))
             {
                 return 10;
             }
-            
+            if (cmbEmpleado.Text == "Todos" && !(cmbArea.Text == "Todos") && (cmbEmpresa.Text == "Todos"))
+            {
+                return 11;
+            }
+            if (cmbEmpleado.Text == "Todos" && (cmbArea.Text == "Todos") && !(cmbEmpresa.Text == "Todos"))
+            {
+                return 12;
+            }
+            if (!(cmbEmpleado.Text == "Todos") && (cmbArea.Text == "Todos") && (cmbEmpresa.Text == "Todos"))
+            {
+                return 13;
+            }
+            //Especifico
+            if (!(cmbArea.Text == "") && !(cmbEmpresa.Text == "") && !(cmbEmpleado.Text == ""))
+            {
+                return 14;
+            }
+            if ((!(cmbEmpleado.Text == "") && !(cmbEmpleado.Text == "Todos")) && (!(cmbEmpresa.Text == "") && !(cmbEmpresa.Text == "Todos")))
+            {
+                return 1;
+            }
+            if ( (!(cmbArea.Text=="") && !(cmbArea.Text=="Todos")) && (!(cmbEmpleado.Text=="")&& !(cmbEmpleado.Text=="Todos")) )
+            {
+                return 2;
+            }
+            if ((!(cmbEmpresa.Text=="") && !(cmbEmpresa.Text=="Todos")) && (!(cmbArea.Text=="")&& !(cmbArea.Text=="Todos")))
+            {
+                return 3;
+            }
+            if ( !(cmbArea.Text=="") && !(cmbArea.Text=="Todos") )
+            {
+                return 4;
+            }
+
+            if (!(cmbEmpresa.Text=="") && !(cmbEmpresa.Text=="Todos"))
+            {
+
+                return 5;
+            }
+
+            if (!(cmbEmpleado.Text=="") && !(cmbEmpleado.Text=="Todos"))
+            {
+                return 6;
+            }
             else
             {
-             //consulta año
-             return 0;
+                //consulta año
+                return 0;
             }
         }
         //FIN VALIDACIONES
@@ -217,9 +230,30 @@ namespace ControlDeTiempos
                                     variableRelacion = 9;
                                     break;
                                 }
+                                
                             case 10:
                                 {
                                     variableRelacion = 10;
+                                    break;
+                                }
+                            case 11:
+                                {
+                                    variableRelacion = 11;
+                                    break;
+                                }
+                            case 12:
+                                {
+                                    variableRelacion = 12;
+                                    break;
+                                }
+                            case 13:
+                                {
+                                    variableRelacion = 13;
+                                    break;
+                                }
+                            case 14:
+                                {
+                                    variableRelacion = 14;
                                     break;
                                 }
                             case 0:
