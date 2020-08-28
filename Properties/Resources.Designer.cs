@@ -61,10 +61,19 @@ namespace ControlDeTiempos.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap anadir {
+            get {
+                object obj = ResourceManager.GetObject("anadir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 2015
         ///2016
         ///2017
-        ///2018
         ///2018
         ///2019
         ///2020
@@ -81,7 +90,7 @@ namespace ControlDeTiempos.Properties {
         ///   Looks up a localized string similar to Auditoria
         ///Contabilidad
         ///Administracion
-        ///TrabajoEspecial
+        ///Trabajo especial
         ///Otros
         ///
         ///.
@@ -147,6 +156,16 @@ namespace ControlDeTiempos.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap documento {
+            get {
+                object obj = ResourceManager.GetObject("documento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ALIANZAS AFECTUOSAS, S.A de C.V
         ///ADMINISTRADORA DE OBRAS Y CONCESIONES, S.A de C.V
         ///ASCENCIO SOULES Y CIA, S.C
@@ -193,6 +212,16 @@ namespace ControlDeTiempos.Properties {
         internal static System.Drawing.Bitmap mas {
             get {
                 object obj = ResourceManager.GetObject("mas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap portafolio {
+            get {
+                object obj = ResourceManager.GetObject("portafolio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

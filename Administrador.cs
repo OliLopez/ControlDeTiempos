@@ -12,6 +12,7 @@ namespace ControlDeTiempos
 {
     public partial class Administrador : Form
     {
+        
         int variableRelacion=0;
         string sarea="/";
         string sempresa="/";
@@ -22,21 +23,35 @@ namespace ControlDeTiempos
         {
             InitializeComponent();
         }
-
-        //Metodos para el Llenado de los combos
         //Inicio Diseño 
-        private void btnReporte_MouseMove(object sender, MouseEventArgs e)
+        private void picBuscar_MouseMove(object sender, MouseEventArgs e)
         {
-            btnReporte.BackColor = Color.Goldenrod;
-            btnReporte.ForeColor = Color.Black;
+            picBuscar.BackColor = Color.Goldenrod;
         }
 
-        private void btnReporte_MouseLeave(object sender, EventArgs e)
+        private void picBuscar_MouseLeave(object sender, EventArgs e)
         {
-            btnReporte.BackColor = Color.DodgerBlue;
-            btnReporte.ForeColor = Color.White;
+            picBuscar.BackColor = Color.Transparent;
         }
 
+        private void picAB_MouseMove(object sender, MouseEventArgs e)
+        {
+            picAB.BackColor = Color.Goldenrod;
+        }
+
+        private void picAB_MouseLeave(object sender, EventArgs e)
+        {
+            picAB.BackColor = Color.Transparent;
+        }
+        private void picformModi_MouseMove(object sender, MouseEventArgs e)
+        {
+            picformModi.BackColor = Color.Goldenrod;
+        }
+
+        private void picformModi_MouseLeave(object sender, EventArgs e)
+        {
+            picformModi.BackColor = Color.Transparent;
+        }
         private void comboAdminEmpresa_MouseMove(object sender, MouseEventArgs e)
         {
             lblEmpresa.BackColor = Color.Goldenrod;
@@ -44,17 +59,14 @@ namespace ControlDeTiempos
             lblempleado.BackColor = Color.Transparent;
             lblArea.BackColor = Color.Transparent;
         }
-
         private void comboAdminEmpresa_MouseLeave(object sender, EventArgs e)
         {
             lblEmpresa.BackColor = Color.Transparent;
         }
-
         private void comboAdminAño_MouseLeave(object sender, EventArgs e)
         {
             lblaño.BackColor = Color.Transparent;
         }
-
         private void comboAdminAño_MouseMove(object sender, MouseEventArgs e)
         {
             lblaño.BackColor = Color.Goldenrod;
@@ -62,12 +74,10 @@ namespace ControlDeTiempos
             lblempleado.BackColor = Color.Transparent;
             lblArea.BackColor = Color.Transparent;
         }
-
         private void comboEmpleado_MouseLeave(object sender, EventArgs e)
         {
             lblempleado.BackColor = Color.Transparent;
         }
-
         private void comboEmpleado_MouseMove(object sender, MouseEventArgs e)
         {
             lblempleado.BackColor = Color.Goldenrod;
@@ -79,7 +89,6 @@ namespace ControlDeTiempos
         {
             lblArea.BackColor = Color.Transparent;
         }
-
         private void cmbArea_MouseMove(object sender, MouseEventArgs e)
         {
             lblArea.BackColor = Color.Goldenrod;
@@ -88,6 +97,14 @@ namespace ControlDeTiempos
         }
         //Fin Diseño
 
+        // ------------------inicio ALTABAJAS---------------------------------------------------
+        private void picAB_Click(object sender, EventArgs e)
+        {
+            new AltaBajaForm().ShowDialog();
+        }
+        // ------------------fin ALTABAJAS---------------------------------------------------
+
+        // ------------------inicio CONSULTAS---------------------------------------------------
         //INICIO DE VALIDACIONES DE LOS CAMPOS COMBOBOX
         int validacionAdmin()
         {
@@ -101,7 +118,6 @@ namespace ControlDeTiempos
                 return 0;
             }
         }
- 
         //metodo para identificar tipo de relacion
         int relacion()
         {
@@ -172,9 +188,8 @@ namespace ControlDeTiempos
                 return 0;
             }
         }
-        //FIN VALIDACIONES
-        //DESAROLLO DE BOTONES
-        private void btnReporte_Click(object sender, EventArgs e)
+
+        private void picBuscar_Click(object sender, EventArgs e)
         {
             switch (validacionAdmin())
             {
@@ -230,7 +245,7 @@ namespace ControlDeTiempos
                                     variableRelacion = 9;
                                     break;
                                 }
-                                
+
                             case 10:
                                 {
                                     variableRelacion = 10;
@@ -266,7 +281,7 @@ namespace ControlDeTiempos
                         sarea = cmbArea.Text;
                         sempresa = cmbEmpresa.Text;
                         iEjercicio = cmbAño.Text;
-                        using (Form_ReporteAdmin ventanaReporteGeneral = new Form_ReporteAdmin(variableRelacion,sarea,sempresa,iEjercicio,sempleado))
+                        using (Form_ReporteAdmin ventanaReporteGeneral = new Form_ReporteAdmin(variableRelacion, sarea, sempresa, iEjercicio, sempleado))
                             ventanaReporteGeneral.ShowDialog();
                         break;
                     }
@@ -276,13 +291,34 @@ namespace ControlDeTiempos
                         cmbAño.Focus();
                         break;
                     }
-            } 
+            }
         }
-        //FIN DESAROLLO DE BOTONES
+        // ------------------fin CONSULTAS---------------------------------------------------
+
+        // ------------------inicio MODIFICAR---------------------------------------------------
+        private void picformModi_Click(object sender, EventArgs e)
+        {
+            new Ventana_Modificar().ShowDialog();
+        }
+        // ------------------fin MODIFICAR---------------------------------------------------
+
         //CERRAR APLICACION
         private void Administrador_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Administrador_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'controlTiemposDataSet1.cmbEmpresa' table. You can move, or remove it, as needed.
+            this.cmbEmpresaTableAdapter.Fill(this.ctDataSetcmEmpre.cmbEmpresa);
+            // TODO: This line of code loads data into the 'controlTiemposDataSetempleado.empleado' table. You can move, or remove it, as needed.
+            this.empleadoTableAdapter.Fill(this.controlTiemposDataSetempleado.empleado);
+            // TODO: This line of code loads data into the 'controlTiemposDataSet.Ejercicio' table. You can move, or remove it, as needed.
+            this.ejercicioTableAdapter.Fill(this.controlTiemposDataSet.Ejercicio);
+            cmbAño.Text = "";
+            cmbEmpleado.Text = "";
+            cmbEmpresa.Text = "";
         }
     }
 }

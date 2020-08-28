@@ -42,7 +42,6 @@
             // 
             this.dgvReporte.AllowUserToAddRows = false;
             this.dgvReporte.AllowUserToDeleteRows = false;
-            this.dgvReporte.AllowUserToOrderColumns = true;
             this.dgvReporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvReporte.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvReporte.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
@@ -72,6 +71,7 @@
             this.dgvReporte.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvReporte.Location = new System.Drawing.Point(0, 0);
             this.dgvReporte.Name = "dgvReporte";
+            this.dgvReporte.ReadOnly = true;
             this.dgvReporte.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -82,7 +82,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvReporte.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvReporte.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReporte.Size = new System.Drawing.Size(411, 232);
+            this.dgvReporte.Size = new System.Drawing.Size(403, 232);
             this.dgvReporte.TabIndex = 0;
             // 
             // toolTip
@@ -114,7 +114,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(411, 232);
+            this.ClientSize = new System.Drawing.Size(403, 232);
             this.Controls.Add(this.btnotify);
             this.Controls.Add(this.dgvReporte);
             this.Name = "Form_ReporteAdmin";
