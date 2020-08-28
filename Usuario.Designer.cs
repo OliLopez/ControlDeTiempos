@@ -53,11 +53,22 @@
             this.lbBienvenido = new System.Windows.Forms.Label();
             this.errorProviderUsuario = new System.Windows.Forms.ErrorProvider(this.components);
             this.picError = new System.Windows.Forms.PictureBox();
+            this.controlTiemposDataSet = new ControlDeTiempos.ControlTiemposDataSet();
+            this.ejercicioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ejercicioTableAdapter = new ControlDeTiempos.ControlTiemposDataSetTableAdapters.EjercicioTableAdapter();
+            this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.empresaTableAdapter = new ControlDeTiempos.ControlTiemposDataSetTableAdapters.EmpresaTableAdapter();
+            this.conceptoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.conceptoTableAdapter = new ControlDeTiempos.ControlTiemposDataSetTableAdapters.ConceptoTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxNotaConcepto)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.controlTiemposDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ejercicioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conceptoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -224,6 +235,8 @@
             this.comboConcepto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboConcepto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboConcepto.BackColor = System.Drawing.Color.Silver;
+            this.comboConcepto.DataSource = this.conceptoBindingSource;
+            this.comboConcepto.DisplayMember = "Nombre_Concepto";
             this.comboConcepto.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboConcepto.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboConcepto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -239,6 +252,8 @@
             this.comboAño.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboAño.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboAño.BackColor = System.Drawing.Color.Silver;
+            this.comboAño.DataSource = this.ejercicioBindingSource;
+            this.comboAño.DisplayMember = "Nombre_Ejercicio";
             this.comboAño.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboAño.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboAño.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -254,6 +269,8 @@
             this.comboEmpresa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboEmpresa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboEmpresa.BackColor = System.Drawing.Color.Silver;
+            this.comboEmpresa.DataSource = this.empresaBindingSource;
+            this.comboEmpresa.DisplayMember = "Nombre_Empresa";
             this.comboEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboEmpresa.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboEmpresa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -342,6 +359,38 @@
             this.picError.TabStop = false;
             this.picError.Visible = false;
             // 
+            // controlTiemposDataSet
+            // 
+            this.controlTiemposDataSet.DataSetName = "ControlTiemposDataSet";
+            this.controlTiemposDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ejercicioBindingSource
+            // 
+            this.ejercicioBindingSource.DataMember = "Ejercicio";
+            this.ejercicioBindingSource.DataSource = this.controlTiemposDataSet;
+            // 
+            // ejercicioTableAdapter
+            // 
+            this.ejercicioTableAdapter.ClearBeforeFill = true;
+            // 
+            // empresaBindingSource
+            // 
+            this.empresaBindingSource.DataMember = "Empresa";
+            this.empresaBindingSource.DataSource = this.controlTiemposDataSet;
+            // 
+            // empresaTableAdapter
+            // 
+            this.empresaTableAdapter.ClearBeforeFill = true;
+            // 
+            // conceptoBindingSource
+            // 
+            this.conceptoBindingSource.DataMember = "Concepto";
+            this.conceptoBindingSource.DataSource = this.controlTiemposDataSet;
+            // 
+            // conceptoTableAdapter
+            // 
+            this.conceptoTableAdapter.ClearBeforeFill = true;
+            // 
             // Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,6 +419,10 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.controlTiemposDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ejercicioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conceptoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,5 +453,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtOtrasAreas;
+        private ControlTiemposDataSet controlTiemposDataSet;
+        private System.Windows.Forms.BindingSource ejercicioBindingSource;
+        private ControlTiemposDataSetTableAdapters.EjercicioTableAdapter ejercicioTableAdapter;
+        private System.Windows.Forms.BindingSource empresaBindingSource;
+        private ControlTiemposDataSetTableAdapters.EmpresaTableAdapter empresaTableAdapter;
+        private System.Windows.Forms.BindingSource conceptoBindingSource;
+        private ControlTiemposDataSetTableAdapters.ConceptoTableAdapter conceptoTableAdapter;
     }
 }

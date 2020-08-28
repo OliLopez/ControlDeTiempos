@@ -29,17 +29,11 @@ namespace ControlDeTiempos
             idFormInicio = id;
             lbBienvenido.Text = "Bienvenido, "+nombre;
             //el archivo txt se pasa a string
-            string slistado_empresas = Properties.Resources.empresa.ToString();
-            string slistado_año = Properties.Resources.año.ToString();
             string slistado_area = Properties.Resources.area.ToString();
-            string slistado_concepto = Properties.Resources.concepto.ToString();
             //arreglo empresa se inicializa dentro de este constructor leyendo los datos del archivo txt
             //metodo Split genera un nuevo arreglo en el cual el separador sea los caracteres:"\r\n"
             //en opciones del split, si se ve una linea vacia se elimine
-            array_empresa = slistado_empresas.Split(new[] {"\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            array_año = slistado_año.Split(new[] {"\r\n" }, StringSplitOptions.RemoveEmptyEntries);
             array_area = slistado_area.Split(new[] {"\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            array_concepto = slistado_concepto.Split(new[] {"\r\n"}, StringSplitOptions.RemoveEmptyEntries);
             //Desplegar las horas total que lleva del el usuario por dia
             float dia = formulario.diaTotal(idFormInicio, dateTimePicker1.Value.ToString("dd"));
             lbHoraDia.Text = dia.ToString();
@@ -50,41 +44,25 @@ namespace ControlDeTiempos
 
         private void Usuario_Load(object sender, EventArgs e)
         {
-            desplegarEmpresas();
-            desplegarAños();
+            // TODO: This line of code loads data into the 'controlTiemposDataSet.Concepto' table. You can move, or remove it, as needed.
+            this.conceptoTableAdapter.Fill(this.controlTiemposDataSet.Concepto);
+            // TODO: This line of code loads data into the 'controlTiemposDataSet.Empresa' table. You can move, or remove it, as needed.
+            this.empresaTableAdapter.Fill(this.controlTiemposDataSet.Empresa);
+            // TODO: This line of code loads data into the 'controlTiemposDataSet.Ejercicio' table. You can move, or remove it, as needed.
+            this.ejercicioTableAdapter.Fill(this.controlTiemposDataSet.Ejercicio);
             desplegarAreas();
-            desplegarConceptos();
+            comboEmpresa.Text = "";
+            comboAño.Text = "";
+            comboConcepto.Text = "";
+
         }
     
         //Metodos para el Llenado de los combos
-        void desplegarEmpresas()
-        {
-            for(int i=0;i<array_empresa.Length;i++)
-            {
-                comboEmpresa.Items.Add(array_empresa[i]);
-
-            }
-        }
-        void desplegarAños()
-        {
-            for (int i = 0; i < array_año.Length; i++)
-            {
-                comboAño.Items.Add(array_año[i]);
-
-            }
-        }
         void desplegarAreas()
         {
             for (int i = 0; i < array_area.Length; i++)
             {
                 comboArea.Items.Add(array_area[i]);
-            }
-        }
-        void desplegarConceptos()
-        {
-            for (int i= 0; i<array_concepto.Length; i++)
-            {
-                comboConcepto.Items.Add(array_concepto[i]);
             }
         }
         //DISEÑO
