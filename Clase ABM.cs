@@ -65,11 +65,29 @@ namespace ControlDeTiempos
             }
         }
         //Modificar
+        //todos
+        public void todos(DataGridView dgv,string ej)
+        {
+            try
+            {
+                string consulta = "select li.Nombre,Empresa,Area,Concepto, Comentario,Horas from Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where Ejercicio=@ej";
+                sqlcmd = new SqlCommand(consulta, sqlConexion);
+                sqlcmd.Parameters.AddWithValue("ej", ej);
+                da = new SqlDataAdapter(sqlcmd);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo realizar la consulta: \n" + ex.ToString());
+            }
+        }
         public void Modiempleado(DataGridView dgv, string name, string año)
         {
             try
             {
-                string consulta = "select Fecha,Empresa,Area,Concepto,Horas from Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre=@n and Ejercicio=@ej";
+                string consulta = "select Fecha,Empresa,Area,Concepto,Comentario,Horas from Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre=@n and Ejercicio=@ej";
                 sqlcmd = new SqlCommand(consulta, sqlConexion);
                 sqlcmd.Parameters.AddWithValue("n", name);
                 sqlcmd.Parameters.AddWithValue("ej", año);

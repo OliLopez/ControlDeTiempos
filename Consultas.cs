@@ -152,15 +152,18 @@ string consulta = "select distinct Area,substring((select ', '+convert(varchar(1
                 MessageBox.Show("No se pudo realizar la consulta: \n" + ex.ToString());
             }
         }
+        //CORREGIR
         //7
-        public void todos_empleado(DataGridView dgv,string ej)
+        public void todos_empleado(DataGridView dgv,string ej,string empre,string area)
         {
             try
             {
-                string consulta = "SELECT DISTINCT Ejercicio,SUBSTRING((SELECT ', '+ li.Nombre AS [text()]FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario WHERE Ejercicio=@ej GROUP BY li.Nombre FOR XML PATH ('')), 2,1000) [Empleados],sum(Horas) as HRS from Registro where Ejercicio=@ej group by Ejercicio";
+                string consulta = "select distinct Empresa,Area,SUBSTRING((select ', '+CONVERT(varchar(10), Ejercicio) AS [text()]FROM Registro where Ejercicio=@ej and Empresa=@e and Area=@a GROUP BY Ejercicio FOR XML PATH ('')), 2,1000) [Ejercicio],SUBSTRING((SELECT ', '+ li.Nombre AS [text()]FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where Ejercicio=@ej and Empresa=@e and Area=@a GROUP BY li.Nombre FOR XML PATH ('')), 2,1000) [Empleados],sum(Horas) as HRS from Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where Ejercicio=@ej and Empresa=@e and Area=@a group by Empresa, Area";
 
                 SqlCommand sqlcmd = new SqlCommand(consulta, sqlConexion);
                 sqlcmd.Parameters.AddWithValue("ej", ej);
+                sqlcmd.Parameters.AddWithValue("e", empre);
+                sqlcmd.Parameters.AddWithValue("a", area);
                 da = new SqlDataAdapter(sqlcmd);
                 dt = new DataTable();
                 da.Fill(dt);
@@ -172,14 +175,16 @@ string consulta = "select distinct Area,substring((select ', '+convert(varchar(1
             }
         }
         //8
-        public void todos_area(DataGridView dgv, string ej)
+        public void todos_area(DataGridView dgv, string ej,string empleado,string empresa)
         {
             try
             {
-                string consulta = "SELECT DISTINCT Ejercicio,SUBSTRING((SELECT ', '+r.Area  AS [text()]FROM Registro r WHERE Ejercicio=@ej GROUP BY Area FOR XML PATH ('')), 2,1000) [Areas],sum(Horas) as HRS from Registro where Ejercicio=@ej group by Ejercicio";
+                string consulta = "SELECT DISTINCT Empresa,li.Nombre,SUBSTRING((SELECT ', '+r.Area  AS [text()]FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre=@n and Ejercicio=@ej and Empresa=@e GROUP BY Area FOR XML PATH ('')), 2,1000) [Areas],SUBSTRING((SELECT ', '+CONVERT(varchar(10), Ejercicio) AS [text()]FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre=@n and Ejercicio=@ej and Empresa=@e GROUP BY Ejercicio FOR XML PATH ('')), 2,1000) [Ejercicio],SUM(Horas) as HRS FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre=@n and Ejercicio=@ej and Empresa=@e GROUP BY li.Nombre,Empresa";
 
                 SqlCommand sqlcmd = new SqlCommand(consulta, sqlConexion);
                 sqlcmd.Parameters.AddWithValue("ej", ej);
+                sqlcmd.Parameters.AddWithValue("n", empleado);
+                sqlcmd.Parameters.AddWithValue("e", empresa);
                 da = new SqlDataAdapter(sqlcmd);
                 dt = new DataTable();
                 da.Fill(dt);
@@ -191,14 +196,16 @@ string consulta = "select distinct Area,substring((select ', '+convert(varchar(1
             }
         }
         //9
-        public void todos_empresa(DataGridView dgv, string ej)
+        public void todos_empresa(DataGridView dgv, string ej, string nombre,string area)
         {
             try
             {
-                string consulta = "SELECT DISTINCT Ejercicio,SUBSTRING((SELECT ', '+r.Empresa  AS [text()]FROM Registro r WHERE Ejercicio=@ej GROUP BY Empresa FOR XML PATH ('')), 2,1000) [Empresas],sum(Horas) as HRS from Registro where Ejercicio=@ej group by Ejercicio";
+                string consulta = "SELECT DISTINCT li.Nombre,Area,SUBSTRING((SELECT ', '+CONVERT(varchar(10), Ejercicio) AS [text()]FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre=@n and Area=@a and Ejercicio=@ej GROUP BY Ejercicio FOR XML PATH ('')), 2,1000) [Ejercicio],SUBSTRING((SELECT ', '+r.Empresa  AS [text()] FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre=@n and Area=@a and Ejercicio=@ej GROUP BY Empresa FOR XML PATH ('')), 2,1000) [Empresas],SUM(Horas) as HRS FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre=@n and Area=@a and Ejercicio=@ej GROUP BY li.Nombre,Area";
 
                 SqlCommand sqlcmd = new SqlCommand(consulta, sqlConexion);
                 sqlcmd.Parameters.AddWithValue("ej", ej);
+                sqlcmd.Parameters.AddWithValue("n", nombre);
+                sqlcmd.Parameters.AddWithValue("a", area);
                 da = new SqlDataAdapter(sqlcmd);
                 dt = new DataTable();
                 da.Fill(dt);
@@ -251,14 +258,15 @@ string consulta = "select distinct Area,substring((select ', '+convert(varchar(1
             }
         }
         //11
-        public void empleados_empresas(DataGridView dgv, string ej)
+        public void empleados_empresas(DataGridView dgv, string ej,string area)
         {
             try
             {
-                string consulta = "SELECT DISTINCT Ejercicio,SUBSTRING((SELECT ', '+ li.Nombre AS [text()]FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario WHERE Ejercicio=@ej GROUP BY li.Nombre FOR XML PATH ('')), 2,1000) [Empleados],SUBSTRING((SELECT ', '+r.Empresa  AS [text()]FROM Registro r WHERE Ejercicio=@ej GROUP BY Empresa FOR XML PATH ('')), 2,1000) [Empresas],sum(Horas) as HRS from Registro where Ejercicio=@ej group by Ejercicio";
+                string consulta = "SELECT DISTINCT Area,SUBSTRING((SELECT ', '+CONVERT(varchar(10), Ejercicio) AS [text()]FROM Registro r where Area=@a and Ejercicio=@ej GROUP BY Ejercicio FOR XML PATH ('')), 2,1000) [Ejercicio],SUBSTRING((SELECT ', '+r.Empresa  AS [text()] FROM Registro r  where  Area=@a and Ejercicio=@ej GROUP BY Empresa FOR XML PATH ('')), 2,1000) [Empresas],SUBSTRING((SELECT ', '+ li.Nombre AS [text()]FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where Ejercicio=@ej and  Area=@a GROUP BY li.Nombre FOR XML PATH ('')), 2,1000) [Empleados],SUM(Horas) as HRS FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where Area=@a and Ejercicio=@ej GROUP BY Area";
 
                 SqlCommand sqlcmd = new SqlCommand(consulta, sqlConexion);
                 sqlcmd.Parameters.AddWithValue("ej", ej);
+                sqlcmd.Parameters.AddWithValue("a", area);
                 da = new SqlDataAdapter(sqlcmd);
                 dt = new DataTable();
                 da.Fill(dt);
@@ -270,14 +278,15 @@ string consulta = "select distinct Area,substring((select ', '+convert(varchar(1
             }
         }
         //12
-        public void empleados_areas(DataGridView dgv, string ej)
+        public void empleados_areas(DataGridView dgv, string ej, string emp)
         {
             try
             {
-                string consulta = "SELECT DISTINCT Ejercicio,SUBSTRING((SELECT ', '+ li.Nombre AS [text()]FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario WHERE Ejercicio=@ej GROUP BY li.Nombre FOR XML PATH ('')), 2,1000) [Empleados],SUBSTRING((SELECT ', '+r.Area  AS [text()]FROM Registro r WHERE Ejercicio=@ej GROUP BY Area FOR XML PATH ('')), 2,1000) [Areas],sum(Horas) as HRS from Registro where Ejercicio='2020'group by Ejercicio";
+                string consulta = "SELECT DISTINCT Empresa,SUBSTRING((SELECT ', '+CONVERT(varchar(10), Ejercicio) AS [text()]FROM Registro r where Empresa=@e and Ejercicio=@ej GROUP BY Ejercicio FOR XML PATH ('')), 2,1000) [Ejercicio],SUBSTRING((SELECT ', '+r.Area  AS [text()]FROM Registro r  where Empresa=@e and Ejercicio=@ej GROUP BY Area FOR XML PATH ('')), 2,1000) [Areas],SUBSTRING((SELECT ', '+ li.Nombre AS [text()]FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where Ejercicio=@ej and Empresa=@e GROUP BY li.Nombre FOR XML PATH ('')), 2,1000) [Empleados],SUM(Horas) as HRS FROM Registro r where  Empresa=@e and Ejercicio=@ej GROUP BY Empresa";
 
                 SqlCommand sqlcmd = new SqlCommand(consulta, sqlConexion);
                 sqlcmd.Parameters.AddWithValue("ej", ej);
+                sqlcmd.Parameters.AddWithValue("e", emp);
                 da = new SqlDataAdapter(sqlcmd);
                 dt = new DataTable();
                 da.Fill(dt);
@@ -289,14 +298,15 @@ string consulta = "select distinct Area,substring((select ', '+convert(varchar(1
             }
         }
         //13
-        public void empresas_areas(DataGridView dgv, string ej)
+        public void empresas_areas(DataGridView dgv, string ej, string name)
         {
             try
             {
-                string consulta = "SELECT DISTINCT Ejercicio,SUBSTRING((SELECT ', '+r.Area  AS [text()]FROM Registro r WHERE Ejercicio='2020'GROUP BY Area FOR XML PATH ('')), 2,1000) [Areas],SUBSTRING((SELECT ', '+r.Empresa  AS [text()]FROM Registro r WHERE Ejercicio=@ej GROUP BY Empresa FOR XML PATH ('')), 2,1000) [Empresas],sum(Horas) as HRS from Registro where Ejercicio=@ej group by Ejercicio";
+                string consulta = "SELECT DISTINCT li.Nombre,SUBSTRING((SELECT ', '+r.Area  AS [text()]FROM Registro r  inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre=@n and Ejercicio=@ej GROUP BY Area FOR XML PATH ('')), 2,1000) [Areas],SUBSTRING((SELECT ', '+CONVERT(varchar(10), Ejercicio) AS [text()]FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre=@n and Ejercicio=@ej GROUP BY Ejercicio FOR XML PATH ('')), 2,1000) [Ejercicio],SUBSTRING((SELECT ', '+r.Empresa  AS [text()] FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre=@n and Ejercicio=@ej GROUP BY Empresa FOR XML PATH ('')), 2,1000) [Empresas],SUM(Horas) as HRS FROM Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre=@n  and Ejercicio=@ej GROUP BY li.Nombre";
 
                 SqlCommand sqlcmd = new SqlCommand(consulta, sqlConexion);
                 sqlcmd.Parameters.AddWithValue("ej", ej);
+                sqlcmd.Parameters.AddWithValue("n", name);
                 da = new SqlDataAdapter(sqlcmd);
                 dt = new DataTable();
                 da.Fill(dt);

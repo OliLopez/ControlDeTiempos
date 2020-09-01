@@ -34,6 +34,10 @@ namespace ControlDeTiempos
             mempleado = cmbModificar.Text;
             mejercicio = cmbAñoModificar.Text;
             mostrar.Modiempleado(dgvModificar, mempleado, mejercicio);
+            if (cmbModificar.Text=="Todos")
+            {
+                mostrar.todos(dgvModificar,mejercicio);
+            }
         }
 
         private void Ventana_Modificar_Load(object sender, EventArgs e)

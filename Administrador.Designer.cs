@@ -44,6 +44,8 @@
             this.empleadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.controlTiemposDataSetempleado = new ControlDeTiempos.ControlTiemposDataSetempleado();
             this.cmbEmpresa = new System.Windows.Forms.ComboBox();
+            this.cmbEmpresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ctDataSetcmEmpre = new ControlDeTiempos.ControlTiemposDataSet1();
             this.picBuscar = new System.Windows.Forms.PictureBox();
             this.errorProviderAdmin = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -53,8 +55,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ejercicioTableAdapter = new ControlDeTiempos.ControlTiemposDataSetTableAdapters.EjercicioTableAdapter();
             this.empleadoTableAdapter = new ControlDeTiempos.ControlTiemposDataSetempleadoTableAdapters.empleadoTableAdapter();
-            this.ctDataSetcmEmpre = new ControlDeTiempos.ControlTiemposDataSet1();
-            this.cmbEmpresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmbEmpresaTableAdapter = new ControlDeTiempos.ControlTiemposDataSet1TableAdapters.cmbEmpresaTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ejercicioBindingSource)).BeginInit();
@@ -62,13 +62,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.controlTiemposDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.controlTiemposDataSetempleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbEmpresaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctDataSetcmEmpre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAdmin)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picformModi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ctDataSetcmEmpre)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbEmpresaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -220,6 +220,16 @@
             this.cmbEmpresa.MouseLeave += new System.EventHandler(this.comboAdminEmpresa_MouseLeave);
             this.cmbEmpresa.MouseMove += new System.Windows.Forms.MouseEventHandler(this.comboAdminEmpresa_MouseMove);
             // 
+            // cmbEmpresaBindingSource
+            // 
+            this.cmbEmpresaBindingSource.DataMember = "cmbEmpresa";
+            this.cmbEmpresaBindingSource.DataSource = this.ctDataSetcmEmpre;
+            // 
+            // ctDataSetcmEmpre
+            // 
+            this.ctDataSetcmEmpre.DataSetName = "ControlTiemposDataSet1";
+            this.ctDataSetcmEmpre.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // picBuscar
             // 
             this.picBuscar.BackColor = System.Drawing.SystemColors.HighlightText;
@@ -306,16 +316,6 @@
             // 
             this.empleadoTableAdapter.ClearBeforeFill = true;
             // 
-            // ctDataSetcmEmpre
-            // 
-            this.ctDataSetcmEmpre.DataSetName = "ControlTiemposDataSet1";
-            this.ctDataSetcmEmpre.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cmbEmpresaBindingSource
-            // 
-            this.cmbEmpresaBindingSource.DataMember = "cmbEmpresa";
-            this.cmbEmpresaBindingSource.DataSource = this.ctDataSetcmEmpre;
-            // 
             // cmbEmpresaTableAdapter
             // 
             this.cmbEmpresaTableAdapter.ClearBeforeFill = true;
@@ -347,13 +347,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.controlTiemposDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empleadoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.controlTiemposDataSetempleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbEmpresaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctDataSetcmEmpre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAdmin)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picAB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picformModi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ctDataSetcmEmpre)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbEmpresaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

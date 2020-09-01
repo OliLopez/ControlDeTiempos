@@ -44,7 +44,7 @@ namespace ControlDeTiempos
                 //en caso de que un dato este mal escrito o no coincida en la tabla:
                 salida = "Error en la inserccion de datos: " + ex.ToString();
             }
-            MessageBoxTemporal.Show(salida, " ", 3, true);
+            MessageBoxTemporal.Show(salida, " ", 2, true);
             return salida;
         }
 

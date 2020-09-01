@@ -55,7 +55,7 @@ namespace ControlDeTiempos
                 if (ResultReport == 4)
                 {
                     reporte.area(dgvReporte, Rarea, Ra);
-                    this.toolTip.SetToolTip(btnotify, "Cuantas horas tiene un area en un año");
+                    this.toolTip.SetToolTip(btnotify, "Cuantas horas tiene una area en un año");
                     this.Size = new Size(290, 160);
                 }
                 if (ResultReport == 5)
@@ -68,28 +68,28 @@ namespace ControlDeTiempos
                 {
                     reporte.empleado(dgvReporte, Rempl, Ra);
                     this.toolTip.SetToolTip(btnotify, "Total horas por todos los servicios del empleado seleccionado");
-                    this.Size = new Size(730, 200);
+                    this.Size = new Size(800, 200);
                 }
 
                 if (ResultReport == 7)
                 {
-                    reporte.todos_empleado(dgvReporte,Ra);
-                    this.toolTip.SetToolTip(btnotify, "Total horas de todos los empleados");
-                    this.Size = new Size(370, 270);
+                    reporte.todos_empleado(dgvReporte,Ra,Rempr,Rarea);
+                    this.toolTip.SetToolTip(btnotify, "Total horas de todos los Empleados de una empresa y area determinada");
+                    this.Size = new Size(590, 200);
                     
                 }
                 if (ResultReport == 8)
                 {
-                    reporte.todos_area(dgvReporte,Ra);
-                    this.toolTip.SetToolTip(btnotify, "Total horas de todas las Areas");
-                    this.Size = new Size(370, 270);
+                    reporte.todos_area(dgvReporte,Ra,Rempl,Rempr);
+                    this.toolTip.SetToolTip(btnotify, "Total horas de todas las Areas de una empresa y empleado determinado");
+                    this.Size = new Size(580, 200);
                    
                 }
                 if (ResultReport == 9)
                 {
-                    reporte.todos_empresa(dgvReporte,Ra);
-                    this.toolTip.SetToolTip(btnotify, "Total horas de todas las empresas");
-                    this.Size = new Size(575, 270);
+                    reporte.todos_empresa(dgvReporte,Ra,Rempl,Rarea);
+                    this.toolTip.SetToolTip(btnotify, "Total horas de todas las empresas de una area y empleado seleccionado");
+                    this.Size = new Size(745, 270);
                 }
                 
                 //Ultimos 4
@@ -97,38 +97,38 @@ namespace ControlDeTiempos
                 {
                     reporte.ejercicio(dgvReporte,Ra);
                     this.toolTip.SetToolTip(btnotify, "Total horas de todos los empleados, de todas las areas y empresas");
-                    this.Size = new Size(830, 270);
+                    this.Size = new Size(860, 270);
                 }
                 if (ResultReport == 11)
                 {
-                    reporte.empleados_empresas(dgvReporte,Ra);
-                    this.toolTip.SetToolTip(btnotify, "Total horas de todos los empleados y empresas del ejercicio seleccionado");
-                    this.Size = new Size(685, 270);
+                    reporte.empleados_empresas(dgvReporte,Ra,Rarea);
+                    this.toolTip.SetToolTip(btnotify, "Total horas de todas las empresas y empleados de una area determinada");
+                    this.Size = new Size(770, 270);
                 }
                 if (ResultReport == 12)
                 {
-                    reporte.empleados_areas(dgvReporte,Ra);
-                    this.toolTip.SetToolTip(btnotify, "Total horas de todos los empleados y areas del ejercicio seleccionado");
-                    this.Size = new Size(525, 270);
+                    reporte.empleados_areas(dgvReporte,Ra,Rempr);
+                    this.toolTip.SetToolTip(btnotify, "Total horas de todas las areas y empleados de una empresa determinada");
+                    this.Size = new Size(600, 180);
                 }
                 if (ResultReport == 13)
                 {
-                    reporte.empresas_areas(dgvReporte,Ra);
-                    this.toolTip.SetToolTip(btnotify, "Total horas de todas las empresas y areas del ejercicio seleccionado");
-                    this.Size = new Size(725, 270);
+                    reporte.empresas_areas(dgvReporte,Ra,Rempl);
+                    this.toolTip.SetToolTip(btnotify, "Total horas de todas las areas y empresas de un empleado determinado");
+                    this.Size = new Size(750, 220);
                 }
 
                 if (ResultReport == 14)
                 {
                     reporte.con_especifico(dgvReporte,Rempl,Rarea,Ra,Rempr);
-                    this.Size = new Size(565, 270);
+                    this.Size = new Size(565, 195);
                     this.toolTip.SetToolTip(btnotify, "Total horas de un empleado en un area especifica y empresa seleccionada");
                 }
                 if (ResultReport == 0)
                 {
                     reporte.ejercicio(dgvReporte,Ra);
                     this.toolTip.SetToolTip(btnotify, "Total de horas del año contable seleccionado");
-                    this.Size = new Size(830, 270);
+                    this.Size = new Size(860, 270);
                     
                 }
             }
