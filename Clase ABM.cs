@@ -30,7 +30,7 @@ namespace ControlDeTiempos
                 Console.WriteLine("No se conecto a la Base de datos...");
             }
         }
-
+        //Mostrar
         public void empleados(DataGridView dgv)
         {
             try
@@ -210,6 +210,72 @@ namespace ControlDeTiempos
             try
             {
                 sqlcmd = new SqlCommand("Insert into cmbEmpresa(Nombre_Empresa) values('" + cmbempre + "')", sqlConexion);
+                sqlcmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //en caso de que un dato este mal escrito o no coincida en la tabla:
+                salida = "Error en la inserccion de datos: " + ex.ToString();
+            }
+        }
+        //Bajas
+        public string empresaBaja(string empresa)
+        {
+            string salida = "Empresa eliminada";
+
+            try
+            {
+                sqlcmd = new SqlCommand("delete from Empresa where Nombre_Empresa='" + empresa + "'", sqlConexion);
+                sqlcmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //en caso de que un dato este mal escrito o no coincida en la tabla:
+                salida = "Error en la inserccion de datos: " + ex.ToString();
+            }
+            MessageBoxTemporal.Show(salida, " ", 2, true);
+            return salida;
+        }
+        public string empleadoBaja(string empleado)
+        {
+            string salida = "Empleado eliminado";
+
+            try
+            {
+                sqlcmd = new SqlCommand("delete from LogIn where Nombre='"+empleado+"'", sqlConexion);
+                sqlcmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //en caso de que un dato este mal escrito o no coincida en la tabla:
+                salida = "Error en la inserccion de datos: " + ex.ToString();
+            }
+            MessageBoxTemporal.Show(salida, " ", 2, true);
+            return salida;
+        }
+        //BajasCombos
+        public void cmbempl_Baja(string empleado)
+        {
+            string salida = "";
+
+            try
+            {
+                sqlcmd = new SqlCommand("delete from empleado where Nombre='" + empleado + "'", sqlConexion);
+                sqlcmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //en caso de que un dato este mal escrito o no coincida en la tabla:
+                salida = "Error en la inserccion de datos: " + ex.ToString();
+            }
+        }
+        public void cmbempr_Baja(string empr)
+        {
+            string salida = "";
+
+            try
+            {
+                sqlcmd = new SqlCommand("delete from cmbEmpresa where Nombre_Empresa='" + empr + "'", sqlConexion);
                 sqlcmd.ExecuteNonQuery();
             }
             catch (Exception ex)

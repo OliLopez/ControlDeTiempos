@@ -49,6 +49,7 @@
             this.picBuscar = new System.Windows.Forms.PictureBox();
             this.errorProviderAdmin = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.picAB = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.picformModi = new System.Windows.Forms.PictureBox();
@@ -83,7 +84,7 @@
             this.panel1.Controls.Add(this.lblEmpresa);
             this.panel1.Controls.Add(this.cmbEmpleado);
             this.panel1.Controls.Add(this.cmbEmpresa);
-            this.panel1.Location = new System.Drawing.Point(23, 34);
+            this.panel1.Location = new System.Drawing.Point(17, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(411, 150);
             this.panel1.TabIndex = 1;
@@ -234,7 +235,7 @@
             // 
             this.picBuscar.BackColor = System.Drawing.SystemColors.HighlightText;
             this.picBuscar.Image = global::ControlDeTiempos.Properties.Resources.buscar;
-            this.picBuscar.Location = new System.Drawing.Point(440, 81);
+            this.picBuscar.Location = new System.Drawing.Point(434, 104);
             this.picBuscar.Name = "picBuscar";
             this.picBuscar.Size = new System.Drawing.Size(55, 51);
             this.picBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -251,21 +252,31 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.picBuscar);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 4);
+            this.groupBox1.Location = new System.Drawing.Point(0, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(511, 214);
+            this.groupBox1.Size = new System.Drawing.Size(511, 199);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "CONSULTAR HRS";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(432, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 30);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "CALCULAR \r\nHRS";
             // 
             // picAB
             // 
             this.picAB.Image = global::ControlDeTiempos.Properties.Resources.anadir;
-            this.picAB.Location = new System.Drawing.Point(117, 282);
+            this.picAB.Location = new System.Drawing.Point(144, 256);
             this.picAB.Name = "picAB";
             this.picAB.Size = new System.Drawing.Size(55, 51);
             this.picAB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -279,7 +290,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 284);
+            this.label1.Location = new System.Drawing.Point(48, 258);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 15);
             this.label1.TabIndex = 0;
@@ -288,7 +299,7 @@
             // picformModi
             // 
             this.picformModi.Image = global::ControlDeTiempos.Properties.Resources.portafolio;
-            this.picformModi.Location = new System.Drawing.Point(353, 284);
+            this.picformModi.Location = new System.Drawing.Point(380, 258);
             this.picformModi.Name = "picformModi";
             this.picformModi.Size = new System.Drawing.Size(55, 51);
             this.picformModi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -302,11 +313,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(275, 287);
+            this.label2.Location = new System.Drawing.Point(285, 258);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 15);
+            this.label2.Size = new System.Drawing.Size(89, 30);
             this.label2.TabIndex = 13;
-            this.label2.Text = "MODIFICAR";
+            this.label2.Text = "MODIFICAR \r\nY CONSULTAR";
             // 
             // ejercicioTableAdapter
             // 
@@ -326,7 +337,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(508, 361);
+            this.ClientSize = new System.Drawing.Size(508, 350);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.picformModi);
             this.Controls.Add(this.label1);
@@ -352,6 +363,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAdmin)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picformModi)).EndInit();
             this.ResumeLayout(false);
@@ -387,5 +399,6 @@
         private ControlTiemposDataSet1 ctDataSetcmEmpre;
         private System.Windows.Forms.BindingSource cmbEmpresaBindingSource;
         private ControlTiemposDataSet1TableAdapters.cmbEmpresaTableAdapter cmbEmpresaTableAdapter;
+        private System.Windows.Forms.Label label3;
     }
 }

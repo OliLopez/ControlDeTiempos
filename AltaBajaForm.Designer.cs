@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaBajaForm));
             this.groupb1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.picAltas = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtAño = new System.Windows.Forms.TextBox();
@@ -54,7 +55,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbEliminar = new System.Windows.Forms.ComboBox();
             this.errorProviderA = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblLeyendaBaja = new System.Windows.Forms.Label();
             this.groupb1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAltas)).BeginInit();
             this.panel1.SuspendLayout();
@@ -79,6 +80,15 @@
             this.groupb1.TabIndex = 0;
             this.groupb1.TabStop = false;
             this.groupb1.Text = "Registrar usuario:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 192);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Agregar:";
             // 
             // picAltas
             // 
@@ -276,6 +286,7 @@
             this.dgvResult.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvResult.Size = new System.Drawing.Size(399, 286);
             this.dgvResult.TabIndex = 0;
+            this.dgvResult.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvResult_CellClick);
             // 
             // picBajas
             // 
@@ -286,6 +297,7 @@
             this.picBajas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBajas.TabIndex = 4;
             this.picBajas.TabStop = false;
+            this.picBajas.Click += new System.EventHandler(this.picBajas_Click);
             this.picBajas.MouseLeave += new System.EventHandler(this.picBajas_MouseLeave);
             this.picBajas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picBajas_MouseMove);
             // 
@@ -299,7 +311,7 @@
             this.groupBox1.Size = new System.Drawing.Size(218, 62);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Visualizar";
+            this.groupBox1.Text = "Eliminar: ";
             // 
             // cmbEliminar
             // 
@@ -317,20 +329,21 @@
             // 
             this.errorProviderA.ContainerControl = this;
             // 
-            // label2
+            // lblLeyendaBaja
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 192);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Agregar:";
+            this.lblLeyendaBaja.AutoSize = true;
+            this.lblLeyendaBaja.Location = new System.Drawing.Point(773, 18);
+            this.lblLeyendaBaja.Name = "lblLeyendaBaja";
+            this.lblLeyendaBaja.Size = new System.Drawing.Size(119, 39);
+            this.lblLeyendaBaja.TabIndex = 6;
+            this.lblLeyendaBaja.Text = "No se ha seleecionado \r\nningun elemento\r\n para eliminar";
             // 
             // AltaBajaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 431);
+            this.Controls.Add(this.lblLeyendaBaja);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.picBajas);
             this.Controls.Add(this.groupBox2);
@@ -340,6 +353,7 @@
             this.Name = "AltaBajaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Altas y Bajas";
+            this.Load += new System.EventHandler(this.AltaBajaForm_Load);
             this.groupb1.ResumeLayout(false);
             this.groupb1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAltas)).EndInit();
@@ -353,6 +367,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderA)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -381,5 +396,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProviderA;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblLeyendaBaja;
     }
 }

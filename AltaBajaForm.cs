@@ -14,7 +14,9 @@ namespace ControlDeTiempos
     {
         Clase_ABM mostrar = new Clase_ABM();
         string rol = "Usuario";
-
+        string mensaje;
+        Boolean encendidoempresa;
+        Boolean encendidoempleado;
         public AltaBajaForm()
         {
             InitializeComponent();
@@ -37,13 +39,17 @@ namespace ControlDeTiempos
         }
         private void cmbEliminar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbEliminar.SelectedIndex==0)//empleados
+            if (cmbEliminar.SelectedIndex==0)//empleados
             {
+                encendidoempleado = true;
+                encendidoempresa = false;
                 //desplegar empleados dgvResult
                 mostrar.empleados(dgvResult);
             }
             if (cmbEliminar.SelectedIndex==1)//empresas
             {
+                encendidoempleado = false;
+                encendidoempresa = true;
                 mostrar.empresas(dgvResult);
             }
         }
@@ -89,6 +95,40 @@ namespace ControlDeTiempos
             {
                 mostrar.login(dgvResult);
             }
+        }
+
+        private void dgvResult_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            mensaje = dgvResult.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+            lblLeyendaBaja.Text="";
+        }
+        private void picBajas_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult dialogResult = MessageBox.Show("¿Está seguro de eliminar "+mensaje+" del registro?", "Confirmacion", buttons);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                if(encendidoempleado==true)
+                {
+                    mostrar.empleadoBaja(mensaje);
+                    mostrar.cmbempl_Baja(mensaje);
+                    //desplegar empleados dgvResult
+                    mostrar.empleados(dgvResult);
+                }
+                if (encendidoempresa == true)
+                {
+                    mostrar.empresaBaja(mensaje);
+                    mostrar.cmbempr_Baja(mensaje);
+                    mostrar.empresas(dgvResult);
+                }
+            }
+
+        }
+
+        private void AltaBajaForm_Load(object sender, EventArgs e)
+        {
+            lblLeyendaBaja.Text = "No se ha seleecionado \n ningun elemento";
         }
     }
 }
