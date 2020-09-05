@@ -102,6 +102,16 @@ namespace ControlDeTiempos.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap avance {
+            get {
+                object obj = ResourceManager.GetObject("avance", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon bloquear {
@@ -222,6 +232,16 @@ namespace ControlDeTiempos.Properties {
         internal static System.Drawing.Bitmap portafolio {
             get {
                 object obj = ResourceManager.GetObject("portafolio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap salvar {
+            get {
+                object obj = ResourceManager.GetObject("salvar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

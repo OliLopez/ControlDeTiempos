@@ -71,7 +71,7 @@ namespace ControlDeTiempos
             }
             if (!(txtAño.Text == "") && txtAño.Text.All(Char.IsNumber))
             {
-                mostrar.nuevoAño(txtAño.Text);
+                mostrar.nuevoAño(Convert.ToInt32( txtAño.Text));
                 txtAño.Text = "";
                 errorProviderA.SetError(txtAño, "");
             }

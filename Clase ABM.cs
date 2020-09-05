@@ -15,7 +15,12 @@ namespace ControlDeTiempos
         SqlDataAdapter da;
         DataTable dt;
         SqlCommand sqlcmd;
-        SqlDataReader dr;
+        string consultaModiEMpleado;
+        //Modificar
+        SqlDataAdapter msda;
+        SqlCommandBuilder mscb;
+        DataTable mdt;
+        DataSet ds;
         public Clase_ABM()
         {
             try
@@ -70,7 +75,7 @@ namespace ControlDeTiempos
         {
             try
             {
-                string consulta = "select li.Nombre,Empresa,Area,Concepto, Comentario,Horas from Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where Ejercicio=@ej";
+                string consulta = "select Fecha,li.Nombre,Empresa,Area,Concepto, Comentario,Horas from Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where Ejercicio=@ej";
                 sqlcmd = new SqlCommand(consulta, sqlConexion);
                 sqlcmd.Parameters.AddWithValue("ej", ej);
                 da = new SqlDataAdapter(sqlcmd);
@@ -87,21 +92,91 @@ namespace ControlDeTiempos
         {
             try
             {
-                string consulta = "select Fecha,Empresa,Area,Concepto,Comentario,Horas from Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre=@n and Ejercicio=@ej";
-                sqlcmd = new SqlCommand(consulta, sqlConexion);
-                sqlcmd.Parameters.AddWithValue("n", name);
-                sqlcmd.Parameters.AddWithValue("ej", año);
-                da = new SqlDataAdapter(sqlcmd);
-                dt = new DataTable();
-                da.Fill(dt);
-                dgv.DataSource = dt;
+                consultaModiEMpleado = "select Id_Registro as #,Fecha,Empresa,Area,Concepto,Comentario,Horas from Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre='" + name + "' and Ejercicio='" + año + "'";
+                msda = new SqlDataAdapter(consultaModiEMpleado,sqlConexion);
+                mdt = new DataTable();
+                msda.Fill(mdt);
+                dgv.DataSource = mdt;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo realizar la consulta: \n" + ex.ToString());
             }
         }
+        //actualizar
+        public void acFecha(string fecha, int id)
+        {
+            try
+            {
+                sqlcmd = new SqlCommand(" UPDATE Registro SET Fecha ='" + fecha + "' WHERE Id_Registro='" + id + "'", sqlConexion);
+                sqlcmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo realizar actualizacion: \n" + ex.ToString());
+            }
+        }
+        public void acEmpresa(string empresa, int id)
+        {
+            try
+            {
+                sqlcmd = new SqlCommand(" UPDATE Registro SET Empresa ='" + empresa + "' WHERE Id_Registro='" + id + "'", sqlConexion);
+                sqlcmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo realizar actualizacion: \n" + ex.ToString());
+            }
+        }
+        public void acArea(string area, int id)
+        {
+            try
+            {
+                sqlcmd = new SqlCommand(" UPDATE Registro SET Area ='" + area + "' WHERE Id_Registro='" + id + "'", sqlConexion);
+                sqlcmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo realizar actualizacion: \n" + ex.ToString());
+            }
+        }
+        public void acConcepto(string concep, int id)
+        {
+            try
+            {
+                sqlcmd = new SqlCommand(" UPDATE Registro SET Concepto ='" + concep + "' WHERE Id_Registro='" + id + "'", sqlConexion);
+                sqlcmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo realizar actualizacion: \n" + ex.ToString());
+            }
+        }
+        public void acComentario(string coment, int id)
+        {
+            try
+            {
+                sqlcmd = new SqlCommand(" UPDATE Registro SET Comentario ='" + coment + "' WHERE Id_Registro='" + id + "'", sqlConexion);
+                sqlcmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo realizar actualizacion: \n" + ex.ToString());
+            }
+        }
 
+        public void acHoras(float horas, int id)
+        {
+            try
+            {
+                sqlcmd = new SqlCommand(" UPDATE Registro SET Horas ='" + horas + "' WHERE Id_Registro='" + id + "'", sqlConexion);
+                sqlcmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo realizar actualizacion: \n" + ex.ToString());
+            }
+        }
         public void login(DataGridView dgv)
         {
             try
@@ -118,6 +193,25 @@ namespace ControlDeTiempos
                 MessageBox.Show("No se pudo realizar la consulta: \n" + ex.ToString());
             }
         }
+        //Modificar-Altas
+        public string registroBaja(int id)
+        {
+            string salida = "Registro eliminado";
+
+            try
+            {
+                sqlcmd = new SqlCommand("delete from Registro where Id_Registro='" + id + "'", sqlConexion);
+                sqlcmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //en caso de que un dato este mal escrito o no coincida en la tabla:
+                salida = "Error en la inserccion de datos: " + ex.ToString();
+            }
+            MessageBoxTemporal.Show(salida, " ", 2, true);
+            return salida;
+        }
+
         //Altas
         public string nuevoUsuario(string name, string alias, string pass, string tipoUsuario)
         {
@@ -152,13 +246,13 @@ namespace ControlDeTiempos
             }
         }
         //ALTAS EJERCICIO, EMPRESA, CONCEPTO
-        public string nuevoAño(string ej)
+        public void nuevoAño(int ej)
         {
             string salida = "Año registrado";
 
             try
             {
-                sqlcmd = new SqlCommand("Insert into Ejercicio(Nombre_Ejercicio) values('" +ej + "')", sqlConexion);
+                sqlcmd = new SqlCommand("Insert into Ejercicio(Nombre_Ejercicio) values(" +ej + ")", sqlConexion);
                 sqlcmd.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -167,7 +261,6 @@ namespace ControlDeTiempos
                 salida = "Error en la inserccion de datos: " + ex.ToString();
             }
             MessageBoxTemporal.Show(salida, " ", 2, true);
-            return salida;
         }
         public string nuevoConcepto(string c)
         {
