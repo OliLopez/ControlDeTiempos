@@ -30,25 +30,6 @@ namespace ControlDeTiempos
         public Ventana_Modificar()
         {
             InitializeComponent();
-            toolTip1.SetToolTip(picEliminar, "doble click al numero de la columna '#' para eliminar");
-        }
-        private void picVer_MouseLeave(object sender, EventArgs e)
-        {
-            picVer.BackColor = Color.Transparent;
-        }
-
-        private void picVer_MouseMove(object sender, MouseEventArgs e)
-        {
-            picVer.BackColor = Color.Goldenrod;
-        }
-        private void picGuardar_MouseLeave(object sender, EventArgs e)
-        {
-            picGuardar.BackColor = Color.Transparent;
-        }
-
-        private void picGuardar_MouseMove(object sender, MouseEventArgs e)
-        {
-            picGuardar.BackColor = Color.Goldenrod;
         }
 
         private void picEliminar_MouseLeave(object sender, EventArgs e)
@@ -61,18 +42,45 @@ namespace ControlDeTiempos
             picEliminar.BackColor = Color.Goldenrod;
         }
 
-        private void picVer_Click_1(object sender, EventArgs e)
+        private void cmbModificar_SelectedIndexChanged(object sender, EventArgs e)
         {
-             dgvModificar.ReadOnly = false;
-             mempleado = cmbModificar.Text;
-             mejercicio = cmbAñoModificar.Text;
-             mostrar.Modiempleado(dgvModificar, mempleado, mejercicio);
-             if (cmbModificar.Text == "Todos")
-             {
-                 mostrar.todos(dgvModificar, mejercicio);
-                dgvModificar.ReadOnly = true;
-             }
+            if (cmbAñoModificar.SelectedIndex<=-1)
+            {
+                errorProvider1.SetError(cmbAñoModificar, "Seleccione un año");
+                cmbAñoModificar.Focus();
+            }
+            else
+            {
+                errorProvider1.SetError(cmbAñoModificar, "");
+                dgvModificar.ReadOnly = false;
+                mempleado = cmbModificar.Text;
+                mejercicio = cmbAñoModificar.Text;
+                mostrar.Modiempleado(dgvModificar, mempleado, mejercicio);
+                DataGridViewColumn column = dgvModificar.Columns[0];
+                column.Visible = false;
+                if (cmbModificar.Text == "Todos")
+                {
+                    mostrar.todos(dgvModificar, mejercicio);
+                    dgvModificar.ReadOnly = true;
+                }
+            }
         }
+        private void cmbAñoModificar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(cmbAñoModificar, "");
+            dgvModificar.ReadOnly = false;
+            mempleado = cmbModificar.Text;
+            mejercicio = cmbAñoModificar.Text;
+            mostrar.Modiempleado(dgvModificar, mempleado, mejercicio);
+            DataGridViewColumn column = dgvModificar.Columns[0];
+            column.Visible = false;
+            if (cmbModificar.Text == "Todos")
+            {
+                mostrar.todos(dgvModificar, mejercicio);
+                dgvModificar.ReadOnly = true;
+            }
+        }
+
         //OBTENER EL VALOR CAMBIADO Y REALIZAR UNA ACCION AL RESPECTO UNA VEZ CAMBIADO
         private void dgvModificar_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -110,19 +118,17 @@ namespace ControlDeTiempos
                 mostrar.acHoras(float.Parse(columnSelect), Convert.ToInt32(id));
             }
         }
-
+        private void dgvModificar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //MessageBox.Show("id:" + dgvModificar.Rows[e.RowIndex].Cells[0].Value.ToString());
+            id = dgvModificar.Rows[e.RowIndex].Cells[0].Value.ToString();
+            registro_Eliminar = dgvModificar.Rows[e.RowIndex].Cells[1].Value.ToString() + ", " + dgvModificar.Rows[e.RowIndex].Cells[2].Value.ToString() + ", " + dgvModificar.Rows[e.RowIndex].Cells[3].Value.ToString() + ", " + dgvModificar.Rows[e.RowIndex].Cells[4].Value.ToString() + ", " + dgvModificar.Rows[e.RowIndex].Cells[5].Value.ToString() + ", Hora: " + dgvModificar.Rows[e.RowIndex].Cells[6].Value.ToString();
+        }
         private void Ventana_Modificar_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'controlTiemposDataSetempleado.empleado' table. You can move, or remove it, as needed.
             this.empleadoTableAdapter.Fill(this.controlTiemposDataSetempleado.empleado);
             cmbModificar.Text = "";
-        }
-
-        private void dgvModificar_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            id = dgvModificar.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-            lblNum.Text = id;
-            registro_Eliminar = dgvModificar.Rows[e.RowIndex].Cells[1].Value.ToString() + ", " + dgvModificar.Rows[e.RowIndex].Cells[2].Value.ToString() + ", " + dgvModificar.Rows[e.RowIndex].Cells[3].Value.ToString() + ", " + dgvModificar.Rows[e.RowIndex].Cells[4].Value.ToString() + ", " + dgvModificar.Rows[e.RowIndex].Cells[5].Value.ToString() + ", Hora: " + dgvModificar.Rows[e.RowIndex].Cells[6].Value.ToString();
         }
         private void picEliminar_Click(object sender, EventArgs e)
         {
@@ -134,8 +140,8 @@ namespace ControlDeTiempos
                 //eliminar
                 mostrar.registroBaja(Convert.ToInt32(id));
                 mostrar.Modiempleado(dgvModificar, mempleado, mejercicio);
-                lblNum.Text = "#";
             }
         }
+
     }
 }

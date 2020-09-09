@@ -27,7 +27,7 @@ namespace ControlDeTiempos
         }
         private void picAltas_MouseLeave(object sender, EventArgs e)
         {
-            picAltas.BackColor = Color.Transparent;
+            picAltas.BackColor = Color.White;
         }
         private void picBajas_MouseMove(object sender, MouseEventArgs e)
         {
@@ -35,7 +35,7 @@ namespace ControlDeTiempos
         }
         private void picBajas_MouseLeave(object sender, EventArgs e)
         {
-            picBajas.BackColor = Color.Transparent;
+            picBajas.BackColor = Color.White;
         }
         private void cmbEliminar_SelectedIndexChanged(object sender, EventArgs e)
         {

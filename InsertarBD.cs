@@ -19,7 +19,8 @@ namespace ControlDeTiempos
         {
             try
             {
-                sqlConexion = new SqlConnection("Data Source=DESKTOP-RH8U25N\\SQLEXPRESS;Initial Catalog=ControlTiempos;Integrated Security=True");
+                sqlConexion = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=ControlTiempos;Integrated Security=True");
+                //DESKTOP - RH8U25N
                 sqlConexion.Open();
                 Console.WriteLine("Base de datos conectada");
             }

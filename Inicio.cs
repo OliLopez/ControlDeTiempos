@@ -18,8 +18,8 @@ namespace ControlDeTiempos
             InitializeComponent();
         }
         //Inicio de codigo para loguear usuario
-        SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-RH8U25N\\SQLEXPRESS;Initial Catalog=ControlTiempos;Integrated Security=True");
- 
+        SqlConnection conexion = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=ControlTiempos;Integrated Security=True");
+        //DESKTOP - RH8U25N
         public void logear(string usuario, string contrasena)
         {
             try
@@ -36,7 +36,7 @@ namespace ControlDeTiempos
                     this.Hide();
                     if(dt.Rows[0][1].ToString()=="Admin")
                     {
-                        new Administrador().Show();
+                        new InicioAdmin().Show();
                     }
                     else if(dt.Rows[0][1].ToString() == "Usuario")
                     {
@@ -149,6 +149,35 @@ namespace ControlDeTiempos
                         errorProviderUsername.SetError(panel1, "Debe introducir una contraseña");
                         break;
                     }
+            }
+        }
+
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                switch (validacionInicio())
+                {
+                    case 0:
+                        {
+                            //no hay ningun error
+                            errorProviderUsername.SetError(panel1, "");
+                            logear(this.txtNombreUsuario.Text, this.txtContraseña.Text);
+                            break;
+                        }
+
+                    case 1:
+                        {
+                            errorProviderUsername.SetError(panel1, "Nombre de usuario invalido");
+                            break;
+                        }
+
+                    case 2:
+                        {
+                            errorProviderUsername.SetError(panel1, "Debe introducir una contraseña");
+                            break;
+                        }
+                }
             }
         }
         //Desarrollo del boton iniciar sesion

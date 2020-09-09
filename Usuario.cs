@@ -54,7 +54,6 @@ namespace ControlDeTiempos
             comboEmpresa.Text = "";
             comboAño.Text = "";
             comboConcepto.Text = "";
-
         }
     
         //Metodos para el Llenado de los combos

@@ -18,14 +18,14 @@ namespace ControlDeTiempos
         string consultaModiEMpleado;
         //Modificar
         SqlDataAdapter msda;
-        SqlCommandBuilder mscb;
         DataTable mdt;
-        DataSet ds;
+
         public Clase_ABM()
         {
             try
             {
-                sqlConexion = new SqlConnection("Data Source=DESKTOP-RH8U25N\\SQLEXPRESS;Initial Catalog=ControlTiempos;Integrated Security=True");
+                sqlConexion = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=ControlTiempos;Integrated Security=True");
+                //DESKTOP - RH8U25N
                 sqlConexion.Open();
                 Console.WriteLine("Base de datos conectada");
             }
@@ -92,7 +92,7 @@ namespace ControlDeTiempos
         {
             try
             {
-                consultaModiEMpleado = "select Id_Registro as #,Fecha,Empresa,Area,Concepto,Comentario,Horas from Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre='" + name + "' and Ejercicio='" + año + "'";
+                consultaModiEMpleado = "select Id_Registro,Fecha,Empresa,Area,Concepto,Comentario,Horas from Registro r inner join LogIn li on r.Id_Empleado = li.Id_usuario where li.Nombre='" + name + "' and Ejercicio='" + año + "'";
                 msda = new SqlDataAdapter(consultaModiEMpleado,sqlConexion);
                 mdt = new DataTable();
                 msda.Fill(mdt);

@@ -87,6 +87,7 @@
             this.txtContraseña.TabStop = false;
             this.txtContraseña.Text = "Contraseña";
             this.txtContraseña.Click += new System.EventHandler(this.txtContraseña_Click);
+            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
             // txtNombreUsuario
             // 

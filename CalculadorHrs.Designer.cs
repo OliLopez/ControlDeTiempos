@@ -1,6 +1,6 @@
 ﻿namespace ControlDeTiempos
 {
-    partial class Administrador
+    partial class CalculadorHrs
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administrador));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculadorHrs));
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmbArea = new System.Windows.Forms.ComboBox();
             this.lblArea = new System.Windows.Forms.Label();
@@ -48,15 +48,12 @@
             this.ctDataSetcmEmpre = new ControlDeTiempos.ControlTiemposDataSet1();
             this.picBuscar = new System.Windows.Forms.PictureBox();
             this.errorProviderAdmin = new System.Windows.Forms.ErrorProvider(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.picAB = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.picformModi = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.ejercicioTableAdapter = new ControlDeTiempos.ControlTiemposDataSetTableAdapters.EjercicioTableAdapter();
             this.empleadoTableAdapter = new ControlDeTiempos.ControlTiemposDataSetempleadoTableAdapters.empleadoTableAdapter();
             this.cmbEmpresaTableAdapter = new ControlDeTiempos.ControlTiemposDataSet1TableAdapters.cmbEmpresaTableAdapter();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ejercicioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.controlTiemposDataSetBindingSource)).BeginInit();
@@ -67,9 +64,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ctDataSetcmEmpre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAdmin)).BeginInit();
+            this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picformModi)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,7 +80,7 @@
             this.panel1.Controls.Add(this.lblEmpresa);
             this.panel1.Controls.Add(this.cmbEmpleado);
             this.panel1.Controls.Add(this.cmbEmpresa);
-            this.panel1.Location = new System.Drawing.Point(17, 25);
+            this.panel1.Location = new System.Drawing.Point(6, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(411, 150);
             this.panel1.TabIndex = 1;
@@ -235,7 +231,7 @@
             // 
             this.picBuscar.BackColor = System.Drawing.SystemColors.HighlightText;
             this.picBuscar.Image = global::ControlDeTiempos.Properties.Resources.buscar;
-            this.picBuscar.Location = new System.Drawing.Point(434, 104);
+            this.picBuscar.Location = new System.Drawing.Point(432, 85);
             this.picBuscar.Name = "picBuscar";
             this.picBuscar.Size = new System.Drawing.Size(55, 51);
             this.picBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -249,75 +245,15 @@
             // 
             this.errorProviderAdmin.ContainerControl = this;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Controls.Add(this.picBuscar);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(511, 199);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(432, 64);
+            this.label3.Location = new System.Drawing.Point(431, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 30);
             this.label3.TabIndex = 3;
             this.label3.Text = "CALCULAR \r\nHRS";
-            // 
-            // picAB
-            // 
-            this.picAB.Image = global::ControlDeTiempos.Properties.Resources.anadir;
-            this.picAB.Location = new System.Drawing.Point(144, 256);
-            this.picAB.Name = "picAB";
-            this.picAB.Size = new System.Drawing.Size(55, 51);
-            this.picAB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAB.TabIndex = 2;
-            this.picAB.TabStop = false;
-            this.picAB.Click += new System.EventHandler(this.picAB_Click);
-            this.picAB.MouseLeave += new System.EventHandler(this.picAB_MouseLeave);
-            this.picAB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picAB_MouseMove);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(48, 258);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ALTAS Y BAJAS";
-            // 
-            // picformModi
-            // 
-            this.picformModi.Image = global::ControlDeTiempos.Properties.Resources.portafolio;
-            this.picformModi.Location = new System.Drawing.Point(380, 258);
-            this.picformModi.Name = "picformModi";
-            this.picformModi.Size = new System.Drawing.Size(55, 51);
-            this.picformModi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picformModi.TabIndex = 12;
-            this.picformModi.TabStop = false;
-            this.picformModi.Click += new System.EventHandler(this.picformModi_Click);
-            this.picformModi.MouseLeave += new System.EventHandler(this.picformModi_MouseLeave);
-            this.picformModi.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picformModi_MouseMove);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(285, 258);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 30);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "MODIFICAR \r\nY CONSULTAR";
             // 
             // ejercicioTableAdapter
             // 
@@ -331,25 +267,44 @@
             // 
             this.cmbEmpresaTableAdapter.ClearBeforeFill = true;
             // 
-            // Administrador
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.groupBox1);
+            this.panel2.Location = new System.Drawing.Point(8, 8);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(530, 162);
+            this.panel2.TabIndex = 7;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.picBuscar);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(6, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(511, 156);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            // 
+            // CalculadorHrs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(508, 350);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.picformModi);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.picAB);
-            this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.ClientSize = new System.Drawing.Size(547, 180);
+            this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Administrador";
+            this.MaximumSize = new System.Drawing.Size(567, 228);
+            this.MinimumSize = new System.Drawing.Size(567, 223);
+            this.Name = "CalculadorHrs";
+            this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Administrador";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Administrador_FormClosed);
+            this.Text = "Calcular Horas";
             this.Load += new System.EventHandler(this.Administrador_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -362,12 +317,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ctDataSetcmEmpre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderAdmin)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picformModi)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -384,11 +337,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderAdmin;
         private System.Windows.Forms.Label lblArea;
         private System.Windows.Forms.ComboBox cmbArea;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox picAB;
-        private System.Windows.Forms.PictureBox picformModi;
-        private System.Windows.Forms.Label label2;
         private ControlTiemposDataSet controlTiemposDataSet;
         private System.Windows.Forms.BindingSource controlTiemposDataSetBindingSource;
         private System.Windows.Forms.BindingSource ejercicioBindingSource;
@@ -400,5 +348,7 @@
         private System.Windows.Forms.BindingSource cmbEmpresaBindingSource;
         private ControlTiemposDataSet1TableAdapters.cmbEmpresaTableAdapter cmbEmpresaTableAdapter;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

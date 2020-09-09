@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ControlDeTiempos
 {
-    public partial class Administrador : Form
+    public partial class CalculadorHrs : Form
     {
         
         int variableRelacion=0;
@@ -19,7 +19,7 @@ namespace ControlDeTiempos
         string iEjercicio="0";
         string sempleado = "/";
 
-        public Administrador()
+        public CalculadorHrs()
         {
             InitializeComponent();
         }
@@ -34,24 +34,6 @@ namespace ControlDeTiempos
             picBuscar.BackColor = Color.Transparent;
         }
 
-        private void picAB_MouseMove(object sender, MouseEventArgs e)
-        {
-            picAB.BackColor = Color.Goldenrod;
-        }
-
-        private void picAB_MouseLeave(object sender, EventArgs e)
-        {
-            picAB.BackColor = Color.Transparent;
-        }
-        private void picformModi_MouseMove(object sender, MouseEventArgs e)
-        {
-            picformModi.BackColor = Color.Goldenrod;
-        }
-
-        private void picformModi_MouseLeave(object sender, EventArgs e)
-        {
-            picformModi.BackColor = Color.Transparent;
-        }
         private void comboAdminEmpresa_MouseMove(object sender, MouseEventArgs e)
         {
             lblEmpresa.BackColor = Color.Goldenrod;
@@ -96,13 +78,6 @@ namespace ControlDeTiempos
             lblaño.BackColor = Color.Transparent;
         }
         //Fin Diseño
-
-        // ------------------inicio ALTABAJAS---------------------------------------------------
-        private void picAB_Click(object sender, EventArgs e)
-        {
-            new AltaBajaForm().ShowDialog();
-        }
-        // ------------------fin ALTABAJAS---------------------------------------------------
 
         // ------------------inicio CONSULTAS---------------------------------------------------
         //INICIO DE VALIDACIONES DE LOS CAMPOS COMBOBOX
@@ -277,6 +252,7 @@ namespace ControlDeTiempos
                                     break;
                                 }
                         }
+
                         sempleado = cmbEmpleado.Text;
                         sarea = cmbArea.Text;
                         sempresa = cmbEmpresa.Text;
@@ -294,19 +270,6 @@ namespace ControlDeTiempos
             }
         }
         // ------------------fin CONSULTAS---------------------------------------------------
-
-        // ------------------inicio MODIFICAR---------------------------------------------------
-        private void picformModi_Click(object sender, EventArgs e)
-        {
-            new Ventana_Modificar().ShowDialog();
-        }
-        // ------------------fin MODIFICAR---------------------------------------------------
-
-        //CERRAR APLICACION
-        private void Administrador_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void Administrador_Load(object sender, EventArgs e)
         {
